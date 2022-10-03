@@ -10,3 +10,4 @@
 | Existing Applications     | https://www.apple.com/chde/app-store/ Searching for: "Cartoons Drawing/Sketch". "Drawing", ...    | Sep 29, 2022 |
 | Cartoon Network (> 250 people) | https://www.cartooningforpeace.org/en/cartoonists-2/ | Sep 29, 2022 |
 | Problems of Comic Industry| http://www.creatoratlarge.com/blog/27-problems | Oct 03, 2022 |
+| Drawing/Comic Application |https://brush.ninja | Oct 03, 2022 |
