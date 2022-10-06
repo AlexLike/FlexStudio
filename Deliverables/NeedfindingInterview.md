@@ -33,7 +33,7 @@ N: I didn't even think about that. Nice. Fortunately I don't think it should shr
 _[J @Jenny#9512, R @ranka#3867, and F @Fei#7144 on June 9, 2022.](https://discord.com/channels/854144771357540352/854149028517642241/984513236810481695)_
 
 J: these are my thumbnails rn
-![](img/nfi01.png)
+![](../img/nfi01.png)
 It's like, there's 1000 rules about good things to do when framing, but when it gets down to it I just get lazy and put down like. 6 boxes
 
 R: I tried doing a longform story in webtoon format, but it just didn't feel as good as traditional comic/manga panels
@@ -70,8 +70,8 @@ and not try to force a popular format
 J: It's like, at one end you have something like houseki no kuni where every page feels like a separate, weighty illustration.
 And then on the other end (of manga) you have these loose, free flowing panels where the emotions bleed into everything and it has a weightless feeling.
 And then FURTHER on that end you have webtoon where everything is floating and free
-![](img/nfi02.png)
-![](img/nfi03.png)
+![](../img/nfi02.png)
+![](../img/nfi03.png)
 but, I do wish it was easier to post these on tapas / webtoon or to have bigger sites for non-webtoon format. Cuz I have to shrink my pages a lot to post them 😛
 my saved page is at 5291x7488
 
