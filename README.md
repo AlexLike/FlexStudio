@@ -44,7 +44,23 @@ We look forward to the prototyping phase, where we will explore different featur
 
 ## Low-fidelity Prototype
 
-    TODO
+Our lo-fi prototyping happened in two stages: First, every member designed a very rough, 2D paper prototype showing their vision of one specific feature from our idea catalogue. After 30min, we had sketched
+
+1. [a practice app with daily challenges](/Deliverables/LowFiPrototyping/Other/dlofi01.mov),
+2. [a layer-based, responsive panel editor](/Deliverables/LowFiPrototyping/Other/dlofi02.mov),
+3. [a side panel with references (from design inspiration over storyboards to character logs)](/Deliverables/LowFiPrototyping/Other/dlofi03.mov),
+4. [an interactive 3D reference model concept](/Deliverables/LowFiPrototyping/Other/dlofi04.mov), and
+5. [a library-esque navigation and unified export scheme](/Deliverables/LowFiPrototyping/Other/dlofi05.mov).
+
+Half a week later, equipped with materials for handicrafts, we met again to build more sophisticated user storyboards and prototypes. We looked into how we could
+
+1. [intuitively switch between 3D reference model joint adjustments and drawing mode](/Deliverables/LowFiPrototyping/IdeaA/),
+2. [make navigating and exporting a breeze](/Deliverables/LowFiPrototyping/IdeaB/Storyboard.pdf), and
+3. [leverage the layering concept to create a 3D parallax sensation when a reader tilts their device](/Deliverables/LowFiPrototyping/IdeaC/).
+
+Prototyping was simple and fun. We noticed that some concepts, for instance the parallax viewer, previously had no consensus when it came to their execution. Playing around with a paper model made things clear for everyone.
+
+We enter the next stage with excitement and plan to focus on these three core features. How we weigh them will be determined in the mid-fi prototypes.
 
 ## Mid-fidelity Prototype
 
