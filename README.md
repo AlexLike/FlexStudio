@@ -62,7 +62,7 @@ We enter the next stage with excitement and plan to focus on these three core fe
 
 To get a more thorough feeling for the structure, feature set, and visual language of our product, we decided to create pseudo-interactive prototypes for
 
-1. the [top level-navigation](/Deliverables/MidFiPrototyping/Top%20Level-Navigation%20and%20Export.mov) and for
+1. the [top level-navigation](/Deliverables/MidFiPrototyping/Top%20Level-Navigation%20and%20Export.mp4) and for
 2. the unified panel editor.
 
 The former we designed in Sketch, following Apple's Human Interface Guidelines and drawing inspiration from other apps that foster organized productivity.
