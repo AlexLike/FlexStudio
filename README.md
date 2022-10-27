@@ -63,7 +63,7 @@ We enter the next stage with excitement and plan to focus on these three core fe
 To get a more thorough feeling for the structure, feature set, and visual language of our product, we decided to create pseudo-interactive prototypes for
 
 1. the [top level-navigation](/Deliverables/MidFiPrototyping/Top%20Level-Navigation%20and%20Export.mp4) and for
-2. the [unified panel editor] (/Deliverables/MidFiPrototyping/Sidebar%and%3D%Model%Import.mp4).
+2. the [unified panel editor](/Deliverables/MidFiPrototyping/Sidebar%and%3D%Model%Import.mp4).
 
 The former we designed in Sketch, following Apple's Human Interface Guidelines and drawing inspiration from other apps that foster organized productivity.
 The latter we created in Figma, exploring how basic layering, the reference side panel, and context-switching to 3D template mode could work together.
