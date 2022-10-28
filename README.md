@@ -3,7 +3,7 @@
   <img height="56" src="img/eth-sip-3l.png">     
 </p>
 
-# [Project name], Group 1
+# Flex Studio, Group 1
 
 #### Kai Zheng, Cashen Adkins, Tim Kluser, Karl Robert Kristenprun, Alexander Zank
 
