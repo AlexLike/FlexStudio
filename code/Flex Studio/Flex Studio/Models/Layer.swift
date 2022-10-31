@@ -8,13 +8,13 @@
 import CoreData
 
 class Layer: NSManagedObject {
-    @NSManaged var constraint_top: Float
-    @NSManaged var constraint_leading: Float
-    @NSManaged var constraint_trailing: Float
-    @NSManaged var constraint_bottom: Float
-    @NSManaged var position_x: Float
-    @NSManaged var position_y: Float
-    @NSManaged var position_z: Int16
+    @NSManaged var constraintTop: Float
+    @NSManaged var constraintLeading: Float
+    @NSManaged var constraintTrailing: Float
+    @NSManaged var constraintBottom: Float
+    @NSManaged var positionX: Float
+    @NSManaged var positionY: Float
+    @NSManaged var positionZ: Int16
     
-    @NSManaged var parent_panel: Panel
+    @NSManaged var parentPanel: Panel
 }

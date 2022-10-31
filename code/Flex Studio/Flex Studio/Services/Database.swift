@@ -29,8 +29,8 @@ class Database: ObservableObject {
         
         comic.order = Int16(comics.count) // Assuming insertComic is called always after we fetched all comics (and they are up to date!)
         comic.name = name
-        comic.date_created = Date()
-        comic.date_modified = Date()
+        comic.creationDate = Date()
+        comic.modificationDate = Date()
         
         comic.panels = []
         
@@ -42,7 +42,7 @@ class Database: ObservableObject {
         
         panel.order = Int16(comic.panels.count)
         
-        panel.parent_comic = comic
+        panel.parentComic = comic
         comic.panels.insert(panel)
         
         coreDataStack.saveContext()
@@ -51,15 +51,15 @@ class Database: ObservableObject {
     func insertLayer(for panel: Panel) {
         let layer = Layer(context: coreDataStack.context)
         
-        layer.constraint_top = 0
-        layer.constraint_leading = 0
-        layer.constraint_trailing = 0
-        layer.constraint_bottom = 0
-        layer.position_x = 0
-        layer.position_y = 0
-        layer.position_z = Int16(panel.layers.count)
+        layer.constraintTop = 0
+        layer.constraintLeading = 0
+        layer.constraintTrailing = 0
+        layer.constraintBottom = 0
+        layer.positionX = 0
+        layer.positionY = 0
+        layer.positionZ = Int16(panel.layers.count)
         
-        layer.parent_panel = panel
+        layer.parentPanel = panel
         panel.layers.insert(layer)
         
         coreDataStack.saveContext()
@@ -71,14 +71,14 @@ class Database: ObservableObject {
     }
     
     func deletePanel(panel: Panel) {
-        panel.parent_comic.panels.remove(panel)
+        panel.parentComic.panels.remove(panel)
         
         coreDataStack.context.delete(panel)
         coreDataStack.saveContext()
     }
     
     func deleteLayer(layer: Layer) {
-        layer.parent_panel.layers.remove(layer)
+        layer.parentPanel.layers.remove(layer)
         
         coreDataStack.context.delete(layer)
         coreDataStack.saveContext()

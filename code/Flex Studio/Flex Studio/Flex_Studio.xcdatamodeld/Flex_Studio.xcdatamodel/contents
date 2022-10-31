@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="22A380" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A380" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Comic" representedClassName=".Comic" syncable="YES">
-        <attribute name="date_created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="date_modified" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="modificationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="panels" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Panel" inverseName="parent_comic" inverseEntity="Panel"/>
+        <relationship name="panels" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Panel" inverseName="parentComic" inverseEntity="Panel"/>
     </entity>
     <entity name="Layer" representedClassName=".Layer" syncable="YES">
-        <attribute name="constraint_bottom" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="constraint_leading" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="constraint_top" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="constraint_trailing" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="position_x" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="position_y" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="position_z" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="parent_panel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Panel" inverseName="layers" inverseEntity="Panel"/>
+        <attribute name="constraintBottom" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="constraintLeading" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="constraintTop" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="constraintTrailing" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="positionX" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="positionY" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="positionZ" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="parentPanel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Panel" inverseName="layers" inverseEntity="Panel"/>
     </entity>
     <entity name="Panel" representedClassName=".Panel" syncable="YES">
         <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="layers" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Layer" inverseName="parent_panel" inverseEntity="Layer"/>
-        <relationship name="parent_comic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Comic" inverseName="panels" inverseEntity="Comic"/>
+        <relationship name="layers" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Layer" inverseName="parentPanel" inverseEntity="Layer"/>
+        <relationship name="parentComic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Comic" inverseName="panels" inverseEntity="Comic"/>
     </entity>
 </model>

@@ -10,8 +10,8 @@ import CoreData
 class Comic: NSManagedObject {
     @NSManaged var order: Int16
     @NSManaged var name: String
-    @NSManaged var date_created: Date
-    @NSManaged var date_modified: Date
+    @NSManaged var creationDate: Date
+    @NSManaged var modificationDate: Date
     
     @NSManaged var panels: Set<Panel>
 }
