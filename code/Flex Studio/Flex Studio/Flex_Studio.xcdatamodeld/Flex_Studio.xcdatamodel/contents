@@ -5,22 +5,21 @@
         <attribute name="date_modified" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="panels" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Panel" inverseName="parent_comic" inverseEntity="Panel"/>
+        <relationship name="panels" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Panel" inverseName="parent_comic" inverseEntity="Panel"/>
     </entity>
     <entity name="Layer" representedClassName=".Layer" syncable="YES">
         <attribute name="constraint_bottom" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="constraint_leading" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="constraint_top" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="constraint_trailing" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="position_x" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="position_y" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="position_z" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="parent_panel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Panel" inverseName="layers" inverseEntity="Panel"/>
     </entity>
     <entity name="Panel" representedClassName=".Panel" syncable="YES">
-        <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="layers" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Layer" inverseName="parent_panel" inverseEntity="Layer"/>
+        <relationship name="layers" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Layer" inverseName="parent_panel" inverseEntity="Layer"/>
         <relationship name="parent_comic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Comic" inverseName="panels" inverseEntity="Comic"/>
     </entity>
 </model>
