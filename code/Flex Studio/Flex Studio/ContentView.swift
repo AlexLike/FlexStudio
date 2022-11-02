@@ -5,12 +5,20 @@
 //  Created by Alexander Zank on 28.10.22.
 //
 
+import PencilKit
 import SwiftUI
 
 struct ContentView: View {
-  
     var body: some View {
-        Text("Hello Toons!")
+        NavigationStack {
+            PanelView(
+                layers: PanelView_Previews.demoLayers,
+                selectedLayer: PanelView_Previews.demoLayers[1],
+                selectedTool: .debugDraw,
+                targetSize: .zero
+            )
+            .navigationTitle("Panel Editor")
+        }
     }
 }
 

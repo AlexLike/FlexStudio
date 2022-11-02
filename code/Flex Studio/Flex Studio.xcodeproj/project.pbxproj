@@ -14,6 +14,11 @@
 		14232BB5290BF403009F006A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14232BB4290BF403009F006A /* CoreDataStack.swift */; };
 		14232BB8290BF403009F006A /* Flex_Studio.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14232BB6290BF403009F006A /* Flex_Studio.xcdatamodeld */; };
 		14232BC6290BFB8E009F006A /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14232BC5290BFB8E009F006A /* Database.swift */; };
+		14279D5F2911878700FB80B6 /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14279D5E2911878700FB80B6 /* PanelView.swift */; };
+		14279D61291187AF00FB80B6 /* LayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14279D60291187AF00FB80B6 /* LayerView.swift */; };
+		14279D63291187D700FB80B6 /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14279D62291187D700FB80B6 /* FrameView.swift */; };
+		14279D6629118AFA00FB80B6 /* LayerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14279D6529118AFA00FB80B6 /* LayerState.swift */; };
+		14ABA1CA2911E2CD006C631A /* EditorTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ABA1C92911E2CD006C631A /* EditorTool.swift */; };
 		3DE28114290FE50F00931D8A /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE28113290FE50F00931D8A /* Comic.swift */; };
 		3DE28116290FE5D500931D8A /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE28115290FE5D500931D8A /* Panel.swift */; };
 		3DE28118290FE5E400931D8A /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE28117290FE5E400931D8A /* Layer.swift */; };
@@ -28,6 +33,11 @@
 		14232BB4290BF403009F006A /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		14232BB7290BF403009F006A /* Flex_Studio.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Flex_Studio.xcdatamodel; sourceTree = "<group>"; };
 		14232BC5290BFB8E009F006A /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		14279D5E2911878700FB80B6 /* PanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelView.swift; sourceTree = "<group>"; };
+		14279D60291187AF00FB80B6 /* LayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerView.swift; sourceTree = "<group>"; };
+		14279D62291187D700FB80B6 /* FrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
+		14279D6529118AFA00FB80B6 /* LayerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerState.swift; sourceTree = "<group>"; };
+		14ABA1C92911E2CD006C631A /* EditorTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorTool.swift; sourceTree = "<group>"; };
 		3DE28113290FE50F00931D8A /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
 		3DE28115290FE5D500931D8A /* Panel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panel.swift; sourceTree = "<group>"; };
 		3DE28117290FE5E400931D8A /* Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
@@ -63,6 +73,7 @@
 		14232BAA290BF402009F006A /* Flex Studio */ = {
 			isa = PBXGroup;
 			children = (
+				14279D6429118ADE00FB80B6 /* Identities */,
 				14232BBF290BF50F009F006A /* Utilities */,
 				14232BC3290BF659009F006A /* Models */,
 				14232BC2290BF651009F006A /* Services */,
@@ -102,6 +113,9 @@
 		14232BC1290BF5EF009F006A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				14279D5E2911878700FB80B6 /* PanelView.swift */,
+				14279D60291187AF00FB80B6 /* LayerView.swift */,
+				14279D62291187D700FB80B6 /* FrameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -123,6 +137,15 @@
 				3DE28117290FE5E400931D8A /* Layer.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		14279D6429118ADE00FB80B6 /* Identities */ = {
+			isa = PBXGroup;
+			children = (
+				14279D6529118AFA00FB80B6 /* LayerState.swift */,
+				14ABA1C92911E2CD006C631A /* EditorTool.swift */,
+			);
+			path = Identities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,10 +220,15 @@
 			files = (
 				14232BB5290BF403009F006A /* CoreDataStack.swift in Sources */,
 				3DE28116290FE5D500931D8A /* Panel.swift in Sources */,
+				14ABA1CA2911E2CD006C631A /* EditorTool.swift in Sources */,
+				14279D61291187AF00FB80B6 /* LayerView.swift in Sources */,
 				3DE28114290FE50F00931D8A /* Comic.swift in Sources */,
+				14279D5F2911878700FB80B6 /* PanelView.swift in Sources */,
+				14279D6629118AFA00FB80B6 /* LayerState.swift in Sources */,
 				3DE28118290FE5E400931D8A /* Layer.swift in Sources */,
 				14232BAE290BF402009F006A /* ContentView.swift in Sources */,
 				14232BB8290BF403009F006A /* Flex_Studio.xcdatamodeld in Sources */,
+				14279D63291187D700FB80B6 /* FrameView.swift in Sources */,
 				14232BC6290BFB8E009F006A /* Database.swift in Sources */,
 				14232BAC290BF402009F006A /* Flex_StudioApp.swift in Sources */,
 			);
@@ -331,7 +359,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Flex Studio/Preview Content\"";
-				DEVELOPMENT_TEAM = M4J79LU3NC;
+				DEVELOPMENT_TEAM = 2WC6CZUK4Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -360,7 +388,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Flex Studio/Preview Content\"";
-				DEVELOPMENT_TEAM = M4J79LU3NC;
+				DEVELOPMENT_TEAM = 2WC6CZUK4Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
