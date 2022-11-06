@@ -9,13 +9,13 @@ import SwiftUI
 import PencilKit
 
 class CanvasViewController: UIViewController {
-    var canvasView: PKCanvasView = PKCanvasView(frame: .zero)
-    var toolPicker: PKToolPicker = PKToolPicker()
-    
     var layer: Layer
     var state: LayerState
     var drawingChanged: (PKDrawing) -> () = { _ in }
     var geometry: GeometryProxy
+    
+    var canvasView: PKCanvasView = PKCanvasView(frame: .zero)
+    var toolPicker: PKToolPicker = PKToolPicker()
 
     init(layer: Layer, state: LayerState, geometry: GeometryProxy) {
         self.layer = layer
