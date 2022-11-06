@@ -21,8 +21,7 @@ struct PanelsView: View {
                 LazyVGrid(columns: viewModel.itemColumns, spacing: .fsPaddingLarge) {
                     ForEach(panels) { panel in
                         NavigationLink(
-                            destination: PanelView(panel: panel, selectedTool: .debugDraw,
-                                                   targetSize: .zero)
+                            destination: PanelView(panel: panel, selectedTool: .debugDraw)
                         ) {
                             PanelItemView(panel: panel)
                         }

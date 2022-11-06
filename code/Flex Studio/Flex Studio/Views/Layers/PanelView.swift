@@ -10,23 +10,38 @@ import SwiftUI
 struct PanelView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @ObservedObject var panel: Panel
-    @State var selectedLayerOffset = 0
     @State var selectedTool: EditorTool?
-    @State var targetSize: CGSize
+    
+    @State private var panelScale: CGFloat = 1
+    @State private var panelLastScale: CGFloat = 1
+    
+    @State private var selectedLayerOffset = 0
 
     var body: some View {
         ZStack {
+            Color.fsGray.edgesIgnoringSafeArea(.all)
+            
             ZStack {
                 ForEach(panel.sortedLayers) { layer in
                     let isSelected = layer.order == selectedLayerOffset
-                    LayerView(
-                        layer: layer,
-                        state: isSelected ? .selected(tool: selectedTool) : .static
-                    )
-                    .allowsHitTesting(isSelected)
+                    GeometryReader { geometry in
+                        let magnificationGesture = MagnificationGesture()
+                            .onChanged { panelScale = panelLastScale * $0 }
+                            .onEnded { _ in fixScale() }
+                        
+                        LayerView(
+                            layer: layer,
+                            state: isSelected ? .selected(tool: selectedTool) : .static,
+                            geometry: geometry
+                        )
+                        .allowsHitTesting(isSelected)
+                        .scaleEffect(panelScale, anchor: .center)
+                        .gesture(magnificationGesture)
+                    }
                 }
             }
         }
+        .edgesIgnoringSafeArea(.all)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: { presentationMode.wrappedValue.dismiss() }) {
@@ -50,6 +65,15 @@ struct PanelView: View {
         }
         return .static
     }
+    
+    private func fixScale() {
+        let newScale = CGFloat.minimum(.maximum(panelScale, 0.5), 2)
+        panelLastScale = newScale
+        
+        withAnimation() {
+            panelScale = newScale
+        }
+    }
 }
 
 struct PanelView_Previews: PreviewProvider {
@@ -61,11 +85,7 @@ struct PanelView_Previews: PreviewProvider {
 
     static var previews: some View {
         NavigationStack {
-            PanelView(
-                panel: demoPanel,
-                selectedTool: .debugDraw,
-                targetSize: .zero
-            )
+            PanelView(panel: demoPanel, selectedTool: .debugDraw)
         }
     }
 }
