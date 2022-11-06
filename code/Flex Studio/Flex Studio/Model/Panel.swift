@@ -42,7 +42,7 @@ extension Panel {
         return p
     }
 
-    static func requestNewestToOldest() -> NSFetchRequest<Panel> {
+    static func fetchRequestNewestToOldest() -> NSFetchRequest<Panel> {
         let request = Panel.fetchRequest()
         request
             .sortDescriptors = [NSSortDescriptor(keyPath: \Panel.creationDate_, ascending: false)]

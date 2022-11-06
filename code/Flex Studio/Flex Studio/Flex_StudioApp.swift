@@ -13,7 +13,7 @@ struct Flex_StudioApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView().environment(\.managedObjectContext, PersistenceLayer.shared.viewContext)
+            PanelsView().environment(\.managedObjectContext, PersistenceLayer.shared.viewContext)
         }
         .onChange(of: scenePhase) {
             switch $0 {

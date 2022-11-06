@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		14752FDD2916B9290084BF7E /* Flex_StudioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14752FDC2916B9290084BF7E /* Flex_StudioApp.swift */; };
-		14752FDF2916B9290084BF7E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14752FDE2916B9290084BF7E /* ContentView.swift */; };
 		14752FE12916B92A0084BF7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14752FE02916B92A0084BF7E /* Assets.xcassets */; };
 		14752FE42916B92A0084BF7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14752FE32916B92A0084BF7E /* Preview Assets.xcassets */; };
 		14752FE62916B92A0084BF7E /* PersistenceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14752FE52916B92A0084BF7E /* PersistenceLayer.swift */; };
@@ -22,12 +21,13 @@
 		14EB30D22916CEE800744608 /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB30D12916CEE800744608 /* Panel.swift */; };
 		14EB30D42916D0CE00744608 /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB30D32916D0CE00744608 /* Layer.swift */; };
 		3D39BC242917936500268337 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D39BC232917936500268337 /* Date+Ext.swift */; };
+		3D580C962917969200BA58DA /* PanelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580C952917969200BA58DA /* PanelsView.swift */; };
+		3D580C98291796E100BA58DA /* PanelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580C97291796E100BA58DA /* PanelsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		14752FD92916B9290084BF7E /* Flex Studio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flex Studio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14752FDC2916B9290084BF7E /* Flex_StudioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flex_StudioApp.swift; sourceTree = "<group>"; };
-		14752FDE2916B9290084BF7E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		14752FE02916B92A0084BF7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14752FE32916B92A0084BF7E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		14752FE52916B92A0084BF7E /* PersistenceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceLayer.swift; sourceTree = "<group>"; };
@@ -41,6 +41,8 @@
 		14EB30D12916CEE800744608 /* Panel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panel.swift; sourceTree = "<group>"; };
 		14EB30D32916D0CE00744608 /* Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
 		3D39BC232917936500268337 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		3D580C952917969200BA58DA /* PanelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelsView.swift; sourceTree = "<group>"; };
+		3D580C97291796E100BA58DA /* PanelsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,12 +75,12 @@
 		14752FDB2916B9290084BF7E /* Flex Studio */ = {
 			isa = PBXGroup;
 			children = (
+				14EB30CA2916BFEB00744608 /* Utilities */,
 				14CD95B729173BD800BE08FB /* Identities */,
 				14EB30D02916CED600744608 /* Model */,
+				14EB30CC2916C03300744608 /* Persistence */,
 				14EB30CD2916C05100744608 /* Views */,
 				14752FDC2916B9290084BF7E /* Flex_StudioApp.swift */,
-				14EB30CC2916C03300744608 /* Persistence */,
-				14EB30CA2916BFEB00744608 /* Utilities */,
 				14EB30CB2916C00D00744608 /* Resources */,
 				14752FE22916B92A0084BF7E /* Preview Content */,
 			);
@@ -132,9 +134,8 @@
 		14EB30CD2916C05100744608 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				14752FDE2916B9290084BF7E /* ContentView.swift */,
-				14CD95BC29173CAE00BE08FB /* PanelView.swift */,
-				14CD95B529173BBA00BE08FB /* LayerView.swift */,
+				3D580C992917A07F00BA58DA /* Panels */,
+				3D580C9A2917A08300BA58DA /* Layers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -154,6 +155,24 @@
 				3D39BC232917936500268337 /* Date+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3D580C992917A07F00BA58DA /* Panels */ = {
+			isa = PBXGroup;
+			children = (
+				3D580C97291796E100BA58DA /* PanelsViewModel.swift */,
+				3D580C952917969200BA58DA /* PanelsView.swift */,
+			);
+			path = Panels;
+			sourceTree = "<group>";
+		};
+		3D580C9A2917A08300BA58DA /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				14CD95BC29173CAE00BE08FB /* PanelView.swift */,
+				14CD95B529173BBA00BE08FB /* LayerView.swift */,
+			);
+			path = Layers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,9 +253,10 @@
 				3D39BC242917936500268337 /* Date+Ext.swift in Sources */,
 				14EB30D42916D0CE00744608 /* Layer.swift in Sources */,
 				14752FE62916B92A0084BF7E /* PersistenceLayer.swift in Sources */,
-				14752FDF2916B9290084BF7E /* ContentView.swift in Sources */,
 				14CD95B629173BBA00BE08FB /* LayerView.swift in Sources */,
+				3D580C98291796E100BA58DA /* PanelsViewModel.swift in Sources */,
 				14CD95BD29173CAE00BE08FB /* PanelView.swift in Sources */,
+				3D580C962917969200BA58DA /* PanelsView.swift in Sources */,
 				14752FE92916B92A0084BF7E /* Flex_Studio.xcdatamodeld in Sources */,
 				14752FDD2916B9290084BF7E /* Flex_StudioApp.swift in Sources */,
 			);
