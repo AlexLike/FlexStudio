@@ -6,7 +6,9 @@
 //
 
 import SwiftUI
+import CoreData
 
+// TODO: - Remove (or rework to be an NSFetchedResultsController delegate)
 class PanelsViewModel: ObservableObject {
     private let logger = Logger.forType(PanelsViewModel.self)
     private let viewContext = PersistenceLayer.shared.viewContext
@@ -20,7 +22,7 @@ class PanelsViewModel: ObservableObject {
     // MARK: - Data
 
     private func fetchPanels() {
-        let request = Panel.fetchRequestNewestToOldest()
+        let request = Panel.fetchRequestOldestToNewest
         viewContext.perform {
             do {
                 let panels = try self.viewContext.fetch(request)

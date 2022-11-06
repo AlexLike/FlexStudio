@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct MainNavigationView: View {
-    
     var body: some View {
         NavigationStack {
             PanelsView()
         }
-        .tint(.fs_black) // Global tint
+        .tint(.fsGray)
+    }
+}
+
+struct MainNavigationView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainNavigationView()
+            .environment(\.managedObjectContext, PersistenceLayer.preview.viewContext)
     }
 }

@@ -8,10 +8,10 @@
 import SwiftUI
 
 extension Font {
-    static let fs_header = custom("Inter-SemiBold", size: 36)
-    static let fs_title = custom("Inter-Medium", size: 20)
-    static let fs_subtitle = custom("Inter-Medium", size: 17)
-    static let fs_text = custom("Inter-Regular", size: 15)
+    static let fsHeader = custom("Inter-SemiBold", size: 36, relativeTo: .largeTitle)
+    static let fsTitle = custom("Inter-Medium", size: 20, relativeTo: .title)
+    static let fsSubtitle = custom("Inter-Medium", size: 17, relativeTo: .subheadline)
+    static let fsBody = custom("Inter-Regular", size: 15, relativeTo: .body)
 }
 
 extension UIFont {

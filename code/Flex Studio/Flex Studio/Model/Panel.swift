@@ -12,7 +12,7 @@ extension Panel {
 
     /// This panel's unique identifier, automatically generated on creation and persistent.
     var uid: UUID { uid_ ?? .init() }
-    
+
     /// A timestamp of this panel's creation.
     var creationDate: Date? {
         get { creationDate_ }
@@ -20,13 +20,13 @@ extension Panel {
     }
 
     // MARK: - Relationships
-    
+
     /// All layers this panel contains.
     var layers: Set<Layer> {
         get { layers_ as? Set<Layer> ?? [] }
         set { layers_ = newValue as NSSet }
     }
-    
+
     /// All layers this panel consists of, sorted from furthest away to closest to the viewer.
     var sortedLayers: [Layer] { layers.sorted(using: KeyPathComparator(\.order)) }
 
@@ -42,12 +42,12 @@ extension Panel {
         return p
     }
 
-    static func fetchRequestNewestToOldest() -> NSFetchRequest<Panel> {
+    static let fetchRequestOldestToNewest: NSFetchRequest<Panel> = {
         let request = Panel.fetchRequest()
         request
-            .sortDescriptors = [NSSortDescriptor(keyPath: \Panel.creationDate_, ascending: false)]
+            .sortDescriptors = [NSSortDescriptor(keyPath: \Panel.creationDate_, ascending: true)]
         return request
-    }
+    }()
 
     func delete() {
         layers.forEach { $0.delete(removingFromPanel: false) }

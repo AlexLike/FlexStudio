@@ -10,13 +10,14 @@ import PencilKit
 
 extension Layer {
     // MARK: - Data
-    
-    /// A value in `0..<(panel.layers.count)`, denoting how close this layer is to the viewer. (`0` is furthest to the back.)
+
+    /// A value in `0..<(panel.layers.count)`, denoting how close this layer is to the viewer. (`0`
+    /// is furthest to the back.)
     var order: Int16 {
         get { order_ }
         set { order_ = newValue }
     }
-    
+
     /// The drawing pictured by this layer.
     var drawing: PKDrawing {
         get { (drawing_ as! PKDrawingReference) as PKDrawing }
@@ -24,7 +25,7 @@ extension Layer {
     }
 
     // MARK: - Relationships
-    
+
     /// The panel containing this layer.
     var panel: Panel {
         get { panel_! }
