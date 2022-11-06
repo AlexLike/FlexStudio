@@ -12,7 +12,7 @@ struct MainNavigationView: View {
         NavigationStack {
             PanelsView()
         }
-        .tint(.fsGray)
+        .tint(.fsBlack)
     }
 }
 

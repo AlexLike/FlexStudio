@@ -8,8 +8,8 @@
 import SwiftUI
 
 extension Image {
-    static let fs_delete = Image(systemName: "trash.fill")
-    static let fs_paint = Image(systemName: "paintbrush.fill")
-    static let fs_sidemenu = Image(systemName: "sidebar.trailing")
-    static let fs_panels = Image(systemName: "square.grid.2x2")
+    static let fsDelete = Image(systemName: "trash.fill")
+    static let fsPaint = Image(systemName: "paintbrush.fill")
+    static let fsSidemenu = Image(systemName: "sidebar.trailing")
+    static let fsPanels = Image(systemName: "square.grid.2x2")
 }

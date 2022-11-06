@@ -30,12 +30,12 @@ struct PanelView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: { presentationMode.wrappedValue.dismiss() }) {
-                    Image.fs_panels
+                    Image.fsPanels
                 }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {  }) { // Sidebar menu functionality
-                    Image.fs_sidemenu
+                    Image.fsSidemenu
                 }
             }
         }

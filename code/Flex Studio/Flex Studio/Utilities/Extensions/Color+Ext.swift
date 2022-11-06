@@ -8,8 +8,8 @@
 import SwiftUI
 
 extension Color {
-    static let fsWhite = Self.white //  Color("fs_white")
-    static let fsBackground =  Self.white // Color("fs_background")
-    static let fsGray = Self.gray // Color("fs_gray")
-    static let fsBlack = Self.black // Color("fs_black")
+    static let fsWhite = Color("fs_white")
+    static let fsBackground = Color("fs_background")
+    static let fsGray = Color("fs_gray")
+    static let fsBlack = Color("fs_black")
 }

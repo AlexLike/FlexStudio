@@ -15,7 +15,7 @@ private struct ButtonStyleScale: ButtonStyle {
 }
 
 extension View {
-    func fs_buttonStyleScale() -> some View {
+    func fsButtonStyleScale() -> some View {
         self
             .buttonStyle(withAnimation(.easeInOut(duration: 0.15)) { ButtonStyleScale() })
     }

@@ -8,7 +8,7 @@
 import Foundation
 
 extension CGFloat {
-    static let fs_padding_small = 10.0
-    static let fs_padding_medium = 20.0
-    static let fs_padding_large = 32.0
+    static let fsPaddingSmall = 5.0
+    static let fsPaddingMedium = 20.0
+    static let fsPaddingLarge = 32.0
 }

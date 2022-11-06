@@ -11,13 +11,14 @@ import SwiftUI
 struct PanelsView: View {
     @Environment(\.managedObjectContext) var viewContext: NSManagedObjectContext
     @FetchRequest(fetchRequest: Panel.fetchRequestOldestToNewest) var panels: FetchedResults<Panel>
+    private let viewModel = PanelsViewModel()
 
     var body: some View {
         ZStack {
             Color.fsBackground.edgesIgnoringSafeArea(.all)
 
             ScrollView(showsIndicators: false) {
-                LazyVGrid(columns: columns, spacing: .fs_padding_large) {
+                LazyVGrid(columns: viewModel.itemColumns, spacing: .fsPaddingLarge) {
                     ForEach(panels) { panel in
                         NavigationLink(
                             destination: PanelView(panel: panel, selectedTool: .debugDraw,
@@ -25,16 +26,16 @@ struct PanelsView: View {
                         ) {
                             PanelItemView(panel: panel)
                         }
-                        .fs_buttonStyleScale()
+                        .fsButtonStyleScale()
                     }
 
-                    Button(action: addPanel) {
+                    Button(action: viewModel.addItem) {
                         AddItemView()
                     }
-                    .fs_buttonStyleScale()
+                    .fsButtonStyleScale()
                 }
-                .padding(.fs_padding_medium)
-                .padding(.bottom, .fs_padding_large)
+                .padding(.fsPaddingMedium)
+                .padding(.bottom, .fsPaddingLarge)
             }
         }
         .navigationTitle("Panels")
@@ -47,20 +48,12 @@ struct PanelsView: View {
         }
     }
 
-    let columns = [GridItem(.flexible(), spacing: 20),
-                   GridItem(.flexible(), spacing: 20),
-                   GridItem(.flexible(), spacing: 20)]
-
-    func addPanel() {
-        Panel.create(in: viewContext)
-    }
-
     private struct PanelItemView: View {
         @ObservedObject var panel: Panel
 
         var body: some View {
-            VStack(spacing: .fs_padding_medium) {
-                Color.gray.opacity(0.1) // TODO: - Image Snapshot of Panel
+            VStack(spacing: .fsPaddingMedium) {
+                Color.clear // TODO: - Image Snapshot of Panel
                     .background(Color.fsWhite)
                     .frame(height: 240) // TODO: - Dynamic height based on Panel
                     .cornerRadius(10)
@@ -81,8 +74,8 @@ struct PanelsView: View {
                     .frame(height: 240)
                     .cornerRadius(10)
                     .overlay(
-                        VStack(spacing: .fs_padding_small) {
-                            Image.fs_paint
+                        VStack(spacing: .fsPaddingSmall) {
+                            Image.fsPaint
                                 .font(.system(size: 32))
                                 .foregroundColor(.fsGray)
                             Text("New panel")
