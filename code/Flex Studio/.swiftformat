@@ -48,7 +48,7 @@
 --operatorfunc spaced
 --organizetypes actor,class,enum,struct
 --patternlet hoist
---ranges spaced
+--ranges no-space
 --redundanttype infer-locals-only
 --self remove
 --selfrequired 

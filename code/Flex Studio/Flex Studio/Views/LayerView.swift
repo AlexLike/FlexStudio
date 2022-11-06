@@ -9,26 +9,33 @@ import PencilKit
 import SwiftUI
 
 struct LayerView: UIViewRepresentable {
-    @Binding var layer: Layer
+    @ObservedObject var layer: Layer
     let state: LayerState
-    let targetSize: CGSize
 
-    func makeUIView(context _: Context) -> PKCanvasView {
+    func makeCoordinator() -> CanvasManager {
+        CanvasManager(layer: layer)
+    }
+
+    func makeUIView(context: Context) -> PKCanvasView {
         let canvas = PKCanvasView()
         canvas.drawingPolicy = .anyInput
         canvas.isOpaque = false
         canvas.overrideUserInterfaceStyle = .light
-        Self.configure(canvas: canvas, for: state)
-
+        canvas.drawing = layer.drawing
+        canvas.delegate = context.coordinator
+        reconfigure(canvas)
         return canvas
     }
 
     func updateUIView(_ canvas: PKCanvasView, context _: Context) {
-        Self.configure(canvas: canvas, for: state)
-        // React to changes in layer and targetSize.
+        if layer.drawing != canvas.drawing {
+            // A concurrent version of this layer was updated.
+            canvas.drawing = layer.drawing
+        }
+        reconfigure(canvas)
     }
 
-    private static func configure(canvas: PKCanvasView, for state: LayerState) {
+    private func reconfigure(_ canvas: PKCanvasView) {
         switch state {
         case .static, .editable(tool: .responsivity):
             canvas.isUserInteractionEnabled = false
@@ -37,17 +44,28 @@ struct LayerView: UIViewRepresentable {
             canvas.tool = tool
         }
     }
+
+    class CanvasManager: NSObject, PKCanvasViewDelegate {
+        let layer: Layer
+
+        init(layer: Layer) {
+            self.layer = layer
+        }
+
+        func canvasViewDrawingDidChange(_ canvas: PKCanvasView) {
+            layer.drawing = canvas.drawing
+        }
+    }
 }
 
 struct LayerView_Previews: PreviewProvider {
     static var previews: some View {
         LayerView(
-            layer: .constant(.init()),
+            layer: try! PersistenceLayer.preview.viewContext.fetch(Layer.fetchRequest()).first!,
             state: .editable(tool: .draw(tool: PKInkingTool(
                 .pen,
                 color: .black
-            ))),
-            targetSize: .zero
+            )))
         )
     }
 }

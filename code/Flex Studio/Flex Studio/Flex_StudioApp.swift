@@ -2,24 +2,25 @@
 //  Flex_StudioApp.swift
 //  Flex Studio
 //
-//  Created by Alexander Zank on 28.10.22.
+//  Created by Alexander Zank on 05.11.22.
 //
 
 import SwiftUI
 
 @main
 struct Flex_StudioApp: App {
-    @StateObject var database = Database()
-//  @StateObject var myService: MyService
-    
-    init() {
-//        _myService = StateObject(wrappedValue: MyService(database: database))
-    }
+    @Environment(\.scenePhase) var scenePhase
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-//              .environmentObject(myService)
+            ContentView().environment(\.managedObjectContext, PersistenceLayer.shared.viewContext)
+        }
+        .onChange(of: scenePhase) {
+            switch $0 {
+            case .background, .inactive: PersistenceLayer.shared.save()
+            case .active: ()
+            @unknown default: ()
+            }
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  EditState.swift
+//  LayerState.swift
 //  Flex Studio
 //
 //  Created by Alexander Zank on 01.11.22.
@@ -13,7 +13,7 @@ enum LayerState {
     case `static`
     /// This layer is being edited using `tool`.
     case editable(tool: EditorTool)
-    
+
     static func selected(tool: EditorTool?) -> Self {
         if let tool { return .editable(tool: tool) }
         else { return .static }

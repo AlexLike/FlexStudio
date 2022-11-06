@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A380" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Comic" representedClassName=".Comic" syncable="YES">
-        <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="modificationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="panels" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Panel" inverseName="parentComic" inverseEntity="Panel"/>
+    <entity name="Layer" representedClassName="Layer" syncable="YES" codeGenerationType="class">
+        <attribute name="drawing_" attributeType="Transformable" valueTransformerName="DrawingTransformer"/>
+        <attribute name="order_" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="panel_" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Panel" inverseName="layers_" inverseEntity="Panel"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="panel_"/>
+                <constraint value="order_"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
-    <entity name="Layer" representedClassName=".Layer" syncable="YES">
-        <attribute name="constraintBottom" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="constraintLeading" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="constraintTop" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="constraintTrailing" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="positionX" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="positionY" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="positionZ" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="parentPanel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Panel" inverseName="layers" inverseEntity="Panel"/>
-    </entity>
-    <entity name="Panel" representedClassName=".Panel" syncable="YES">
-        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="layers" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Layer" inverseName="parentPanel" inverseEntity="Layer"/>
-        <relationship name="parentComic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Comic" inverseName="panels" inverseEntity="Comic"/>
+    <entity name="Panel" representedClassName="Panel" syncable="YES" codeGenerationType="class">
+        <attribute name="creationDate_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="uid_" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="layers_" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Layer" inverseName="panel_" inverseEntity="Layer"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="uid_"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
 </model>

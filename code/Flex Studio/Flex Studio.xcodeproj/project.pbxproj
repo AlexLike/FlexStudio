@@ -7,44 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14232BAC290BF402009F006A /* Flex_StudioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14232BAB290BF402009F006A /* Flex_StudioApp.swift */; };
-		14232BAE290BF402009F006A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14232BAD290BF402009F006A /* ContentView.swift */; };
-		14232BB0290BF403009F006A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14232BAF290BF403009F006A /* Assets.xcassets */; };
-		14232BB3290BF403009F006A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14232BB2290BF403009F006A /* Preview Assets.xcassets */; };
-		14232BB5290BF403009F006A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14232BB4290BF403009F006A /* CoreDataStack.swift */; };
-		14232BB8290BF403009F006A /* Flex_Studio.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14232BB6290BF403009F006A /* Flex_Studio.xcdatamodeld */; };
-		14232BC6290BFB8E009F006A /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14232BC5290BFB8E009F006A /* Database.swift */; };
-		14279D5F2911878700FB80B6 /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14279D5E2911878700FB80B6 /* PanelView.swift */; };
-		14279D61291187AF00FB80B6 /* LayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14279D60291187AF00FB80B6 /* LayerView.swift */; };
-		14279D63291187D700FB80B6 /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14279D62291187D700FB80B6 /* FrameView.swift */; };
-		14279D6629118AFA00FB80B6 /* LayerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14279D6529118AFA00FB80B6 /* LayerState.swift */; };
-		14ABA1CA2911E2CD006C631A /* EditorTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ABA1C92911E2CD006C631A /* EditorTool.swift */; };
-		3DE28114290FE50F00931D8A /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE28113290FE50F00931D8A /* Comic.swift */; };
-		3DE28116290FE5D500931D8A /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE28115290FE5D500931D8A /* Panel.swift */; };
-		3DE28118290FE5E400931D8A /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE28117290FE5E400931D8A /* Layer.swift */; };
+		14752FDD2916B9290084BF7E /* Flex_StudioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14752FDC2916B9290084BF7E /* Flex_StudioApp.swift */; };
+		14752FDF2916B9290084BF7E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14752FDE2916B9290084BF7E /* ContentView.swift */; };
+		14752FE12916B92A0084BF7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14752FE02916B92A0084BF7E /* Assets.xcassets */; };
+		14752FE42916B92A0084BF7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14752FE32916B92A0084BF7E /* Preview Assets.xcassets */; };
+		14752FE62916B92A0084BF7E /* PersistenceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14752FE52916B92A0084BF7E /* PersistenceLayer.swift */; };
+		14752FE92916B92A0084BF7E /* Flex_Studio.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14752FE72916B92A0084BF7E /* Flex_Studio.xcdatamodeld */; };
+		14CD95B629173BBA00BE08FB /* LayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CD95B529173BBA00BE08FB /* LayerView.swift */; };
+		14CD95B929173BF700BE08FB /* LayerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CD95B829173BF700BE08FB /* LayerState.swift */; };
+		14CD95BB29173C3600BE08FB /* EditorTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CD95BA29173C3600BE08FB /* EditorTool.swift */; };
+		14CD95BD29173CAE00BE08FB /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CD95BC29173CAE00BE08FB /* PanelView.swift */; };
+		14EB30C92916BACA00744608 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB30C82916BACA00744608 /* Logger.swift */; };
+		14EB30CF2916C94D00744608 /* DrawingTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB30CE2916C94D00744608 /* DrawingTransformer.swift */; };
+		14EB30D22916CEE800744608 /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB30D12916CEE800744608 /* Panel.swift */; };
+		14EB30D42916D0CE00744608 /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB30D32916D0CE00744608 /* Layer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		14232BA8290BF402009F006A /* Flex Studio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flex Studio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		14232BAB290BF402009F006A /* Flex_StudioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flex_StudioApp.swift; sourceTree = "<group>"; };
-		14232BAD290BF402009F006A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		14232BAF290BF403009F006A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		14232BB2290BF403009F006A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		14232BB4290BF403009F006A /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		14232BB7290BF403009F006A /* Flex_Studio.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Flex_Studio.xcdatamodel; sourceTree = "<group>"; };
-		14232BC5290BFB8E009F006A /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
-		14279D5E2911878700FB80B6 /* PanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelView.swift; sourceTree = "<group>"; };
-		14279D60291187AF00FB80B6 /* LayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerView.swift; sourceTree = "<group>"; };
-		14279D62291187D700FB80B6 /* FrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
-		14279D6529118AFA00FB80B6 /* LayerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerState.swift; sourceTree = "<group>"; };
-		14ABA1C92911E2CD006C631A /* EditorTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorTool.swift; sourceTree = "<group>"; };
-		3DE28113290FE50F00931D8A /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
-		3DE28115290FE5D500931D8A /* Panel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panel.swift; sourceTree = "<group>"; };
-		3DE28117290FE5E400931D8A /* Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
+		14752FD92916B9290084BF7E /* Flex Studio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flex Studio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14752FDC2916B9290084BF7E /* Flex_StudioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flex_StudioApp.swift; sourceTree = "<group>"; };
+		14752FDE2916B9290084BF7E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		14752FE02916B92A0084BF7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		14752FE32916B92A0084BF7E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		14752FE52916B92A0084BF7E /* PersistenceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceLayer.swift; sourceTree = "<group>"; };
+		14752FE82916B92A0084BF7E /* Flex_Studio.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Flex_Studio.xcdatamodel; sourceTree = "<group>"; };
+		14CD95B529173BBA00BE08FB /* LayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerView.swift; sourceTree = "<group>"; };
+		14CD95B829173BF700BE08FB /* LayerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerState.swift; sourceTree = "<group>"; };
+		14CD95BA29173C3600BE08FB /* EditorTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorTool.swift; sourceTree = "<group>"; };
+		14CD95BC29173CAE00BE08FB /* PanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelView.swift; sourceTree = "<group>"; };
+		14EB30C82916BACA00744608 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		14EB30CE2916C94D00744608 /* DrawingTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingTransformer.swift; sourceTree = "<group>"; };
+		14EB30D12916CEE800744608 /* Panel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panel.swift; sourceTree = "<group>"; };
+		14EB30D32916D0CE00744608 /* Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		14232BA5290BF402009F006A /* Frameworks */ = {
+		14752FD62916B9290084BF7E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -54,110 +52,109 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		14232B9F290BF402009F006A = {
+		14752FD02916B9290084BF7E = {
 			isa = PBXGroup;
 			children = (
-				14232BAA290BF402009F006A /* Flex Studio */,
-				14232BA9290BF402009F006A /* Products */,
+				14752FDB2916B9290084BF7E /* Flex Studio */,
+				14752FDA2916B9290084BF7E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		14232BA9290BF402009F006A /* Products */ = {
+		14752FDA2916B9290084BF7E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				14232BA8290BF402009F006A /* Flex Studio.app */,
+				14752FD92916B9290084BF7E /* Flex Studio.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		14232BAA290BF402009F006A /* Flex Studio */ = {
+		14752FDB2916B9290084BF7E /* Flex Studio */ = {
 			isa = PBXGroup;
 			children = (
-				14279D6429118ADE00FB80B6 /* Identities */,
-				14232BBF290BF50F009F006A /* Utilities */,
-				14232BC3290BF659009F006A /* Models */,
-				14232BC2290BF651009F006A /* Services */,
-				14232BC1290BF5EF009F006A /* Views */,
-				14232BAB290BF402009F006A /* Flex_StudioApp.swift */,
-				14232BAD290BF402009F006A /* ContentView.swift */,
-				14232BBE290BF4E0009F006A /* Resources */,
-				14232BB1290BF403009F006A /* Preview Content */,
+				14CD95B729173BD800BE08FB /* Identities */,
+				14EB30D02916CED600744608 /* Model */,
+				14EB30CD2916C05100744608 /* Views */,
+				14752FDC2916B9290084BF7E /* Flex_StudioApp.swift */,
+				14EB30CC2916C03300744608 /* Persistence */,
+				14EB30CA2916BFEB00744608 /* Utilities */,
+				14EB30CB2916C00D00744608 /* Resources */,
+				14752FE22916B92A0084BF7E /* Preview Content */,
 			);
 			path = "Flex Studio";
 			sourceTree = "<group>";
 		};
-		14232BB1290BF403009F006A /* Preview Content */ = {
+		14752FE22916B92A0084BF7E /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				14232BB2290BF403009F006A /* Preview Assets.xcassets */,
+				14752FE32916B92A0084BF7E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		14232BBE290BF4E0009F006A /* Resources */ = {
+		14CD95B729173BD800BE08FB /* Identities */ = {
 			isa = PBXGroup;
 			children = (
-				14232BAF290BF403009F006A /* Assets.xcassets */,
-				14232BB6290BF403009F006A /* Flex_Studio.xcdatamodeld */,
+				14CD95B829173BF700BE08FB /* LayerState.swift */,
+				14CD95BA29173C3600BE08FB /* EditorTool.swift */,
 			);
-			name = Resources;
+			path = Identities;
 			sourceTree = "<group>";
 		};
-		14232BBF290BF50F009F006A /* Utilities */ = {
+		14EB30CA2916BFEB00744608 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				14EB30C82916BACA00744608 /* Logger.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		14232BC1290BF5EF009F006A /* Views */ = {
+		14EB30CB2916C00D00744608 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				14279D5E2911878700FB80B6 /* PanelView.swift */,
-				14279D60291187AF00FB80B6 /* LayerView.swift */,
-				14279D62291187D700FB80B6 /* FrameView.swift */,
+				14752FE02916B92A0084BF7E /* Assets.xcassets */,
+				14752FE72916B92A0084BF7E /* Flex_Studio.xcdatamodeld */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		14EB30CC2916C03300744608 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				14752FE52916B92A0084BF7E /* PersistenceLayer.swift */,
+				14EB30CE2916C94D00744608 /* DrawingTransformer.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		14EB30CD2916C05100744608 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				14752FDE2916B9290084BF7E /* ContentView.swift */,
+				14CD95B529173BBA00BE08FB /* LayerView.swift */,
+				14CD95BC29173CAE00BE08FB /* PanelView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		14232BC2290BF651009F006A /* Services */ = {
+		14EB30D02916CED600744608 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				14232BB4290BF403009F006A /* CoreDataStack.swift */,
-				14232BC5290BFB8E009F006A /* Database.swift */,
+				14EB30D12916CEE800744608 /* Panel.swift */,
+				14EB30D32916D0CE00744608 /* Layer.swift */,
 			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		14232BC3290BF659009F006A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				3DE28113290FE50F00931D8A /* Comic.swift */,
-				3DE28115290FE5D500931D8A /* Panel.swift */,
-				3DE28117290FE5E400931D8A /* Layer.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		14279D6429118ADE00FB80B6 /* Identities */ = {
-			isa = PBXGroup;
-			children = (
-				14279D6529118AFA00FB80B6 /* LayerState.swift */,
-				14ABA1C92911E2CD006C631A /* EditorTool.swift */,
-			);
-			path = Identities;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		14232BA7290BF402009F006A /* Flex Studio */ = {
+		14752FD82916B9290084BF7E /* Flex Studio */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 14232BBB290BF403009F006A /* Build configuration list for PBXNativeTarget "Flex Studio" */;
+			buildConfigurationList = 14752FEC2916B92A0084BF7E /* Build configuration list for PBXNativeTarget "Flex Studio" */;
 			buildPhases = (
-				14232BA4290BF402009F006A /* Sources */,
-				14232BA5290BF402009F006A /* Frameworks */,
-				14232BA6290BF402009F006A /* Resources */,
+				14752FD52916B9290084BF7E /* Sources */,
+				14752FD62916B9290084BF7E /* Frameworks */,
+				14752FD72916B9290084BF7E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -165,25 +162,25 @@
 			);
 			name = "Flex Studio";
 			productName = "Flex Studio";
-			productReference = 14232BA8290BF402009F006A /* Flex Studio.app */;
+			productReference = 14752FD92916B9290084BF7E /* Flex Studio.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		14232BA0290BF402009F006A /* Project object */ = {
+		14752FD12916B9290084BF7E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
-					14232BA7290BF402009F006A = {
+					14752FD82916B9290084BF7E = {
 						CreatedOnToolsVersion = 14.1;
 					};
 				};
 			};
-			buildConfigurationList = 14232BA3290BF402009F006A /* Build configuration list for PBXProject "Flex Studio" */;
+			buildConfigurationList = 14752FD42916B9290084BF7E /* Build configuration list for PBXProject "Flex Studio" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -191,53 +188,52 @@
 				en,
 				Base,
 			);
-			mainGroup = 14232B9F290BF402009F006A;
-			productRefGroup = 14232BA9290BF402009F006A /* Products */;
+			mainGroup = 14752FD02916B9290084BF7E;
+			productRefGroup = 14752FDA2916B9290084BF7E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				14232BA7290BF402009F006A /* Flex Studio */,
+				14752FD82916B9290084BF7E /* Flex Studio */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		14232BA6290BF402009F006A /* Resources */ = {
+		14752FD72916B9290084BF7E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14232BB3290BF403009F006A /* Preview Assets.xcassets in Resources */,
-				14232BB0290BF403009F006A /* Assets.xcassets in Resources */,
+				14752FE42916B92A0084BF7E /* Preview Assets.xcassets in Resources */,
+				14752FE12916B92A0084BF7E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		14232BA4290BF402009F006A /* Sources */ = {
+		14752FD52916B9290084BF7E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14232BB5290BF403009F006A /* CoreDataStack.swift in Sources */,
-				3DE28116290FE5D500931D8A /* Panel.swift in Sources */,
-				14ABA1CA2911E2CD006C631A /* EditorTool.swift in Sources */,
-				14279D61291187AF00FB80B6 /* LayerView.swift in Sources */,
-				3DE28114290FE50F00931D8A /* Comic.swift in Sources */,
-				14279D5F2911878700FB80B6 /* PanelView.swift in Sources */,
-				14279D6629118AFA00FB80B6 /* LayerState.swift in Sources */,
-				3DE28118290FE5E400931D8A /* Layer.swift in Sources */,
-				14232BAE290BF402009F006A /* ContentView.swift in Sources */,
-				14232BB8290BF403009F006A /* Flex_Studio.xcdatamodeld in Sources */,
-				14279D63291187D700FB80B6 /* FrameView.swift in Sources */,
-				14232BC6290BFB8E009F006A /* Database.swift in Sources */,
-				14232BAC290BF402009F006A /* Flex_StudioApp.swift in Sources */,
+				14EB30CF2916C94D00744608 /* DrawingTransformer.swift in Sources */,
+				14CD95BB29173C3600BE08FB /* EditorTool.swift in Sources */,
+				14EB30D22916CEE800744608 /* Panel.swift in Sources */,
+				14EB30C92916BACA00744608 /* Logger.swift in Sources */,
+				14CD95B929173BF700BE08FB /* LayerState.swift in Sources */,
+				14EB30D42916D0CE00744608 /* Layer.swift in Sources */,
+				14752FE62916B92A0084BF7E /* PersistenceLayer.swift in Sources */,
+				14752FDF2916B9290084BF7E /* ContentView.swift in Sources */,
+				14CD95B629173BBA00BE08FB /* LayerView.swift in Sources */,
+				14CD95BD29173CAE00BE08FB /* PanelView.swift in Sources */,
+				14752FE92916B92A0084BF7E /* Flex_Studio.xcdatamodeld in Sources */,
+				14752FDD2916B9290084BF7E /* Flex_StudioApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		14232BB9290BF403009F006A /* Debug */ = {
+		14752FEA2916B92A0084BF7E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -297,7 +293,7 @@
 			};
 			name = Debug;
 		};
-		14232BBA290BF403009F006A /* Release */ = {
+		14752FEB2916B92A0084BF7E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -351,7 +347,7 @@
 			};
 			name = Release;
 		};
-		14232BBC290BF403009F006A /* Debug */ = {
+		14752FED2916B92A0084BF7E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -372,7 +368,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alexanderzank.Flex-Studio";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.ethz.hci.2022.Flex-Studio";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -380,7 +376,7 @@
 			};
 			name = Debug;
 		};
-		14232BBD290BF403009F006A /* Release */ = {
+		14752FEE2916B92A0084BF7E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -401,7 +397,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alexanderzank.Flex-Studio";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.ethz.hci.2022.Flex-Studio";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -412,20 +408,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		14232BA3290BF402009F006A /* Build configuration list for PBXProject "Flex Studio" */ = {
+		14752FD42916B9290084BF7E /* Build configuration list for PBXProject "Flex Studio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				14232BB9290BF403009F006A /* Debug */,
-				14232BBA290BF403009F006A /* Release */,
+				14752FEA2916B92A0084BF7E /* Debug */,
+				14752FEB2916B92A0084BF7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		14232BBB290BF403009F006A /* Build configuration list for PBXNativeTarget "Flex Studio" */ = {
+		14752FEC2916B92A0084BF7E /* Build configuration list for PBXNativeTarget "Flex Studio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				14232BBC290BF403009F006A /* Debug */,
-				14232BBD290BF403009F006A /* Release */,
+				14752FED2916B92A0084BF7E /* Debug */,
+				14752FEE2916B92A0084BF7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -433,17 +429,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		14232BB6290BF403009F006A /* Flex_Studio.xcdatamodeld */ = {
+		14752FE72916B92A0084BF7E /* Flex_Studio.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				14232BB7290BF403009F006A /* Flex_Studio.xcdatamodel */,
+				14752FE82916B92A0084BF7E /* Flex_Studio.xcdatamodel */,
 			);
-			currentVersion = 14232BB7290BF403009F006A /* Flex_Studio.xcdatamodel */;
+			currentVersion = 14752FE82916B92A0084BF7E /* Flex_Studio.xcdatamodel */;
 			path = Flex_Studio.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = 14232BA0290BF402009F006A /* Project object */;
+	rootObject = 14752FD12916B9290084BF7E /* Project object */;
 }
