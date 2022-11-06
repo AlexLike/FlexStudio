@@ -23,6 +23,20 @@
 		3D39BC242917936500268337 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D39BC232917936500268337 /* Date+Ext.swift */; };
 		3D580C962917969200BA58DA /* PanelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580C952917969200BA58DA /* PanelsView.swift */; };
 		3D580C98291796E100BA58DA /* PanelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580C97291796E100BA58DA /* PanelsViewModel.swift */; };
+		3D580CA02917A67700BA58DA /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580C9F2917A67700BA58DA /* Color+Ext.swift */; };
+		3D580CA22917A79B00BA58DA /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580CA12917A79B00BA58DA /* Font+Ext.swift */; };
+		3D580CAE2917A80B00BA58DA /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D580CA52917A80A00BA58DA /* Inter-Bold.ttf */; };
+		3D580CAF2917A80B00BA58DA /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D580CA62917A80B00BA58DA /* Inter-Thin.ttf */; };
+		3D580CB02917A80B00BA58DA /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D580CA72917A80B00BA58DA /* Inter-SemiBold.ttf */; };
+		3D580CB12917A80B00BA58DA /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D580CA82917A80B00BA58DA /* Inter-Regular.ttf */; };
+		3D580CB22917A80B00BA58DA /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D580CA92917A80B00BA58DA /* Inter-Black.ttf */; };
+		3D580CB32917A80B00BA58DA /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D580CAA2917A80B00BA58DA /* Inter-Medium.ttf */; };
+		3D580CB42917A80B00BA58DA /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D580CAB2917A80B00BA58DA /* Inter-ExtraLight.ttf */; };
+		3D580CB52917A80B00BA58DA /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D580CAC2917A80B00BA58DA /* Inter-ExtraBold.ttf */; };
+		3D580CB62917A80B00BA58DA /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D580CAD2917A80B00BA58DA /* Inter-Light.ttf */; };
+		3D580CBB2917AC3C00BA58DA /* CGFloat+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580CBA2917AC3C00BA58DA /* CGFloat+Ext.swift */; };
+		3D580CBD2917AD3C00BA58DA /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580CBC2917AD3C00BA58DA /* View+Ext.swift */; };
+		3D580CC32917BBB200BA58DA /* Image+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580CC22917BBB200BA58DA /* Image+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +57,20 @@
 		3D39BC232917936500268337 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		3D580C952917969200BA58DA /* PanelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelsView.swift; sourceTree = "<group>"; };
 		3D580C97291796E100BA58DA /* PanelsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelsViewModel.swift; sourceTree = "<group>"; };
+		3D580C9F2917A67700BA58DA /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
+		3D580CA12917A79B00BA58DA /* Font+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ext.swift"; sourceTree = "<group>"; };
+		3D580CA52917A80A00BA58DA /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		3D580CA62917A80B00BA58DA /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Thin.ttf"; sourceTree = "<group>"; };
+		3D580CA72917A80B00BA58DA /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		3D580CA82917A80B00BA58DA /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		3D580CA92917A80B00BA58DA /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
+		3D580CAA2917A80B00BA58DA /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		3D580CAB2917A80B00BA58DA /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
+		3D580CAC2917A80B00BA58DA /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
+		3D580CAD2917A80B00BA58DA /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
+		3D580CBA2917AC3C00BA58DA /* CGFloat+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Ext.swift"; sourceTree = "<group>"; };
+		3D580CBC2917AD3C00BA58DA /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
+		3D580CC22917BBB200BA58DA /* Image+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +144,7 @@
 		14EB30CB2916C00D00744608 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3D580CA42917A7D000BA58DA /* Fonts */,
 				14752FE02916B92A0084BF7E /* Assets.xcassets */,
 				14752FE72916B92A0084BF7E /* Flex_Studio.xcdatamodeld */,
 			);
@@ -152,7 +181,12 @@
 		3D39BC222917935200268337 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3D580C9F2917A67700BA58DA /* Color+Ext.swift */,
 				3D39BC232917936500268337 /* Date+Ext.swift */,
+				3D580CA12917A79B00BA58DA /* Font+Ext.swift */,
+				3D580CBA2917AC3C00BA58DA /* CGFloat+Ext.swift */,
+				3D580CBC2917AD3C00BA58DA /* View+Ext.swift */,
+				3D580CC22917BBB200BA58DA /* Image+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -173,6 +207,22 @@
 				14CD95B529173BBA00BE08FB /* LayerView.swift */,
 			);
 			path = Layers;
+			sourceTree = "<group>";
+		};
+		3D580CA42917A7D000BA58DA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3D580CA92917A80B00BA58DA /* Inter-Black.ttf */,
+				3D580CA52917A80A00BA58DA /* Inter-Bold.ttf */,
+				3D580CAC2917A80B00BA58DA /* Inter-ExtraBold.ttf */,
+				3D580CAB2917A80B00BA58DA /* Inter-ExtraLight.ttf */,
+				3D580CAD2917A80B00BA58DA /* Inter-Light.ttf */,
+				3D580CAA2917A80B00BA58DA /* Inter-Medium.ttf */,
+				3D580CA82917A80B00BA58DA /* Inter-Regular.ttf */,
+				3D580CA72917A80B00BA58DA /* Inter-SemiBold.ttf */,
+				3D580CA62917A80B00BA58DA /* Inter-Thin.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,8 +283,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D580CAF2917A80B00BA58DA /* Inter-Thin.ttf in Resources */,
+				3D580CAE2917A80B00BA58DA /* Inter-Bold.ttf in Resources */,
 				14752FE42916B92A0084BF7E /* Preview Assets.xcassets in Resources */,
+				3D580CB02917A80B00BA58DA /* Inter-SemiBold.ttf in Resources */,
+				3D580CB32917A80B00BA58DA /* Inter-Medium.ttf in Resources */,
+				3D580CB52917A80B00BA58DA /* Inter-ExtraBold.ttf in Resources */,
+				3D580CB12917A80B00BA58DA /* Inter-Regular.ttf in Resources */,
 				14752FE12916B92A0084BF7E /* Assets.xcassets in Resources */,
+				3D580CB62917A80B00BA58DA /* Inter-Light.ttf in Resources */,
+				3D580CB42917A80B00BA58DA /* Inter-ExtraLight.ttf in Resources */,
+				3D580CB22917A80B00BA58DA /* Inter-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,8 +305,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				14EB30CF2916C94D00744608 /* DrawingTransformer.swift in Sources */,
+				3D580CBB2917AC3C00BA58DA /* CGFloat+Ext.swift in Sources */,
+				3D580CBD2917AD3C00BA58DA /* View+Ext.swift in Sources */,
 				14CD95BB29173C3600BE08FB /* EditorTool.swift in Sources */,
 				14EB30D22916CEE800744608 /* Panel.swift in Sources */,
+				3D580CC32917BBB200BA58DA /* Image+Ext.swift in Sources */,
 				14EB30C92916BACA00744608 /* Logger.swift in Sources */,
 				14CD95B929173BF700BE08FB /* LayerState.swift in Sources */,
 				3D39BC242917936500268337 /* Date+Ext.swift in Sources */,
@@ -257,8 +319,10 @@
 				3D580C98291796E100BA58DA /* PanelsViewModel.swift in Sources */,
 				14CD95BD29173CAE00BE08FB /* PanelView.swift in Sources */,
 				3D580C962917969200BA58DA /* PanelsView.swift in Sources */,
+				3D580CA22917A79B00BA58DA /* Font+Ext.swift in Sources */,
 				14752FE92916B92A0084BF7E /* Flex_Studio.xcdatamodeld in Sources */,
 				14752FDD2916B9290084BF7E /* Flex_StudioApp.swift in Sources */,
+				3D580CA02917A67700BA58DA /* Color+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +454,7 @@
 				DEVELOPMENT_TEAM = M4J79LU3NC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Flex-Studio-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -419,6 +484,7 @@
 				DEVELOPMENT_TEAM = M4J79LU3NC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Flex-Studio-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

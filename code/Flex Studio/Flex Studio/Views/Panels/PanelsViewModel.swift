@@ -17,6 +17,8 @@ class PanelsViewModel: ObservableObject {
         fetchPanels()
     }
     
+    // MARK: - Data
+
     private func fetchPanels() {
         let request = Panel.fetchRequestNewestToOldest()
         viewContext.perform {
@@ -35,12 +37,17 @@ class PanelsViewModel: ObservableObject {
         }
     }
 
-    func deleteItems(offsets: IndexSet) {
+    func deleteItem(panel: Panel) {
         withAnimation {
-            offsets
-                .map { panels[$0] }
-                .forEach { $0.delete() }
+            panel.delete()
             fetchPanels()
         }
     }
+    
+    // MARK: - UI
+    
+    let itemColumns = [GridItem(.flexible(), spacing: 20),
+                       GridItem(.flexible(), spacing: 20),
+                       GridItem(.flexible(), spacing: 20)
+    ]
 }
