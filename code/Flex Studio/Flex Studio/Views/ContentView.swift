@@ -23,7 +23,7 @@ struct ContentView: View {
                         PanelView(panel: panel, selectedTool: .debugDraw, targetSize: .zero)
                     } label: {
                         Text(
-                            "Panel from \(panel.creationDate?.formatted(.dateTime) ?? "some time")"
+                            "Panel from \(panel.creationDate?.toString() ?? Date.nilString)"
                         )
                     }
                 }
@@ -58,13 +58,6 @@ struct ContentView: View {
         }
     }
 }
-
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

@@ -21,6 +21,7 @@
 		14EB30CF2916C94D00744608 /* DrawingTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB30CE2916C94D00744608 /* DrawingTransformer.swift */; };
 		14EB30D22916CEE800744608 /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB30D12916CEE800744608 /* Panel.swift */; };
 		14EB30D42916D0CE00744608 /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB30D32916D0CE00744608 /* Layer.swift */; };
+		3D39BC242917936500268337 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D39BC232917936500268337 /* Date+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		14EB30CE2916C94D00744608 /* DrawingTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingTransformer.swift; sourceTree = "<group>"; };
 		14EB30D12916CEE800744608 /* Panel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panel.swift; sourceTree = "<group>"; };
 		14EB30D32916D0CE00744608 /* Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
+		3D39BC232917936500268337 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		14EB30CA2916BFEB00744608 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				3D39BC222917935200268337 /* Extensions */,
 				14EB30C82916BACA00744608 /* Logger.swift */,
 			);
 			path = Utilities;
@@ -130,8 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				14752FDE2916B9290084BF7E /* ContentView.swift */,
-				14CD95B529173BBA00BE08FB /* LayerView.swift */,
 				14CD95BC29173CAE00BE08FB /* PanelView.swift */,
+				14CD95B529173BBA00BE08FB /* LayerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -143,6 +146,14 @@
 				14EB30D32916D0CE00744608 /* Layer.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3D39BC222917935200268337 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3D39BC232917936500268337 /* Date+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +231,7 @@
 				14EB30D22916CEE800744608 /* Panel.swift in Sources */,
 				14EB30C92916BACA00744608 /* Logger.swift in Sources */,
 				14CD95B929173BF700BE08FB /* LayerState.swift in Sources */,
+				3D39BC242917936500268337 /* Date+Ext.swift in Sources */,
 				14EB30D42916D0CE00744608 /* Layer.swift in Sources */,
 				14752FE62916B92A0084BF7E /* PersistenceLayer.swift in Sources */,
 				14752FDF2916B9290084BF7E /* ContentView.swift in Sources */,
@@ -355,7 +367,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Flex Studio/Preview Content\"";
-				DEVELOPMENT_TEAM = 2WC6CZUK4Q;
+				DEVELOPMENT_TEAM = M4J79LU3NC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -384,7 +396,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Flex Studio/Preview Content\"";
-				DEVELOPMENT_TEAM = 2WC6CZUK4Q;
+				DEVELOPMENT_TEAM = M4J79LU3NC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
