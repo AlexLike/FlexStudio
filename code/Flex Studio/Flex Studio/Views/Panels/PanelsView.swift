@@ -11,34 +11,32 @@ struct PanelsView: View {
     @StateObject var viewModel = PanelsViewModel()
     
     var body: some View {
-        NavigationStack {
-            ZStack {
-                Color.fs_background.edgesIgnoringSafeArea(.all)
-                
-                ScrollView(showsIndicators: false) {
-                    LazyVGrid(columns: viewModel.itemColumns, spacing: .fs_padding_large) {
-                        ForEach(viewModel.panels) { panel in
-                            NavigationLink(destination: PanelView(panel: panel, selectedTool: .debugDraw, targetSize: .zero)) {
-                                PanelItemView(panel: panel)
-                            }
-                            .fs_buttonStyleScale()
-                        }
-                        
-                        Button(action: { viewModel.addItem() }) {
-                            AddItemView()
+        ZStack {
+            Color.fs_background.edgesIgnoringSafeArea(.all)
+            
+            ScrollView(showsIndicators: false) {
+                LazyVGrid(columns: viewModel.itemColumns, spacing: .fs_padding_large) {
+                    ForEach(viewModel.panels) { panel in
+                        NavigationLink(destination: PanelView(panel: panel, selectedTool: .debugDraw, targetSize: .zero)) {
+                            PanelItemView(panel: panel)
                         }
                         .fs_buttonStyleScale()
                     }
-                    .padding(.horizontal, .fs_padding_medium)
-                    .padding(.bottom, .fs_padding_large + .fs_padding_medium)
-                }
-            }
-            .navigationTitle("Panels")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {}) {
-                        Text("Select") // TODO: - Implement selecting logic
+                    
+                    Button(action: { viewModel.addItem() }) {
+                        AddItemView()
                     }
+                    .fs_buttonStyleScale()
+                }
+                .padding(.fs_padding_medium)
+                .padding(.bottom, .fs_padding_large)
+            }
+        }
+        .navigationTitle("Panels")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {}) {
+                    Text("Select") // TODO: - Implement selecting logic
                 }
             }
         }

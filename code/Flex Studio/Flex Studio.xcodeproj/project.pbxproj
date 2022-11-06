@@ -37,6 +37,7 @@
 		3D580CBB2917AC3C00BA58DA /* CGFloat+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580CBA2917AC3C00BA58DA /* CGFloat+Ext.swift */; };
 		3D580CBD2917AD3C00BA58DA /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580CBC2917AD3C00BA58DA /* View+Ext.swift */; };
 		3D580CC32917BBB200BA58DA /* Image+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580CC22917BBB200BA58DA /* Image+Ext.swift */; };
+		3DD199D72917E0E00005886E /* MainNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD199D62917E0E00005886E /* MainNavigationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		3D580CBA2917AC3C00BA58DA /* CGFloat+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Ext.swift"; sourceTree = "<group>"; };
 		3D580CBC2917AD3C00BA58DA /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		3D580CC22917BBB200BA58DA /* Image+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Ext.swift"; sourceTree = "<group>"; };
+		3DD199D62917E0E00005886E /* MainNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +109,8 @@
 				14CD95B729173BD800BE08FB /* Identities */,
 				14EB30D02916CED600744608 /* Model */,
 				14EB30CC2916C03300744608 /* Persistence */,
-				14EB30CD2916C05100744608 /* Views */,
 				14752FDC2916B9290084BF7E /* Flex_StudioApp.swift */,
+				14EB30CD2916C05100744608 /* Views */,
 				14EB30CB2916C00D00744608 /* Resources */,
 				14752FE22916B92A0084BF7E /* Preview Content */,
 			);
@@ -163,6 +165,7 @@
 		14EB30CD2916C05100744608 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3DD199D62917E0E00005886E /* MainNavigationView.swift */,
 				3D580C992917A07F00BA58DA /* Panels */,
 				3D580C9A2917A08300BA58DA /* Layers */,
 			);
@@ -317,6 +320,7 @@
 				14752FE62916B92A0084BF7E /* PersistenceLayer.swift in Sources */,
 				14CD95B629173BBA00BE08FB /* LayerView.swift in Sources */,
 				3D580C98291796E100BA58DA /* PanelsViewModel.swift in Sources */,
+				3DD199D72917E0E00005886E /* MainNavigationView.swift in Sources */,
 				14CD95BD29173CAE00BE08FB /* PanelView.swift in Sources */,
 				3D580C962917969200BA58DA /* PanelsView.swift in Sources */,
 				3D580CA22917A79B00BA58DA /* Font+Ext.swift in Sources */,
@@ -379,7 +383,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -433,7 +437,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

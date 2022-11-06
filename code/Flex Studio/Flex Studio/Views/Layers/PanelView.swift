@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PanelView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @ObservedObject var panel: Panel
     @State var selectedLayerOffset = 0
     @State var selectedTool: EditorTool?
@@ -15,29 +16,32 @@ struct PanelView: View {
 
     var body: some View {
         ZStack {
-            ForEach(panel.sortedLayers) { layer in
-                let isSelected = layer.order == selectedLayerOffset
-                LayerView(
-                    layer: layer,
-                    state: isSelected ? .selected(tool: selectedTool) : .static
-                )
-                .allowsHitTesting(isSelected)
+            ZStack {
+                ForEach(panel.sortedLayers) { layer in
+                    let isSelected = layer.order == selectedLayerOffset
+                    LayerView(
+                        layer: layer,
+                        state: isSelected ? .selected(tool: selectedTool) : .static
+                    )
+                    .allowsHitTesting(isSelected)
+                }
             }
         }
         .toolbar {
-            ToolbarItem {
-                Button {
-                    selectedTool = .debugErase
-                } label: { Image(systemName: "eraser") }
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: { presentationMode.wrappedValue.dismiss() }) {
+                    Image.fs_panels
+                }
             }
-            ToolbarItem {
-                Button {
-                    selectedTool = .debugDraw
-                } label: { Image(systemName: "pencil.tip") }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {  }) { // Sidebar menu functionality
+                    Image.fs_sidemenu
+                }
             }
         }
-        .navigationTitle("Panel \(panel.uid)")
+        .navigationTitle("Panel \(panel.creationDate?.toString() ?? Date.nilString)")
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden()
     }
 
     private func stateForLayer(_ layer: Layer) -> LayerState {
