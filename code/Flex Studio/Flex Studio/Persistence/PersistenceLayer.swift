@@ -10,8 +10,9 @@ import CoreData
 /// A data structure that tracks this application's presence in Core Data.
 struct PersistenceLayer {
     static let logger = Logger.forType(PersistenceLayer.self)
-
-    static let shared = PersistenceLayer(inMemory: false)
+    
+    static let shared = ExecutionEnvironment.isPreview ? preview : persistent
+    static let persistent = PersistenceLayer(inMemory: false)
     static let preview: PersistenceLayer = {
         let result = PersistenceLayer(inMemory: true)
         let viewContext = result.container.viewContext

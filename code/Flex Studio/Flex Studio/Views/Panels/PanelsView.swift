@@ -9,7 +9,6 @@ import CoreData
 import SwiftUI
 
 struct PanelsView: View {
-    @Environment(\.managedObjectContext) var viewContext: NSManagedObjectContext
     @FetchRequest(fetchRequest: Panel.fetchRequestOldestToNewest) var panels: FetchedResults<Panel>
     private let viewModel = PanelsViewModel()
 

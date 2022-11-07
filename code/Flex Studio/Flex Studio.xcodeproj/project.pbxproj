@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140E79D429195D6D00F1A8F1 /* ExecutionEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140E79D329195D6D00F1A8F1 /* ExecutionEnvironment.swift */; };
 		14752FDD2916B9290084BF7E /* Flex_StudioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14752FDC2916B9290084BF7E /* Flex_StudioApp.swift */; };
 		14752FE12916B92A0084BF7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14752FE02916B92A0084BF7E /* Assets.xcassets */; };
 		14752FE42916B92A0084BF7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14752FE32916B92A0084BF7E /* Preview Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		140E79D329195D6D00F1A8F1 /* ExecutionEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutionEnvironment.swift; sourceTree = "<group>"; };
 		14752FD92916B9290084BF7E /* Flex Studio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flex Studio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14752FDC2916B9290084BF7E /* Flex_StudioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flex_StudioApp.swift; sourceTree = "<group>"; };
 		14752FE02916B92A0084BF7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				3D39BC222917935200268337 /* Extensions */,
 				14EB30C82916BACA00744608 /* Logger.swift */,
+				140E79D329195D6D00F1A8F1 /* ExecutionEnvironment.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				140E79D429195D6D00F1A8F1 /* ExecutionEnvironment.swift in Sources */,
 				3D93D5802918400D00293FE2 /* CanvasViewController.swift in Sources */,
 				14EB30CF2916C94D00744608 /* DrawingTransformer.swift in Sources */,
 				3D580CBB2917AC3C00BA58DA /* CGFloat+Ext.swift in Sources */,
@@ -459,7 +463,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Flex Studio/Preview Content\"";
-				DEVELOPMENT_TEAM = M4J79LU3NC;
+				DEVELOPMENT_TEAM = 2WC6CZUK4Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Flex-Studio-Info.plist";
@@ -489,7 +493,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Flex Studio/Preview Content\"";
-				DEVELOPMENT_TEAM = M4J79LU3NC;
+				DEVELOPMENT_TEAM = 2WC6CZUK4Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Flex-Studio-Info.plist";
