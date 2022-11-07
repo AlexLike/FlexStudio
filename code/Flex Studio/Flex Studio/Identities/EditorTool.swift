@@ -14,6 +14,6 @@ enum EditorTool {
     /// Edit the responsivity parameters of the selected layer.
     case responsivity
 
-    static var debugDraw: Self { .draw(tool: PKInkingTool(.pen, color: .black)) }
-    static var debugErase: Self { .draw(tool: PKEraserTool(.bitmap)) }
+    static var defaultDraw: Self { .draw(tool: PKInkingTool(.pen, color: .black)) }
+    static var defaultErase: Self { .draw(tool: PKEraserTool(.bitmap)) }
 }

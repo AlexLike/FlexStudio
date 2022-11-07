@@ -21,15 +21,15 @@ struct PanelsView: View {
                 LazyVGrid(columns: viewModel.itemColumns, spacing: .fsPaddingLarge) {
                     ForEach(panels) { panel in
                         NavigationLink(
-                            destination: PanelView(panel: panel, selectedTool: .debugDraw)
+                            destination: PanelView(panel: panel)
                         ) {
-                            PanelItemView(panel: panel)
+                            PanelItemView(panel: panel, viewModel: viewModel)
                         }
                         .fsButtonStyleScale()
                     }
 
                     Button(action: viewModel.addItem) {
-                        AddItemView()
+                        AddItemView(viewModel: viewModel)
                     }
                     .fsButtonStyleScale()
                 }
@@ -49,28 +49,35 @@ struct PanelsView: View {
 
     private struct PanelItemView: View {
         @ObservedObject var panel: Panel
+        var viewModel: PanelsViewModel
 
         var body: some View {
             VStack(spacing: .fsPaddingMedium) {
-                Color.clear // TODO: - Image Snapshot of Panel
+                Image(uiImage: panel.previewImage ?? UIImage())
+                    .resizable()
+                    .frame(height: (panel.size.height / panel.size.width) * viewModel.itemWidth)
                     .background(Color.fsWhite)
-                    .frame(height: 240) // TODO: - Dynamic height based on Panel
                     .cornerRadius(10)
+                    .clipped()
 
                 // TODO: - Number in Comic (in final product)
                 Text("\(panel.creationDate?.toString() ?? Date.nilString)")
                     .font(.fsSubtitle)
                     .foregroundColor(.gray)
+                
+                Spacer()
             }
         }
     }
 
     private struct AddItemView: View {
+        var viewModel: PanelsViewModel
+        
         var body: some View {
             VStack {
                 RoundedRectangle(cornerRadius: 15)
                     .stroke(Color.fsGray, style: StrokeStyle(lineWidth: 4, dash: [15.0]))
-                    .frame(height: 240)
+                    .frame(height: (Panel.defaultSize.height / Panel.defaultSize.width) * viewModel.itemWidth)
                     .cornerRadius(10)
                     .overlay(
                         VStack(spacing: .fsPaddingSmall) {

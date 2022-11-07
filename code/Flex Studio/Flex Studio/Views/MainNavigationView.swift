@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct MainNavigationView: View {
+    @State private var safeAreaInsets: (top: CGFloat, bottom: CGFloat) = (0, 0)
+    
     var body: some View {
         NavigationStack {
-            PanelsView()
+            ZStack {
+                GeometryReader { proxy in
+                    Color.clear.onAppear { safeAreaInsets = (proxy.safeAreaInsets.top, proxy.safeAreaInsets.bottom) }
+                }
+                
+                PanelsView()
+                    .environment(\.safeAreaInsets, safeAreaInsets)
+            }
         }
         .tint(.fsBlack)
     }

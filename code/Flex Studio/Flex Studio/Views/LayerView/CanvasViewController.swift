@@ -12,15 +12,13 @@ class CanvasViewController: UIViewController {
     var layer: Layer
     var state: LayerState
     var drawingChanged: (PKDrawing) -> () = { _ in }
-    var geometry: GeometryProxy
     
-    var canvasView: PKCanvasView = PKCanvasView(frame: .zero)
+    var canvasView: PKCanvasView = PKCanvasView()
     var toolPicker: PKToolPicker = PKToolPicker()
 
-    init(layer: Layer, state: LayerState, geometry: GeometryProxy) {
+    init(layer: Layer, state: LayerState) {
         self.layer = layer
         self.state = state
-        self.geometry = geometry
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -35,12 +33,7 @@ class CanvasViewController: UIViewController {
         configureToolPicker()
         
         view.addSubview(canvasView)
-        NSLayoutConstraint.activate([
-            canvasView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            canvasView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            canvasView.widthAnchor.constraint(equalToConstant: geometry.size.width * 0.7),
-            canvasView.heightAnchor.constraint(equalToConstant: geometry.size.height * 0.7)
-        ])
+        canvasView.frame = view.bounds
         
         reconfigure()
     }
@@ -52,7 +45,6 @@ class CanvasViewController: UIViewController {
         
         canvasView.drawingPolicy = .anyInput
         canvasView.isOpaque = false
-        canvasView.backgroundColor = UIColor(Color.fsWhite)
         canvasView.overrideUserInterfaceStyle = .light
         
         canvasView.translatesAutoresizingMaskIntoConstraints = false

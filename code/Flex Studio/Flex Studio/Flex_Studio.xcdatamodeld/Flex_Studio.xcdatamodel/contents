@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A380" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="22A380" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Layer" representedClassName="Layer" syncable="YES" codeGenerationType="class">
         <attribute name="drawing_" attributeType="Transformable" valueTransformerName="DrawingTransformer"/>
         <attribute name="order_" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -13,7 +13,10 @@
     </entity>
     <entity name="Panel" representedClassName="Panel" syncable="YES" codeGenerationType="class">
         <attribute name="creationDate_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="height_" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="previewImage_" optional="YES" attributeType="Binary"/>
         <attribute name="uid_" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="width_" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="layers_" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Layer" inverseName="panel_" inverseEntity="Layer"/>
         <uniquenessConstraints>
             <uniquenessConstraint>

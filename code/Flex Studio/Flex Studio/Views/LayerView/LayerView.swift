@@ -11,11 +11,10 @@ import PencilKit
 
 struct LayerView: UIViewControllerRepresentable {
     @ObservedObject var layer: Layer
-    let state: LayerState
-    let geometry: GeometryProxy
+    let layerState: LayerState
     
     func makeUIViewController(context: Context) -> CanvasViewController {
-        let viewController = CanvasViewController(layer: layer, state: state, geometry: geometry)
+        let viewController = CanvasViewController(layer: layer, state: layerState)
         viewController.layer = layer
         viewController.drawingChanged = { drawing in
             layer.drawing = drawing

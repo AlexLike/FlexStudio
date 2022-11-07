@@ -12,4 +12,5 @@ extension Image {
     static let fsPaint = Image(systemName: "paintbrush.fill")
     static let fsSidemenu = Image(systemName: "sidebar.trailing")
     static let fsPanels = Image(systemName: "square.grid.2x2")
+    static let fsResize = Image(systemName: "crop")
 }
