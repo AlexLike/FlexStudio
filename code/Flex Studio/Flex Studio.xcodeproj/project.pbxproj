@@ -24,6 +24,7 @@
 		3D2472E6291956180000583C /* PanelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2472E5291956180000583C /* PanelState.swift */; };
 		3D2472E8291991680000583C /* SafeAreaHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2472E7291991680000583C /* SafeAreaHelper.swift */; };
 		3D2472EC2919A01D0000583C /* FSToolCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2472EB2919A01D0000583C /* FSToolCircleButton.swift */; };
+		3D2472EE291A37390000583C /* ExecutionEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2472ED291A37390000583C /* ExecutionEnvironment.swift */; };
 		3D39BC242917936500268337 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D39BC232917936500268337 /* Date+Ext.swift */; };
 		3D580C962917969200BA58DA /* PanelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580C952917969200BA58DA /* PanelsView.swift */; };
 		3D580C98291796E100BA58DA /* PanelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580C97291796E100BA58DA /* PanelsViewModel.swift */; };
@@ -65,6 +66,7 @@
 		3D2472E5291956180000583C /* PanelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelState.swift; sourceTree = "<group>"; };
 		3D2472E7291991680000583C /* SafeAreaHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeAreaHelper.swift; sourceTree = "<group>"; };
 		3D2472EB2919A01D0000583C /* FSToolCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSToolCircleButton.swift; sourceTree = "<group>"; };
+		3D2472ED291A37390000583C /* ExecutionEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutionEnvironment.swift; sourceTree = "<group>"; };
 		3D39BC232917936500268337 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		3D580C952917969200BA58DA /* PanelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelsView.swift; sourceTree = "<group>"; };
 		3D580C97291796E100BA58DA /* PanelsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelsViewModel.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				3D2472EA2919A0090000583C /* Helper */,
 				3D39BC222917935200268337 /* Extensions */,
 				3D2472E929199FF90000583C /* CustomViews */,
+				3D2472ED291A37390000583C /* ExecutionEnvironment.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				3DD199D72917E0E00005886E /* MainNavigationView.swift in Sources */,
 				14CD95BD29173CAE00BE08FB /* PanelView.swift in Sources */,
 				3D580C962917969200BA58DA /* PanelsView.swift in Sources */,
+				3D2472EE291A37390000583C /* ExecutionEnvironment.swift in Sources */,
 				3D93D57E29183FF400293FE2 /* LayerView.swift in Sources */,
 				3D580CA22917A79B00BA58DA /* Font+Ext.swift in Sources */,
 				14752FE92916B92A0084BF7E /* Flex_Studio.xcdatamodeld in Sources */,

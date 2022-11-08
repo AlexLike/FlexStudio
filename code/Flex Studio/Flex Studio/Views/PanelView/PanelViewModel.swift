@@ -24,10 +24,12 @@ class PanelViewModel: ObservableObject {
     // MARK: - PanelView
     
     lazy var magnificationGesture = MagnificationGesture()
-        .onChanged { value in
+        .onChanged { [weak self] value in
+            guard let self = self else { return }
             self.panelScale = self.panelScaleCurrent * value
         }
-        .onEnded { _ in
+        .onEnded { [weak self] _ in
+            guard let self = self else { return }
             let newScale = CGFloat.minimum(.maximum(self.panelScale, 0.5), 1.5)
             self.panelScaleCurrent = newScale
             
@@ -36,14 +38,16 @@ class PanelViewModel: ObservableObject {
             }
         }
     
-    lazy var canvasWidth: (GeometryProxy, Panel) -> CGFloat? = { proxy, panel in
+    lazy var canvasWidth: (GeometryProxy, Panel) -> CGFloat? = { [weak self] proxy, panel in
+        guard let self = self else { return nil }
         guard !proxy.size.height.isZero else { return nil }
-        return (panel.size.width / proxy.size.height) * (proxy.size.height * 0.7) + self.dragOffset.width
+        return (panel.size.width / 1000) * (1000 * 0.7) - self.dragOffset.width
     }
     
-    lazy var canvasHeight: (GeometryProxy, Panel) -> CGFloat? = { proxy, panel in
+    lazy var canvasHeight: (GeometryProxy, Panel) -> CGFloat? = { [weak self] proxy, panel in
+        guard let self = self else { return nil }
         guard !proxy.size.height.isZero else { return nil }
-        return (panel.size.height / proxy.size.height) * (proxy.size.height * 0.7) + self.dragOffset.height
+        return (panel.size.height / 1000) * (1000 * 0.7) - self.dragOffset.height
     }
     
     private func stateForLayer(_ layer: Layer) -> LayerState {
@@ -58,7 +62,8 @@ class PanelViewModel: ObservableObject {
     @MainActor
     lazy var rezisingDragGesture: (Edge, GeometryProxy, Panel) -> _EndedGesture<_ChangedGesture<DragGesture>> = { edge, proxy, panel in
         DragGesture(minimumDistance: 0)
-            .onChanged { value in
+            .onChanged { [weak self] value in
+                guard let self = self else { return }
 //                guard panel.size.width + abs(value.translation.width) < proxy.size.width - 200 else { return }
 //                guard panel.size.width - abs(value.translation.width) >= Panel.minSize.width else { return }
 //                
@@ -74,7 +79,8 @@ class PanelViewModel: ObservableObject {
                 
                 self.panelState = .onResize(onDrag: true)
             }
-            .onEnded { _ in
+            .onEnded { [weak self] _ in
+                guard let self = self else { return }
                 self.updateSize(panel, with: self.dragOffset)
                 self.dragOffset = .zero
                 self.panelState = .onResize(onDrag: false)

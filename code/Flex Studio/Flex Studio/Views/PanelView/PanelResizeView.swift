@@ -51,8 +51,7 @@ struct PanelResizingView: View {
                     FSToolCircleButton(symbol: Image.fsResize) { selected in
                         viewModel.panelState = selected ? .onResize(onDrag: false) : .static
                     }
-//                    .padding(safeAreaInsets.bottom)
-                    .padding(20)
+                    .padding(20 /*safeAreainsets.bottom*/)
                 }
             }
         }
@@ -73,7 +72,7 @@ struct PanelResizingView: View {
                 // Hack to increase drag area
                 ResizingShape(edge: edge)
                     .stroke(Color.fsWhite.opacity(0.001), lineWidth: 30)
-                
+
                 ResizingShape(edge: edge)
                     .stroke(color, lineWidth: PanelResizingView.strokeWidth)
                     .background(ResizingShape(edge: edge).fill(color))
