@@ -91,6 +91,7 @@ struct PanelsView: View {
 
                 Spacer()
             }
+            .contentShape(Rectangle())
         }
     }
 }

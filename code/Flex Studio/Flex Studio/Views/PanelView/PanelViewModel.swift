@@ -41,13 +41,13 @@ class PanelViewModel: ObservableObject {
     lazy var canvasWidth: (GeometryProxy, Panel) -> CGFloat? = { [weak self] proxy, panel in
         guard let self = self else { return nil }
         guard !proxy.size.height.isZero else { return nil }
-        return (panel.size.width / 1000) * (1000 * 0.7) - self.dragOffset.width
+        return (panel.size.width / 1000) * (1000 * 0.7) + self.dragOffset.width
     }
     
     lazy var canvasHeight: (GeometryProxy, Panel) -> CGFloat? = { [weak self] proxy, panel in
         guard let self = self else { return nil }
         guard !proxy.size.height.isZero else { return nil }
-        return (panel.size.height / 1000) * (1000 * 0.7) - self.dragOffset.height
+        return (panel.size.height / 1000) * (1000 * 0.7) + self.dragOffset.height
     }
     
     private func stateForLayer(_ layer: Layer) -> LayerState {
