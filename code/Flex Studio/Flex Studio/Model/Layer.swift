@@ -23,6 +23,11 @@ extension Layer {
         get { (drawing_ as! PKDrawingReference) as PKDrawing }
         set { drawing_ = newValue as PKDrawingReference }
     }
+    
+    var isVisible: Bool {
+        get { isVisible_ }
+        set { isVisible_ = newValue }
+    }
 
     // MARK: - Relationships
 
@@ -40,6 +45,7 @@ extension Layer {
         l.order = order
         l.drawing = PKDrawing()
         l.panel = panel
+        l.isVisible = true
         panel.layers.insert(l)
         return l
     }

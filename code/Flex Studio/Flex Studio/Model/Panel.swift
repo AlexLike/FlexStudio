@@ -10,10 +10,10 @@ import SwiftUI
 
 extension Panel {
     // MARK: - Data
-
+    
     /// This panel's unique identifier, automatically generated on creation and persistent.
     var uid: UUID { uid_ ?? .init() }
-
+    
     /// A timestamp of this panel's creation.
     var creationDate: Date? {
         get { creationDate_ }
@@ -41,13 +41,13 @@ extension Panel {
     }
 
     // MARK: - Relationships
-
+    
     /// All layers this panel contains.
     var layers: Set<Layer> {
         get { layers_ as? Set<Layer> ?? [] }
         set { layers_ = newValue as NSSet }
     }
-
+    
     /// All layers this panel consists of, sorted from furthest away to closest to the viewer.
     var sortedLayers: [Layer] { layers.sorted(using: KeyPathComparator(\.order)) }
     
@@ -57,7 +57,7 @@ extension Panel {
     static let minSize: CGSize = .init(width: 200, height: 200)
 
     // MARK: - CRD operations
-
+    
     @discardableResult
     static func create(in ctx: NSManagedObjectContext, creationDate: Date? = .now) -> Panel {
         let p = Panel(context: ctx)
@@ -68,6 +68,10 @@ extension Panel {
         p.layers = []
         Layer.create(for: p, order: 0)
         return p
+    }
+    
+    func addLayer() {
+        Layer.create(for: self, order: Int16(self.layers.count))
     }
 
     static let fetchRequestOldestToNewest: NSFetchRequest<Panel> = {

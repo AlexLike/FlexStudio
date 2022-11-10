@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="22A380" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Layer" representedClassName="Layer" syncable="YES" codeGenerationType="class">
         <attribute name="drawing_" attributeType="Transformable" valueTransformerName="DrawingTransformer"/>
+        <attribute name="isVisible_" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="order_" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="panel_" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Panel" inverseName="layers_" inverseEntity="Panel"/>
         <uniquenessConstraints>
