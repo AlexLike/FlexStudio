@@ -133,8 +133,68 @@ We enter the next stage with ideas for two potential A/B tests: one for (2) and 
 
 ## Hi-fidelity Prototype
 
-    TODO
-
 ## User study
 
-    TODO
+### Goal
+
+Given that the core functionality of our app relies on sensibly responsive panels, we need to make editing the corresponding constraints discoverable and easy to use. We want the responsivity editor to
+
+1. require minimal input, i.e. work with as little manual input as possible,
+2. behave predicatably, i.e. extrapolate from the user's guidance like another human would, and
+3. be flexible enough to achieve a wide range of results, i.e. allow the artist to express many layer alignments.
+
+---
+
+### Independent Variables
+
+**(V1) Interface Variant**\
+Drawing inspiration from existing paradigmns, we implement two alternative interface variants (independent):
+
+(I) an indirect "pin" menu that allows the user to attach every layer to 9 points (corners, edge centers, panel center), and
+
+(D) a direct "keyframe" mechanism that allows the user to drag layers to their desired position given the resizable panel's size.
+
+**(V2) Task Type**\
+To measure our goals, we task participants with
+
+(C1) / (C2) making one of two preset panels responsive in such way that it mimicks the behavior from a video reference.
+
+(O) making a preset panel responsive however they desire.
+
+---
+
+### Quantitative Dependent Variables
+
+**(T) Task completion time**
+
+**(N) Number of taps and drag gestures**
+
+**(E) Number of erroneous inputs (i.e. missing or performing irrelevant inputs)**
+
+**(A) Accuracy of the result (only for V2 ∈ {C1, C2})**
+
+### Qualitative Dependent Variables
+
+**(U) System Usability Scale (SUS) Score**
+
+**(X) Extended UX Questionnaire Predicate**
+
+---
+
+### Hypotheses
+
+(HT) There will be no effect of input modality (V1) on the time (T) required to fulfill a closed task (V2 ∈ {C1, C2}).
+
+(HN) There will be no effect of input modality (V1) on the number of gestures (N) required to fulfill a closed task (V2 ∈ {C1, C2}).
+
+(HEA) There will be no effect of input modality (V1) on the overall accuracy (E/A) of the responsivity process in a closed task (V2 ∈ {C1, C2}).
+
+(HU) There will be no effect of input modality (V1) on the SUS score (U) awarded by the users.
+
+(HX) There will be no effect of input modality (V1) on the subjective user experience and creative process (X).
+
+---
+
+### Protocol
+
+WIP
