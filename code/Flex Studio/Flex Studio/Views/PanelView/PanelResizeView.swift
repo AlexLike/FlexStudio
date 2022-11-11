@@ -124,13 +124,3 @@ private struct ResizingShape: Shape {
         return path
     }
 }
-
-//extension HorizontalAlignment {
-//    struct LeadingResizingAlignment: AlignmentID {
-//        static func defaultValue(in d: ViewDimensions) -> CGFloat {
-//            d[HorizontalAlignment.center]
-//        }
-//    }
-//
-//    static let leadingResizingAlignment = HorizontalAlignment(LeadingResizingAlignment.self)
-//}

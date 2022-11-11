@@ -18,7 +18,7 @@ class PanelViewModel: ObservableObject {
     
     // Layer
     
-    @Published var selectedLayerOffset: any BinaryInteger = 0
+    @Published var selectedLayer: Layer?
     @Published var selectedTool: EditorTool? = .defaultDraw
     
     // MARK: - PanelView
@@ -51,7 +51,7 @@ class PanelViewModel: ObservableObject {
     }
     
     private func stateForLayer(_ layer: Layer) -> LayerState {
-        if layer.order == selectedLayerOffset, let selectedTool {
+        if layer == selectedLayer, let selectedTool {
             return .editable(tool: selectedTool)
         }
         return .static
@@ -109,5 +109,17 @@ class PanelViewModel: ObservableObject {
         UIGraphicsEndImageContext()
         
         panel.previewImage = allLayersImage
+    }
+    
+    // MARK: - PanelLayerSelectionView
+    
+    func move(panel: Panel, fromOffsets source : IndexSet, toOffset destination : Int){
+        var sortedLayers = panel.sortedLayers
+        sortedLayers.move(fromOffsets: source, toOffset: destination)
+        
+        for (i, layer) in sortedLayers.enumerated() {
+            layer.order = Int16(i)
+        }
+        panel.objectWillChange.send()
     }
 }

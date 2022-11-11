@@ -13,8 +13,8 @@ struct LayerView: UIViewControllerRepresentable {
     @ObservedObject var layer: Layer
     let layerState: LayerState
     
-    func makeUIViewController(context: Context) -> CanvasViewController {
-        let viewController = CanvasViewController(layer: layer, state: layerState)
+    func makeUIViewController(context: Context) -> LayerViewController {
+        let viewController = LayerViewController(layer: layer, state: layerState)
         viewController.layer = layer
         viewController.drawingChanged = { drawing in
             layer.drawing = drawing
@@ -23,7 +23,7 @@ struct LayerView: UIViewControllerRepresentable {
         return viewController
     }
     
-    func updateUIViewController(_ uiViewController: CanvasViewController, context: Context) {
+    func updateUIViewController(_ uiViewController: LayerViewController, context: Context) {
         uiViewController.layer = layer
         if layer.drawing != uiViewController.canvasView.drawing {
             // A concurrent version of this layer was updated.

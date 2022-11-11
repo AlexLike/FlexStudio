@@ -17,24 +17,26 @@ struct PanelView: View {
             Color.fsGray.edgesIgnoringSafeArea(.all)
             
             GeometryReader { proxy in
-                ZStack(/*alignment: .init(horizontal: .leadingResizingAlignment, vertical: .center)*/) {
+                ZStack {
                     ZStack {
+                        Color.fsWhite
+                        
                         ForEach(panel.sortedLayers) { layer in
-                            let isSelected = layer.order == viewModel.selectedLayerOffset && viewModel.panelState == .static
+                            let isSelected = layer == viewModel.selectedLayer && viewModel.panelState == .static
+                            layer.isVisible ?
                             LayerView(
                                 layer: layer,
                                 layerState: isSelected ? .selected(tool: viewModel.selectedTool) : .static
                             )
                             .allowsHitTesting(isSelected)
+                            : nil
                         }
-                        .background(Color.fsWhite)
                         
                         ZStack {
                             Color.fsGray
                             Rectangle()
                                 .frame(width: viewModel.canvasWidth(proxy, panel), height: viewModel.canvasHeight(proxy, panel), alignment: .center)
                                 .blendMode(.destinationOut)
-//                                .alignmentGuide(.leadingResizingAlignment, computeValue: { $0[.leading] })
                         }
                         .compositingGroup()
                         .allowsHitTesting(false)
@@ -46,7 +48,11 @@ struct PanelView: View {
                 }
             }
             
-            // Layers Selection View here
+            HStack {
+                PanelLayerSelectionView(panel: panel, viewModel: viewModel)
+                Spacer()
+            }
+            .padding(20 /*safeAreainsets.bottom*/)
         }
         .edgesIgnoringSafeArea(.all)
         .toolbar {
@@ -64,6 +70,9 @@ struct PanelView: View {
         .navigationTitle("Panel \(panel.creationDate?.toString() ?? Date.nilString)")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()
+        .onAppear {
+            viewModel.selectedLayer = panel.layers.first
+        }
         .onDisappear {
             viewModel.savePreviewImage(panel: panel)
         }

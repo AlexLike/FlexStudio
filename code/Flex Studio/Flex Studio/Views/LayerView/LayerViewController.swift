@@ -1,5 +1,5 @@
 //
-//  CanvasViewController.swift
+//  LayerViewController:.swift
 //  Flex Studio
 //
 //  Created by Kai Zheng on 06.11.22.
@@ -8,7 +8,7 @@
 import SwiftUI
 import PencilKit
 
-class CanvasViewController: UIViewController {
+class LayerViewController: UIViewController {
     var layer: Layer
     var state: LayerState
     var drawingChanged: (PKDrawing) -> () = { _ in }
@@ -66,7 +66,7 @@ class CanvasViewController: UIViewController {
     }
 }
 
-extension CanvasViewController: PKToolPickerObserver, PKCanvasViewDelegate {
+extension LayerViewController: PKToolPickerObserver, PKCanvasViewDelegate {
     func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
         drawingChanged(canvasView.drawing)
     }
