@@ -23,11 +23,20 @@ struct PanelLayerSelectionView: View {
             List {
                 ForEach(panel.sortedLayers) { layer in
                     LayerRow(panel: panel, layer: layer, viewModel: viewModel)
+                        .swipeActions(allowsFullSwipe: false){
+                            Button {
+                                panel.deleteLayer(layer: layer)
+                            } label: {
+                                Label("Mute", systemImage: "trash")
+                            }
+                            .tint(.red)
+                        }
                 }
                 .onMove(perform: { viewModel.move(panel: panel, fromOffsets: $0, toOffset: $1) })
-                .listRowBackground(Color.clear)
+//                .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
                 .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+                
             }
             .listStyle(.plain)
             .scrollContentBackground(.hidden)

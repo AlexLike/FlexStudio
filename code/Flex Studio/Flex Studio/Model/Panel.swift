@@ -73,6 +73,12 @@ extension Panel {
     func addLayer() {
         Layer.create(for: self, order: Int16(self.layers.count))
     }
+    
+    func deleteLayer(layer : Layer) {
+        // TODO: delete layer entirely
+        self.layers.remove(layer)
+        //layer.delete()
+    }
 
     static let fetchRequestOldestToNewest: NSFetchRequest<Panel> = {
         let request = Panel.fetchRequest()
