@@ -15,27 +15,32 @@ struct PanelView: View {
     var body: some View {
         ZStack {
             Color.fsGray.edgesIgnoringSafeArea(.all)
-            
+
             GeometryReader { proxy in
                 ZStack {
                     ZStack {
                         Color.fsWhite
-                        
+                        DrawToolPickerView(state: $viewModel.drawToolPickerState)
                         ForEach(panel.sortedLayers) { layer in
-                            let isSelected = layer == viewModel.selectedLayer && viewModel.panelState == .static
+                            let isSelected = layer == viewModel.selectedLayer
                             layer.isVisible ?
-                            LayerView(
-                                layer: layer,
-                                layerState: isSelected ? .selected(tool: viewModel.selectedTool) : .static
-                            )
-                            .allowsHitTesting(isSelected)
-                            : nil
+                                LayerView(
+                                    layer: layer,
+                                    state: isSelected ? .selected(tool: viewModel.selectedTool) :
+                                        .static
+                                )
+                                .allowsHitTesting(isSelected)
+                                : nil
                         }
-                        
+
                         ZStack {
                             Color.fsGray
                             Rectangle()
-                                .frame(width: viewModel.canvasWidth(proxy, panel), height: viewModel.canvasHeight(proxy, panel), alignment: .center)
+                                .frame(
+                                    width: viewModel.canvasWidth(proxy, panel),
+                                    height: viewModel.canvasHeight(proxy, panel),
+                                    alignment: .center
+                                )
                                 .blendMode(.destinationOut)
                         }
                         .compositingGroup()
@@ -43,16 +48,16 @@ struct PanelView: View {
                     }
                     .scaleEffect(viewModel.panelScale, anchor: .center)
                     .gesture(viewModel.magnificationGesture)
-                    
+
                     PanelResizingView(panel: panel, viewModel: viewModel, proxy: proxy)
                 }
             }
-            
+
             HStack {
                 PanelLayerSelectionView(panel: panel, viewModel: viewModel)
                 Spacer()
             }
-            .padding(20 /*safeAreainsets.bottom*/)
+            .padding(20 /* safeAreainsets.bottom */ )
         }
         .edgesIgnoringSafeArea(.all)
         .toolbar {

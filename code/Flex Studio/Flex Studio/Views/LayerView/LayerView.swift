@@ -2,33 +2,69 @@
 //  LayerView.swift
 //  Flex Studio
 //
-//  Created by Kai Zheng on 06.11.22.
+//  Created by Alexander Zank on 01.11.22.
 //
 
-import SwiftUI
-import CoreData
 import PencilKit
+import SwiftUI
 
-struct LayerView: UIViewControllerRepresentable {
+struct LayerView: UIViewRepresentable {
     @ObservedObject var layer: Layer
-    let layerState: LayerState
-    
-    func makeUIViewController(context: Context) -> LayerViewController {
-        let viewController = LayerViewController(layer: layer, state: layerState)
-        viewController.layer = layer
-        viewController.drawingChanged = { drawing in
-            layer.drawing = drawing
-        }
-        
-        return viewController
+    let state: LayerState
+
+    func makeCoordinator() -> CanvasManager {
+        CanvasManager(layer: layer)
     }
-    
-    func updateUIViewController(_ uiViewController: LayerViewController, context: Context) {
-        uiViewController.layer = layer
-        if layer.drawing != uiViewController.canvasView.drawing {
+
+    func makeUIView(context: Context) -> PKCanvasView {
+        let canvas = PKCanvasView()
+        canvas.drawingPolicy = .anyInput
+        canvas.isOpaque = false
+        canvas.overrideUserInterfaceStyle = .light
+        canvas.drawing = layer.drawing
+        canvas.delegate = context.coordinator
+        reconfigure(canvas)
+        return canvas
+    }
+
+    func updateUIView(_ canvas: PKCanvasView, context _: Context) {
+        if layer.drawing != canvas.drawing {
             // A concurrent version of this layer was updated.
-            uiViewController.canvasView.drawing = layer.drawing
+            canvas.drawing = layer.drawing
         }
-        uiViewController.reconfigure()
+        reconfigure(canvas)
+    }
+
+    private func reconfigure(_ canvas: PKCanvasView) {
+        switch state {
+        case .static, .editable(tool: .responsivity):
+            canvas.isUserInteractionEnabled = false
+        case let .editable(tool: .draw(tool, isRulerActive)):
+            canvas.isUserInteractionEnabled = true
+            canvas.tool = tool
+            canvas.isRulerActive = isRulerActive
+        }
+    }
+
+    class CanvasManager: NSObject, PKCanvasViewDelegate {
+        let layer: Layer
+
+        init(layer: Layer) {
+            self.layer = layer
+        }
+
+        func canvasViewDrawingDidChange(_ canvas: PKCanvasView) {
+            layer.drawing = canvas.drawing
+        }
     }
 }
+
+struct LayerView_Previews: PreviewProvider {
+    static var previews: some View {
+        LayerView(
+            layer: try! PersistenceLayer.preview.viewContext.fetch(Layer.fetchRequest()).first!,
+            state: .editable(tool: .defaultDraw)
+        )
+    }
+}
+
