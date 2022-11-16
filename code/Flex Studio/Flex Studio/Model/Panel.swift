@@ -76,8 +76,12 @@ extension Panel {
     
     func deleteLayer(layer : Layer) {
         // TODO: delete layer entirely
+        let deletedOrder = Int(layer.order)
         self.layers.remove(layer)
         //layer.delete()
+        for i in deletedOrder ..< layers.count {
+            self.sortedLayers[i].order -= 1
+        }
     }
 
     static let fetchRequestOldestToNewest: NSFetchRequest<Panel> = {
