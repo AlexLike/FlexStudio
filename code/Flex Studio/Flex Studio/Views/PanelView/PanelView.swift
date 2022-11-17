@@ -8,63 +8,50 @@
 import SwiftUI
 
 struct PanelView: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.dismiss) var dismiss: DismissAction
     @ObservedObject var panel: Panel
     @StateObject private var viewModel = PanelViewModel()
 
     var body: some View {
         ZStack {
-            Color.fsGray.edgesIgnoringSafeArea(.all)
-
-            GeometryReader { proxy in
-                ZStack {
-                    ZStack {
-                        Color.fsWhite
-                        DrawToolPickerView(state: $viewModel.drawToolPickerState)
-                        ForEach(panel.sortedLayers) { layer in
-                            let isSelected = layer == viewModel.selectedLayer
-                            layer.isVisible ?
-                                LayerView(
-                                    layer: layer,
-                                    state: isSelected ? .selected(tool: viewModel.selectedTool) :
-                                        .static
-                                )
-                                .allowsHitTesting(isSelected)
-                                : nil
-                        }
-
-                        ZStack {
-                            Color.fsGray
-                            Rectangle()
-                                .frame(
-                                    width: viewModel.canvasWidth(proxy, panel),
-                                    height: viewModel.canvasHeight(proxy, panel),
-                                    alignment: .center
-                                )
-                                .blendMode(.destinationOut)
-                        }
-                        .compositingGroup()
-                        .allowsHitTesting(false)
-                    }
-                    .scaleEffect(viewModel.panelScale, anchor: .center)
-                    .gesture(viewModel.magnificationGesture)
-
-                    PanelResizingView(panel: panel, viewModel: viewModel, proxy: proxy)
-                }
+            // Paper Background
+            Color.fsWhite
+            
+            // Layers
+            ForEach(panel.sortedLayers) { layer in
+                let isSelected = layer == viewModel.selectedLayer
+                LayerView(
+                    layer: layer,
+                    state: isSelected ?
+                        .selected(tool: viewModel.selectedTool) :
+                        .static
+                )
+                .allowsHitTesting(isSelected)
+                .opacity(layer.isVisible ? 1 : 0)
             }
+            
+            // Frame
+            FrameView(aspectProgression: $viewModel.aspectProgression, isResizable: viewModel.isEditingResponsivity)
 
+            // Tools
+            DrawToolPickerView(state: $viewModel.drawToolPickerState)
+                .allowsHitTesting(false)
             HStack {
                 PanelLayerSelectionView(panel: panel, viewModel: viewModel)
                 Spacer()
+                VStack {
+                    Spacer()
+                    FSToolCircleButton(symbol: Image.fsResize, isSelected: $viewModel.isEditingResponsivity)
+                }
             }
             .padding(20 /* safeAreainsets.bottom */ )
         }
         .edgesIgnoringSafeArea(.all)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: { presentationMode.wrappedValue.dismiss() }) {
+                Button(action: { dismiss() }, label: {
                     Image.fsPanels
-                }
+                })
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {}) { // Sidebar menu functionality
@@ -81,5 +68,12 @@ struct PanelView: View {
         .onDisappear {
             viewModel.savePreviewImage(panel: panel)
         }
+    }
+}
+
+struct Panels_Previews: PreviewProvider {
+    static var previews: some View {
+        PanelView(panel: .create(in: PersistenceLayer.preview.viewContext))
+            .environment(\.managedObjectContext, PersistenceLayer.preview.viewContext)
     }
 }

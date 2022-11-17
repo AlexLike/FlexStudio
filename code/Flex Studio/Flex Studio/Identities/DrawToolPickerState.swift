@@ -17,7 +17,7 @@ enum DrawToolPickerState {
         switch editorTool {
         case .some(.draw(let tool, let isRulerActive)):
             return .pick(tool: tool, isRulerActive: isRulerActive)
-        case .some(.responsivity(_)), .none:
+        case .some(.responsivity), .none:
             return .hidden
         }
     }

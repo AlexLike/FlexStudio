@@ -16,6 +16,7 @@ struct Flex_StudioApp: App {
         WindowGroup {
             MainNavigationView()
                 .environment(\.managedObjectContext, PersistenceLayer.shared.viewContext)
+                .preferredColorScheme(.light)
         }
         .onChange(of: scenePhase) {
             switch $0 {

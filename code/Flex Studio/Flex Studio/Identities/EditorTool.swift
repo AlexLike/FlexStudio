@@ -12,7 +12,7 @@ enum EditorTool {
     /// Draw on the selected layer using `tool`.
     case draw(tool: PKTool, isRulerActive: Bool)
     /// Edit the responsivity parameters of the selected layer.
-    case responsivity(byDragging: Bool)
+    case responsivity
 
     static var defaultDraw: Self { .draw(tool: PKInkingTool(.pen, color: .black), isRulerActive: false) }
     static var defaultErase: Self { .draw(tool: PKEraserTool(.bitmap), isRulerActive: false) }

@@ -8,23 +8,21 @@
 import SwiftUI
 
 struct FSToolCircleButton: View {
-    @State private var selected: Bool = false
     let symbol: Image
-    let action: (Bool) -> ()
+    @Binding var isSelected: Bool
     
     var body: some View {
-        Button(action: {
-            selected.toggle()
-            action(selected)
-        }) {
+        Button {
+            isSelected.toggle()
+        } label: {
             Circle()
                 .frame(width: 60, height: 60)
-                .foregroundColor(selected ? Color.fsTint : Color.fsBackground)
+                .foregroundColor(isSelected ? Color.fsTint : Color.fsBackground)
                 .shadow(color: .black.opacity(0.1), radius: 10)
                 .overlay(
                     symbol
                         .font(.system(size: 20))
-                        .foregroundColor(selected ? Color.fsWhite : Color.fsDarkGray)
+                        .foregroundColor(isSelected ? Color.fsWhite : Color.fsDarkGray)
                 )
         }
         .fsButtonStyleScale()

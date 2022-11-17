@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct PanelLayerSelectionView: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @ObservedObject var panel: Panel
     @ObservedObject var viewModel: PanelViewModel
     
@@ -33,7 +32,7 @@ struct PanelLayerSelectionView: View {
                         }
                 }
                 .onMove(perform: { viewModel.move(panel: panel, fromOffsets: $0, toOffset: $1) })
-//                .listRowBackground(Color.clear)
+                .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
                 .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                 
@@ -56,7 +55,6 @@ struct PanelLayerSelectionView: View {
     }
     
     private struct LayerRow: View {
-        @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
         @ObservedObject var panel: Panel
         @ObservedObject var layer: Layer
         @ObservedObject var viewModel: PanelViewModel

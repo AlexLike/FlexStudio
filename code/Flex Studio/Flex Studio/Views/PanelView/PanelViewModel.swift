@@ -8,6 +8,9 @@
 import SwiftUI
 
 class PanelViewModel: ObservableObject {
+    // Display
+    @Published var aspectProgression: CGFloat = 0.5
+
     // Panel
 
     @Published var panelScale: CGFloat = 1
@@ -66,47 +69,22 @@ class PanelViewModel: ObservableObject {
         }
     }
 
-    // MARK: - PanelResizingView
-
-    @MainActor
-    lazy var rezisingDragGesture: (Edge, GeometryProxy, Panel)
-        -> _EndedGesture<_ChangedGesture<DragGesture>> = { edge, _, panel in
-            DragGesture(minimumDistance: 0)
-                .onChanged { [weak self] value in
-                    guard let self = self else { return }
-//                guard panel.size.width + abs(value.translation.width) < proxy.size.width - 200
-//                else { return }
-//                guard panel.size.width - abs(value.translation.width) >= Panel.minSize.width else
-//                { return }
-//
-//                guard panel.size.height + abs(value.translation.height) < proxy.size.height - 200
-//                else { return }
-//                guard panel.size.height - abs(value.translation.height) >= Panel.minSize.height
-//                else { return }
-
-                    switch edge {
-                    case .leading, .trailing:
-                        self.dragOffset.width = value.translation.width
-                    case .top, .bottom:
-                        self.dragOffset.height = value.translation.height
-                    }
-
-                    self.selectedTool = .responsivity(byDragging: true)
-                }
-                .onEnded { [weak self] _ in
-                    guard let self = self else { return }
-                    self.updateSize(panel, with: self.dragOffset)
-                    self.dragOffset = .zero
-                    self.selectedTool = .responsivity(byDragging: false)
-                }
+    var isEditingResponsivity: Bool {
+        get { if case .responsivity = selectedTool { return true } else { return false } }
+        set {
+            if !isEditingResponsivity && newValue {
+                lruTool = selectedTool
+                selectedTool = .responsivity
+            }
+            if isEditingResponsivity && !newValue {
+                let restorableTool = lruTool
+                lruTool = selectedTool
+                selectedTool = restorableTool
+            }
         }
-
-    @MainActor
-    private func updateSize(_ panel: Panel, with offset: CGSize) {
-        panel.width_ = panel.width_ + Float(offset.width)
-        panel.height_ = panel.height_ + Float(offset.height)
-        PersistenceLayer.shared.save()
     }
+
+    // MARK: - PanelResizingView
 
     @MainActor
     func savePreviewImage(panel: Panel) {
@@ -127,18 +105,6 @@ class PanelViewModel: ObservableObject {
         UIGraphicsEndImageContext()
 
         panel.previewImage = allLayersImage
-    }
-
-    @MainActor
-    func toggleResponsivity() {
-        let restorableTool = lruTool
-        lruTool = selectedTool
-        switch selectedTool {
-        case .none, .some(.draw(_, _)):
-            selectedTool = .responsivity(byDragging: false)
-        case .some(.responsivity(_)):
-            selectedTool = restorableTool
-        }
     }
 
     // MARK: - PanelLayerSelectionView
