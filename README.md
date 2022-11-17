@@ -209,3 +209,36 @@ To measure our goals, we task participants with
 ---
 
 ### Protocol
+(For test person #i)
+### Introduction
+Hi [user's name]. Today we are looking for ways to improve the user experience of the responsivity editor in our drawing-app. With our responsivity editor we want to achieve the user to define how the layers should behave he resizes the panel he's drawing on. This is a test of the component; we are not testing you. If you find something difficult to use, chances are that others will as well, so your feedback helps everyone. This test of the component is simply a means of evaluating the component's design and to discover any issues we need to address.
+
+The study will take about [nr minutes] minutes. We'll answer any questions you have in the end of the study.
+
+We would like to make a video recording of the screen and your hands for evaluation purpose. To get your conscent we'd like you to sign the following form: [] (do we need other information?)
+
+Do you have any questions?
+Otherwise let's get started.
+
+### Test
+(Consider between subject design ((#i mod 4) + 1 ))
+
+In the next minutes you're asked to fulfill two tasks, each of them on a different version of our responsivity editor.
+Before we introduce you to the specific task you're asked to get used to working with each of the versions for [y minutes] minutes.
+
+(Perhaps: Show an example of a task (C3) to lead them what they should try out in the following phase)
+
+∀ V1 (V1, O): Here's our first version of the drawing app. Make sure to try out the reference mode by clicking on this button. You're given [y minutes], beginning now.
+
+∀ V1 V2. (V1, V2) : As you can see on the IPad screen, you're given a preset. On the first layer there is [...], on the second [...]...
+Now you're shown a video about how the different layers in the drawing should behave in the end when you're resizing the panel. You're asked to create the same behaviour when resizing the panel. You should try to be accurate (or fast). If you're finished say "STOP" (push the button).
+(show video.)
+
+
+
+
+
+
+
+
+
