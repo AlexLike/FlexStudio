@@ -175,9 +175,11 @@ To measure our goals, we task participants with
 
 ### Qualitative Dependent Variables
 
-**(U) System Usability Scale (SUS) Score**
+**(X) NASA TLX Score**
 
-**(X) Extended UX Questionnaire Predicate**
+### Additional Qualitative Data
+
+**A small set of custom questions on creativity, animation smoothness, joy of using, ...**
 
 ---
 
@@ -189,12 +191,21 @@ To measure our goals, we task participants with
 
 (HEA) There will be no effect of input modality (V1) on the overall accuracy (E/A) of the responsivity process in a closed task (V2 ∈ {C1, C2}).
 
-(HU) There will be no effect of input modality (V1) on the SUS score (U) awarded by the users.
+(HX) There will be no effect of input modality (V1) on the TLX score (X) awarded by the users.
 
-(HX) There will be no effect of input modality (V1) on the subjective user experience and creative process (X).
+---
+
+### Between-Subject Design
+
+| IV Seq. ID | (V1,V2)1 | (V1,V2)2 |
+| ---------- | -------- | -------- |
+| 1          | (I,C1)   | (D,C2)   |
+| 2          | (I,C2)   | (D,C1)   |
+| 3          | (D,C1)   | (I,C2)   |
+| 4          | (D,C2)   | (I,C1)   |
+
+∀ V1, V2. (V1,V2) is preceded by training (V1,O).
 
 ---
 
 ### Protocol
-
-WIP
