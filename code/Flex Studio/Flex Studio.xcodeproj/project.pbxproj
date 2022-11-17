@@ -47,6 +47,8 @@
 		3D580CC32917BBB200BA58DA /* Image+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580CC22917BBB200BA58DA /* Image+Ext.swift */; };
 		3D93D57E29183FF400293FE2 /* LayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D93D57D29183FF400293FE2 /* LayerView.swift */; };
 		3DD199D72917E0E00005886E /* MainNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD199D62917E0E00005886E /* MainNavigationView.swift */; };
+		E9300DF7292653AA00D78892 /* PinMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9300DF6292653AA00D78892 /* PinMenuView.swift */; };
+		E9300DF9292653D300D78892 /* LayerPinState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9300DF8292653D300D78892 /* LayerPinState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +93,8 @@
 		3D580CC22917BBB200BA58DA /* Image+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Ext.swift"; sourceTree = "<group>"; };
 		3D93D57D29183FF400293FE2 /* LayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerView.swift; sourceTree = "<group>"; };
 		3DD199D62917E0E00005886E /* MainNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationView.swift; sourceTree = "<group>"; };
+		E9300DF6292653AA00D78892 /* PinMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinMenuView.swift; sourceTree = "<group>"; };
+		E9300DF8292653D300D78892 /* LayerPinState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerPinState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,7 @@
 				14CD95B829173BF700BE08FB /* LayerState.swift */,
 				14CD95BA29173C3600BE08FB /* EditorTool.swift */,
 				146976872923EF5300F4BF76 /* DrawToolPickerState.swift */,
+				E9300DF8292653D300D78892 /* LayerPinState.swift */,
 			);
 			path = Identities;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				3D2472E3291942040000583C /* PanelViewModel.swift */,
 				14CD95BC29173CAE00BE08FB /* PanelView.swift */,
 				3D1F1423291E587400850B65 /* PanelLayerSelectionView.swift */,
+				E9300DF6292653AA00D78892 /* PinMenuView.swift */,
 			);
 			path = PanelView;
 			sourceTree = "<group>";
@@ -359,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14EB30CF2916C94D00744608 /* DrawingTransformer.swift in Sources */,
+				E9300DF7292653AA00D78892 /* PinMenuView.swift in Sources */,
 				146976882923EF5300F4BF76 /* DrawToolPickerState.swift in Sources */,
 				3D580CBB2917AC3C00BA58DA /* CGFloat+Ext.swift in Sources */,
 				3D580CBD2917AD3C00BA58DA /* View+Ext.swift in Sources */,
@@ -372,6 +379,7 @@
 				3D2472E4291942040000583C /* PanelViewModel.swift in Sources */,
 				14752FE62916B92A0084BF7E /* PersistenceLayer.swift in Sources */,
 				3D580C98291796E100BA58DA /* PanelsViewModel.swift in Sources */,
+				E9300DF9292653D300D78892 /* LayerPinState.swift in Sources */,
 				3D2472EC2919A01D0000583C /* FSToolCircleButton.swift in Sources */,
 				3DD199D72917E0E00005886E /* MainNavigationView.swift in Sources */,
 				14CD95BD29173CAE00BE08FB /* PanelView.swift in Sources */,
