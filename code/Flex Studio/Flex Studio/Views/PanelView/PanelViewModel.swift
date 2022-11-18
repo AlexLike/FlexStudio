@@ -8,7 +8,15 @@
 import SwiftUI
 
 class PanelViewModel: ObservableObject {
+    // Mode
+    
+    @Published var responsivityInterfaceVariant: ResponsivityInterfaceVariant = .indirect
+    @Published var selectedTool: EditorTool? = .defaultDraw
+    private var lruTool: EditorTool?
+    
+    
     // Display
+    
     @Published var aspectProgression: CGFloat = 0.5
 
     // Panel
@@ -19,10 +27,9 @@ class PanelViewModel: ObservableObject {
     @Published var dragOffset: CGSize = .zero
 
     // Layer
-
+    
+    @Published var selectedPinLocation: PinLocation? = .loc(.center, .center)
     @Published var selectedLayer: Layer?
-    @Published var selectedTool: EditorTool? = .defaultDraw
-    private var lruTool: EditorTool?
 
     // MARK: - PanelView
 

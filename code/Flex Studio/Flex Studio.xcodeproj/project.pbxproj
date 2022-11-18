@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1405B35029266D1E009D7759 /* ResponsivityControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1405B34F29266D1E009D7759 /* ResponsivityControlView.swift */; };
+		1405B35229266DD5009D7759 /* ResponsivityInterfaceVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1405B35129266DD5009D7759 /* ResponsivityInterfaceVariant.swift */; };
+		1405B3552926D39A009D7759 /* StaticButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1405B3542926D39A009D7759 /* StaticButtonStyle.swift */; };
+		1405B3572926D5EF009D7759 /* ScaleReactiveButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1405B3562926D5EF009D7759 /* ScaleReactiveButtonStyle.swift */; };
+		1405B3592926D8E5009D7759 /* PinGizmo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1405B3582926D8E5009D7759 /* PinGizmo.swift */; };
+		1405B35B2926FB9B009D7759 /* KeyframeGizmo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1405B35A2926FB9B009D7759 /* KeyframeGizmo.swift */; };
 		1447CDFE29257ADB0047407A /* Comparable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1447CDFD29257ADB0047407A /* Comparable+Ext.swift */; };
 		146976862923EE7A00F4BF76 /* DrawToolPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146976852923EE7A00F4BF76 /* DrawToolPickerView.swift */; };
 		146976882923EF5300F4BF76 /* DrawToolPickerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146976872923EF5300F4BF76 /* DrawToolPickerState.swift */; };
@@ -47,11 +53,16 @@
 		3D580CC32917BBB200BA58DA /* Image+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580CC22917BBB200BA58DA /* Image+Ext.swift */; };
 		3D93D57E29183FF400293FE2 /* LayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D93D57D29183FF400293FE2 /* LayerView.swift */; };
 		3DD199D72917E0E00005886E /* MainNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD199D62917E0E00005886E /* MainNavigationView.swift */; };
-		E9300DF7292653AA00D78892 /* PinMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9300DF6292653AA00D78892 /* PinMenuView.swift */; };
-		E9300DF9292653D300D78892 /* LayerPinState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9300DF8292653D300D78892 /* LayerPinState.swift */; };
+		E9300DF9292653D300D78892 /* PinLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9300DF8292653D300D78892 /* PinLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1405B34F29266D1E009D7759 /* ResponsivityControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsivityControlView.swift; sourceTree = "<group>"; };
+		1405B35129266DD5009D7759 /* ResponsivityInterfaceVariant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsivityInterfaceVariant.swift; sourceTree = "<group>"; };
+		1405B3542926D39A009D7759 /* StaticButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticButtonStyle.swift; sourceTree = "<group>"; };
+		1405B3562926D5EF009D7759 /* ScaleReactiveButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleReactiveButtonStyle.swift; sourceTree = "<group>"; };
+		1405B3582926D8E5009D7759 /* PinGizmo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinGizmo.swift; sourceTree = "<group>"; };
+		1405B35A2926FB9B009D7759 /* KeyframeGizmo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyframeGizmo.swift; sourceTree = "<group>"; };
 		1447CDFD29257ADB0047407A /* Comparable+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comparable+Ext.swift"; sourceTree = "<group>"; };
 		146976852923EE7A00F4BF76 /* DrawToolPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawToolPickerView.swift; sourceTree = "<group>"; };
 		146976872923EF5300F4BF76 /* DrawToolPickerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawToolPickerState.swift; sourceTree = "<group>"; };
@@ -93,8 +104,7 @@
 		3D580CC22917BBB200BA58DA /* Image+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Ext.swift"; sourceTree = "<group>"; };
 		3D93D57D29183FF400293FE2 /* LayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerView.swift; sourceTree = "<group>"; };
 		3DD199D62917E0E00005886E /* MainNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationView.swift; sourceTree = "<group>"; };
-		E9300DF6292653AA00D78892 /* PinMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinMenuView.swift; sourceTree = "<group>"; };
-		E9300DF8292653D300D78892 /* LayerPinState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerPinState.swift; sourceTree = "<group>"; };
+		E9300DF8292653D300D78892 /* PinLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +118,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1405B34E29266CB6009D7759 /* ResponsivityControl */ = {
+			isa = PBXGroup;
+			children = (
+				1405B34F29266D1E009D7759 /* ResponsivityControlView.swift */,
+				1405B3582926D8E5009D7759 /* PinGizmo.swift */,
+				1405B35A2926FB9B009D7759 /* KeyframeGizmo.swift */,
+			);
+			path = ResponsivityControl;
+			sourceTree = "<group>";
+		};
+		1405B3532926D376009D7759 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				1405B3542926D39A009D7759 /* StaticButtonStyle.swift */,
+				1405B3562926D5EF009D7759 /* ScaleReactiveButtonStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
 		14752FD02916B9290084BF7E = {
 			isa = PBXGroup;
 			children = (
@@ -153,7 +182,8 @@
 				14CD95B829173BF700BE08FB /* LayerState.swift */,
 				14CD95BA29173C3600BE08FB /* EditorTool.swift */,
 				146976872923EF5300F4BF76 /* DrawToolPickerState.swift */,
-				E9300DF8292653D300D78892 /* LayerPinState.swift */,
+				E9300DF8292653D300D78892 /* PinLocation.swift */,
+				1405B35129266DD5009D7759 /* ResponsivityInterfaceVariant.swift */,
 			);
 			path = Identities;
 			sourceTree = "<group>";
@@ -161,6 +191,7 @@
 		14EB30CA2916BFEB00744608 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				1405B3532926D376009D7759 /* Styles */,
 				3D2472EA2919A0090000583C /* Helper */,
 				3D39BC222917935200268337 /* Extensions */,
 				3D2472E929199FF90000583C /* CustomViews */,
@@ -192,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				3DD199D62917E0E00005886E /* MainNavigationView.swift */,
+				1405B34E29266CB6009D7759 /* ResponsivityControl */,
 				3D580C992917A07F00BA58DA /* PanelsView */,
 				3D2472E2291941B10000583C /* PanelView */,
 				3D580C9A2917A08300BA58DA /* LayerView */,
@@ -215,7 +247,6 @@
 				3D2472E3291942040000583C /* PanelViewModel.swift */,
 				14CD95BC29173CAE00BE08FB /* PanelView.swift */,
 				3D1F1423291E587400850B65 /* PanelLayerSelectionView.swift */,
-				E9300DF6292653AA00D78892 /* PinMenuView.swift */,
 			);
 			path = PanelView;
 			sourceTree = "<group>";
@@ -364,10 +395,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1405B35B2926FB9B009D7759 /* KeyframeGizmo.swift in Sources */,
 				14EB30CF2916C94D00744608 /* DrawingTransformer.swift in Sources */,
-				E9300DF7292653AA00D78892 /* PinMenuView.swift in Sources */,
 				146976882923EF5300F4BF76 /* DrawToolPickerState.swift in Sources */,
 				3D580CBB2917AC3C00BA58DA /* CGFloat+Ext.swift in Sources */,
+				1405B3572926D5EF009D7759 /* ScaleReactiveButtonStyle.swift in Sources */,
 				3D580CBD2917AD3C00BA58DA /* View+Ext.swift in Sources */,
 				14CD95BB29173C3600BE08FB /* EditorTool.swift in Sources */,
 				14EB30D22916CEE800744608 /* Panel.swift in Sources */,
@@ -379,14 +411,17 @@
 				3D2472E4291942040000583C /* PanelViewModel.swift in Sources */,
 				14752FE62916B92A0084BF7E /* PersistenceLayer.swift in Sources */,
 				3D580C98291796E100BA58DA /* PanelsViewModel.swift in Sources */,
-				E9300DF9292653D300D78892 /* LayerPinState.swift in Sources */,
+				E9300DF9292653D300D78892 /* PinLocation.swift in Sources */,
 				3D2472EC2919A01D0000583C /* FSToolCircleButton.swift in Sources */,
+				1405B3592926D8E5009D7759 /* PinGizmo.swift in Sources */,
 				3DD199D72917E0E00005886E /* MainNavigationView.swift in Sources */,
 				14CD95BD29173CAE00BE08FB /* PanelView.swift in Sources */,
 				3D580C962917969200BA58DA /* PanelsView.swift in Sources */,
+				1405B35029266D1E009D7759 /* ResponsivityControlView.swift in Sources */,
 				3D2472F1291A3BCB0000583C /* ExecutionEnvironment.swift in Sources */,
 				3D93D57E29183FF400293FE2 /* LayerView.swift in Sources */,
 				3D1F1425291E587400850B65 /* PanelLayerSelectionView.swift in Sources */,
+				1405B35229266DD5009D7759 /* ResponsivityInterfaceVariant.swift in Sources */,
 				146976862923EE7A00F4BF76 /* DrawToolPickerView.swift in Sources */,
 				1447CDFE29257ADB0047407A /* Comparable+Ext.swift in Sources */,
 				3D580CA22917A79B00BA58DA /* Font+Ext.swift in Sources */,
@@ -395,6 +430,7 @@
 				14752FDD2916B9290084BF7E /* Flex_StudioApp.swift in Sources */,
 				3D580CA02917A67700BA58DA /* Color+Ext.swift in Sources */,
 				14BDC2C52924F763004FA02B /* FrameView.swift in Sources */,
+				1405B3552926D39A009D7759 /* StaticButtonStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

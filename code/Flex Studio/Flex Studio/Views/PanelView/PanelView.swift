@@ -16,7 +16,7 @@ struct PanelView: View {
         ZStack {
             // Paper Background
             Color.fsWhite
-            
+
             // Layers
             ForEach(panel.sortedLayers) { layer in
                 let isSelected = layer == viewModel.selectedLayer
@@ -29,9 +29,12 @@ struct PanelView: View {
                 .allowsHitTesting(isSelected)
                 .opacity(layer.isVisible ? 1 : 0)
             }
-            
+
             // Frame
-            FrameView(aspectProgression: $viewModel.aspectProgression, isResizable: viewModel.isEditingResponsivity)
+            FrameView(
+                aspectProgression: $viewModel.aspectProgression,
+                isResizable: viewModel.isEditingResponsivity
+            )
 
             // Tools
             DrawToolPickerView(state: $viewModel.drawToolPickerState)
@@ -41,7 +44,20 @@ struct PanelView: View {
                 Spacer()
                 VStack {
                     Spacer()
-                    FSToolCircleButton(symbol: Image.fsResize, isSelected: $viewModel.isEditingResponsivity)
+                    Group {
+                        switch viewModel.responsivityInterfaceVariant {
+                        case .indirect:
+                            ResponsivityControlView.indirect(
+                                isExpanded: $viewModel.isEditingResponsivity,
+                                selectedLocation: $viewModel.selectedPinLocation
+                            )
+                        case .direct:
+                            ResponsivityControlView.direct(
+                                isExpanded: $viewModel.isEditingResponsivity
+                            )
+                        }
+                    }
+                    .padding([.bottom, .top, .trailing], 29)
                 }
             }
             .padding(20 /* safeAreainsets.bottom */ )

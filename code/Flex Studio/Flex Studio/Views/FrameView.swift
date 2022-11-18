@@ -80,7 +80,7 @@ struct FrameView: View {
                     .rotated(by: .pi))
 
             Canvas(rendersAsynchronously: true) { context, _ in
-                context.fill(outer, with: .color(.fsGray))
+                context.fill(outer, with: .color(.fsBackground))
                 context.stroke(boundary, with: .color(.gray), style: .init(lineWidth: 3))
                 if isResizable {
                     if aspectProgression <= 0.5 {
