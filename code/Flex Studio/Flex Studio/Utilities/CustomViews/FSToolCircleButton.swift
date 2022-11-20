@@ -25,6 +25,6 @@ struct FSToolCircleButton: View {
                         .foregroundColor(isSelected ? Color.fsWhite : Color.fsDarkGray)
                 )
         }
-        .fsButtonStyleScale()
+        
     }
 }

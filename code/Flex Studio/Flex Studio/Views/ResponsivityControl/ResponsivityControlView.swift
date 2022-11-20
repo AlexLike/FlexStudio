@@ -15,7 +15,7 @@ import SwiftUI
 /// `rightSupport` properties.
 ///
 /// At compile time, the two `ResponsivityControlView`s specialize.
-/// 
+///
 protocol ResponsivityGizmo: View {
     associatedtype Bottom: View
     associatedtype Right: View
@@ -30,7 +30,7 @@ protocol ResponsivityGizmo: View {
 /// - `ResponsivityControlView.indirect(:,:)` yields a pin menu.
 /// - `ResponsivityControlView.direct(:)` yields a keyframe menu.
 ///
-struct ResponsivityControlView<G: ResponsivityGizmo>: View {
+struct ResponsivityControlView<G: ResponsivityGizmo, A>: View {
     // Convenience initializers are available below as static members.
     let gizmo: G
     @Binding var isExpanded: Bool
@@ -42,16 +42,17 @@ struct ResponsivityControlView<G: ResponsivityGizmo>: View {
             GridRow {
                 if isExpanded {
                     gizmo
-                        .padding([.top, .leading])
-                    gizmo.bottomSupport
-                        .rotationEffect(.radians(-.pi / 2))
+                    gizmo.rightSupport
+                        .font(.subheadline)
                         .fixedSize()
+                        .rotationEffect(.radians(-.pi / 2))
                         .frame(width: 2 * cornerRadius)
                 }
             }
             GridRow {
                 if isExpanded {
-                    gizmo.rightSupport
+                    gizmo.bottomSupport
+                        .font(.subheadline)
                 }
                 Button {
                     withAnimation(
@@ -82,39 +83,58 @@ struct ResponsivityControlView<G: ResponsivityGizmo>: View {
     }
 }
 
-extension ResponsivityControlView where G == PinGizmo {
+extension ResponsivityControlView where G == PinGizmo<A> {
     static func indirect(
         isExpanded: Binding<Bool>,
-        selectedLocation: Binding<PinLocation?>
+        assistant: A
     ) -> Self {
         .init(
-            gizmo: .init(selectedLocation: selectedLocation),
+            gizmo: .init(assistant: assistant),
             isExpanded: isExpanded
         )
     }
 }
 
-extension ResponsivityControlView where G == KeyframeGizmo {
+extension ResponsivityControlView where G == KeyframeGizmo<A> {
     static func direct(
-        isExpanded: Binding<Bool>
+        isExpanded: Binding<Bool>,
+        assistant: A
     ) -> Self {
         .init(
-            gizmo: .init(),
+            gizmo: .init(assistant: assistant),
             isExpanded: isExpanded
         )
     }
 }
 
 struct ResponsivityControl_Previews: PreviewProvider {
+    class MockAssistant: PinAssistant, KeyframeAssistant {
+        @Published var aspectProgression: CGFloat = 0.75
+
+        @Published var selectedPinLocation: PinLocation? = .loc(.center, .center)
+        @Published var sortedKeyframeProgressions: [CGFloat] = [0.2, 0.45, 0.77]
+
+        func toggleKeyframe() {}
+    }
+
     struct Container: View {
+        let variant: ResponsivityInterfaceVariant
         @State var isExpanded: Bool = true
-        @State var selectedPinLocation: PinLocation? = .loc(.center, .center)
+        @StateObject var assistant = MockAssistant()
 
         var body: some View {
-            ResponsivityControlView.indirect(
-                isExpanded: $isExpanded,
-                selectedLocation: $selectedPinLocation
-            )
+            switch variant {
+            case .indirect:
+                ResponsivityControlView.indirect(
+                    isExpanded: $isExpanded,
+                    assistant: assistant
+                )
+            case .direct:
+                ResponsivityControlView.direct(
+                    isExpanded: $isExpanded,
+                    assistant: assistant
+                )
+            }
         }
     }
 
@@ -123,7 +143,7 @@ struct ResponsivityControl_Previews: PreviewProvider {
             Spacer()
             HStack {
                 Spacer()
-                Container()
+                Container(variant: .direct)
             }
         }
         .frame(maxWidth: 500, maxHeight: 500)

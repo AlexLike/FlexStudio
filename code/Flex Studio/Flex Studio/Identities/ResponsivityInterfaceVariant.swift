@@ -10,6 +10,6 @@ import Foundation
 enum ResponsivityInterfaceVariant {
     /// A pin-based interface.
     case indirect
-    /// A keyframe-esque interface.
+    /// A keyframe-based interface.
     case direct
 }

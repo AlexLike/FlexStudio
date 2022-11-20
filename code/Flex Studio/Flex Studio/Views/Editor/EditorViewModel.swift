@@ -1,37 +1,47 @@
 //
-//  PanelViewModel.swift
+//  EditorViewModel.swift
 //  Flex Studio
 //
 //  Created by Kai Zheng on 07.11.22.
 //
 
+import Combine
 import SwiftUI
 
-class PanelViewModel: ObservableObject {
+/// A service for manipulating a given panel.
+class EditorViewModel: ObservableObject {
+    // Panel
+    let panel: Panel
+    private var panelSubscription: AnyCancellable?
+
     // Mode
-    
-    @Published var responsivityInterfaceVariant: ResponsivityInterfaceVariant = .indirect
+    @Published var responsivityInterfaceVariant: ResponsivityInterfaceVariant = .direct
     @Published var selectedTool: EditorTool? = .defaultDraw
     private var lruTool: EditorTool?
-    
-    
+
     // Display
-    
     @Published var aspectProgression: CGFloat = 0.5
 
     // Panel
-
     @Published var panelScale: CGFloat = 1
     @Published var panelScaleCurrent: CGFloat = 1
-
     @Published var dragOffset: CGSize = .zero
 
     // Layer
-    
-    @Published var selectedPinLocation: PinLocation? = .loc(.center, .center)
-    @Published var selectedLayer: Layer?
+    @Published var selectedLayer: Layer {
+        willSet {
+            layerSubscription = newValue.objectWillChange.sink { self.objectWillChange.send() }
+        }
+    }
+    private var layerSubscription: AnyCancellable?
 
-    // MARK: - PanelView
+    init(panel: Panel) {
+        self.panel = panel
+        selectedLayer = panel.sortedLayers.last!
+        panelSubscription = panel.objectWillChange.sink { self.objectWillChange.send() }
+    }
+
+    // MARK: - EditorView
 
     lazy var magnificationGesture = MagnificationGesture()
         .onChanged { [weak self] value in
@@ -79,11 +89,11 @@ class PanelViewModel: ObservableObject {
     var isEditingResponsivity: Bool {
         get { if case .responsivity = selectedTool { return true } else { return false } }
         set {
-            if !isEditingResponsivity && newValue {
+            if !isEditingResponsivity, newValue {
                 lruTool = selectedTool
                 selectedTool = .responsivity
             }
-            if isEditingResponsivity && !newValue {
+            if isEditingResponsivity, !newValue {
                 let restorableTool = lruTool
                 lruTool = selectedTool
                 selectedTool = restorableTool
@@ -94,7 +104,7 @@ class PanelViewModel: ObservableObject {
     // MARK: - PanelResizingView
 
     @MainActor
-    func savePreviewImage(panel: Panel) {
+    func savePreviewImage() {
         UIGraphicsBeginImageContext(panel.size)
 
         let areaSize = CGRect(origin: .zero,
@@ -114,9 +124,9 @@ class PanelViewModel: ObservableObject {
         panel.previewImage = allLayersImage
     }
 
-    // MARK: - PanelLayerSelectionView
+    // MARK: - LayerSelectionView
 
-    func move(panel: Panel, fromOffsets source: IndexSet, toOffset destination: Int) {
+    func move(fromOffsets source: IndexSet, toOffset destination: Int) {
         var sortedLayers = panel.sortedLayers
         sortedLayers.move(fromOffsets: source, toOffset: destination)
 

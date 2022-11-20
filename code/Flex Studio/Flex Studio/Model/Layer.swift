@@ -20,13 +20,24 @@ extension Layer {
 
     /// The drawing pictured by this layer.
     var drawing: PKDrawing {
-        get { (drawing_ as! PKDrawingReference) as PKDrawing }
+        get { (drawing_ as? PKDrawingReference) as? PKDrawing ?? .init() }
         set { drawing_ = newValue as PKDrawingReference }
     }
-    
+
     var isVisible: Bool {
         get { isVisible_ }
         set { isVisible_ = newValue }
+    }
+
+    var pinLocation: PinLocation? {
+        get { pinLocation_ >= 0 ? .from(id: pinLocation_) : nil }
+        set {
+            if let newValue {
+                pinLocation_ = newValue.id
+            } else {
+                pinLocation_ = -1
+            }
+        }
     }
 
     // MARK: - Relationships
@@ -35,6 +46,14 @@ extension Layer {
     var panel: Panel {
         get { panel_! }
         set { panel_ = newValue }
+    }
+
+    var keyframes: Set<Keyframe> {
+        get { keyframes_ as? Set<Keyframe> ?? [] }
+        set { keyframes_ = newValue as NSSet }
+    }
+    
+    var sortedKeyframes: [Keyframe] { keyframes.sorted(using: KeyPathComparator(\Keyframe.aspectProgression))
     }
 
     // MARK: - CD operations
@@ -52,9 +71,18 @@ extension Layer {
 
     func delete(removingFromPanel: Bool = true) {
         let context = managedObjectContext!
+        
         if removingFromPanel {
-            panel.layers.remove(self)
+            panel.removeFromLayers_(self)
         }
-        context.delete(self)
+
+        keyframes.forEach { $0.delete(removingFromLayer: false) }
+        keyframes = []
+
+        Task(priority: .utility) {
+            try await Task.sleep(for: .seconds(1))
+            assert((try? validateForDelete()) != nil)
+            context.delete(self)
+        }
     }
 }

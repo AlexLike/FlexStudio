@@ -81,7 +81,7 @@ struct FrameView: View {
 
             Canvas(rendersAsynchronously: true) { context, _ in
                 context.fill(outer, with: .color(.fsBackground))
-                context.stroke(boundary, with: .color(.gray), style: .init(lineWidth: 3))
+                context.stroke(boundary, with: .color(.gray), style: .init(lineWidth: isResizable ? 3 : 1))
                 if isResizable {
                     if aspectProgression <= 0.5 {
                         context.fill(leftDragger, with: .color(.gray))
@@ -182,13 +182,13 @@ struct FrameView: View {
                 }
             }
             .onEnded { _ in
-                print("Stopped dragging.")
+                Self.logger.notice("Stopped dragging.")
                 convert = nil
             }
     }
 
     static let draggerSize = CGSize(width: 400, height: 200)
-    static let draggerTemplate = Path { (p: inout Path) in
+    static let draggerTemplate = Path { p in
         p.move(to: CGPoint(x: 17.5, y: -16))
         p.addLine(to: CGPoint(x: -17.5, y: -16))
         p.addCurve(

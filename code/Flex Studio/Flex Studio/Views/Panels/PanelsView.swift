@@ -20,17 +20,17 @@ struct PanelsView: View {
                 LazyVGrid(columns: viewModel.itemColumns, spacing: .fsPaddingLarge) {
                     ForEach(panels) { panel in
                         NavigationLink(
-                            destination: PanelView(panel: panel)
+                            destination: EditorView(panel: panel)
                         ) {
                             PanelItemView(panel: panel, viewModel: viewModel)
                         }
-                        .fsButtonStyleScale()
+                        .buttonStyle(.scaleReactive(factor: 1.05))
                     }
 
                     Button(action: viewModel.addItem) {
                         AddItemView(viewModel: viewModel)
                     }
-                    .fsButtonStyleScale()
+                    .buttonStyle(.scaleReactive(factor: 1.05))
                 }
                 .padding(.fsPaddingMedium)
                 .padding(.bottom, .fsPaddingLarge)

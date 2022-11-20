@@ -1,5 +1,5 @@
 //
-//  PanelLayerSelectionView.swift
+//  LayerSelectionView.swift
 //  Flex Studio
 //
 //  Created by Tim Kluser on 08.11.22.
@@ -7,9 +7,8 @@
 
 import SwiftUI
 
-struct PanelLayerSelectionView: View {
-    @ObservedObject var panel: Panel
-    @ObservedObject var viewModel: PanelViewModel
+struct LayerSelectionView: View {
+    @ObservedObject var viewModel: EditorViewModel
     
     var body: some View {
         VStack {
@@ -20,18 +19,18 @@ struct PanelLayerSelectionView: View {
                 .padding(.bottom, .fsPaddingMedium)
             
             List {
-                ForEach(panel.sortedLayers) { layer in
-                    LayerRow(panel: panel, layer: layer, viewModel: viewModel)
+                ForEach(viewModel.panel.sortedLayers) { layer in
+                    LayerRow(layer: layer, viewModel: viewModel)
                         .swipeActions(allowsFullSwipe: false){
                             Button {
-                                panel.deleteLayer(layer: layer)
+                                viewModel.panel.deleteLayer(layer: layer)
                             } label: {
                                 Label("Mute", systemImage: "trash")
                             }
                             .tint(.red)
                         }
                 }
-                .onMove(perform: { viewModel.move(panel: panel, fromOffsets: $0, toOffset: $1) })
+                .onMove(perform: { viewModel.move(fromOffsets: $0, toOffset: $1) })
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
                 .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
@@ -40,7 +39,7 @@ struct PanelLayerSelectionView: View {
             .listStyle(.plain)
             .scrollContentBackground(.hidden)
             
-            Button(action: panel.addLayer) {
+            Button(action: viewModel.panel.createLayer) {
                 Image(systemName: "plus.circle.fill")
                     .font(.system(size: 32))
                     .foregroundColor(.fsGray)
@@ -55,9 +54,8 @@ struct PanelLayerSelectionView: View {
     }
     
     private struct LayerRow: View {
-        @ObservedObject var panel: Panel
         @ObservedObject var layer: Layer
-        @ObservedObject var viewModel: PanelViewModel
+        @ObservedObject var viewModel: EditorViewModel
         
         var body: some View {
             ZStack {
@@ -81,7 +79,7 @@ struct PanelLayerSelectionView: View {
                         .foregroundColor(.fsDarkGray)
                         .highPriorityGesture(TapGesture().onEnded {
                             layer.isVisible.toggle()
-                            panel.objectWillChange.send()
+                            viewModel.panel.objectWillChange.send()
                         })
                 }
                 .padding(.horizontal, 7.5)
@@ -90,7 +88,7 @@ struct PanelLayerSelectionView: View {
             .padding(.horizontal, 2 * .fsPaddingSmall)
             .onTapGesture {
                 viewModel.selectedLayer = layer
-                panel.objectWillChange.send()
+                viewModel.panel.objectWillChange.send()
             }
         }
     }

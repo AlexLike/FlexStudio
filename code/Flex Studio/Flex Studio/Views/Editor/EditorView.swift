@@ -1,5 +1,5 @@
 //
-//  PanelView.swift
+//  EditorView.swift
 //  Flex Studio
 //
 //  Created by Alexander Zank on 01.11.22.
@@ -7,10 +7,14 @@
 
 import SwiftUI
 
-struct PanelView: View {
+struct EditorView: View {
     @Environment(\.dismiss) var dismiss: DismissAction
-    @ObservedObject var panel: Panel
-    @StateObject private var viewModel = PanelViewModel()
+    @StateObject var viewModel: EditorViewModel
+    
+    init(panel: Panel) {
+        _viewModel = StateObject(wrappedValue: EditorViewModel(panel: panel))
+    }
+    
 
     var body: some View {
         ZStack {
@@ -18,7 +22,7 @@ struct PanelView: View {
             Color.fsWhite
 
             // Layers
-            ForEach(panel.sortedLayers) { layer in
+            ForEach(viewModel.panel.sortedLayers) { layer in
                 let isSelected = layer == viewModel.selectedLayer
                 LayerView(
                     layer: layer,
@@ -40,7 +44,7 @@ struct PanelView: View {
             DrawToolPickerView(state: $viewModel.drawToolPickerState)
                 .allowsHitTesting(false)
             HStack {
-                PanelLayerSelectionView(panel: panel, viewModel: viewModel)
+                LayerSelectionView(viewModel: viewModel)
                 Spacer()
                 VStack {
                     Spacer()
@@ -49,11 +53,12 @@ struct PanelView: View {
                         case .indirect:
                             ResponsivityControlView.indirect(
                                 isExpanded: $viewModel.isEditingResponsivity,
-                                selectedLocation: $viewModel.selectedPinLocation
+                                assistant: viewModel
                             )
                         case .direct:
                             ResponsivityControlView.direct(
-                                isExpanded: $viewModel.isEditingResponsivity
+                                isExpanded: $viewModel.isEditingResponsivity,
+                                assistant: viewModel
                             )
                         }
                     }
@@ -75,21 +80,21 @@ struct PanelView: View {
                 }
             }
         }
-        .navigationTitle("Panel \(panel.creationDate?.toString() ?? Date.nilString)")
+        .navigationTitle("Panel \(viewModel.panel.creationDate?.toString() ?? Date.nilString)")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()
         .onAppear {
-            viewModel.selectedLayer = panel.layers.first
+            viewModel.selectedLayer = viewModel.panel.layers.first!
         }
         .onDisappear {
-            viewModel.savePreviewImage(panel: panel)
+            viewModel.savePreviewImage()
         }
     }
 }
 
-struct Panels_Previews: PreviewProvider {
+struct EditorView_Previews: PreviewProvider {
     static var previews: some View {
-        PanelView(panel: .create(in: PersistenceLayer.preview.viewContext))
+        EditorView(panel: .create(in: PersistenceLayer.preview.viewContext))
             .environment(\.managedObjectContext, PersistenceLayer.preview.viewContext)
     }
 }

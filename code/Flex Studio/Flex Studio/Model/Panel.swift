@@ -70,17 +70,20 @@ extension Panel {
         return p
     }
     
-    func addLayer() {
+    func createLayer() {
         Layer.create(for: self, order: Int16(self.layers.count))
     }
     
     func deleteLayer(layer : Layer) {
-        // TODO: delete layer entirely
         let deletedOrder = Int(layer.order)
-        self.layers.remove(layer)
-        //layer.delete()
-        for i in deletedOrder ..< layers.count {
-            self.sortedLayers[i].order -= 1
+        layer.delete(removingFromPanel: true)
+        
+        if layers.count >= 1 {
+            for i in deletedOrder ..< layers.count {
+                self.sortedLayers[i].order -= 1
+            }
+        } else {
+            createLayer()
         }
     }
 
@@ -92,8 +95,15 @@ extension Panel {
     }()
 
     func delete() {
+        let context = managedObjectContext!
+        
         layers.forEach { $0.delete(removingFromPanel: false) }
         layers = []
-        managedObjectContext!.delete(self)
+        
+        Task(priority: .utility) {
+            try await Task.sleep(for: .seconds(1))
+            assert({ (try? validateForDelete()) != nil }())
+            context.delete(self)
+        }
     }
 }
