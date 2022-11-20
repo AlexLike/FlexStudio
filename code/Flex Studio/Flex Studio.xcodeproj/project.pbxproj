@@ -53,6 +53,8 @@
 		3D580CC32917BBB200BA58DA /* Image+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580CC22917BBB200BA58DA /* Image+Ext.swift */; };
 		3D93D57E29183FF400293FE2 /* LayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D93D57D29183FF400293FE2 /* LayerView.swift */; };
 		3DD199D72917E0E00005886E /* MainNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD199D62917E0E00005886E /* MainNavigationView.swift */; };
+		3DD46B11292A3FB5009A902F /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD46B10292A3FB5009A902F /* Array+Ext.swift */; };
+		3DD46B13292A468D009A902F /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD46B12292A468D009A902F /* DebugView.swift */; };
 		E9300DF9292653D300D78892 /* PinLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9300DF8292653D300D78892 /* PinLocation.swift */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +106,8 @@
 		3D580CC22917BBB200BA58DA /* Image+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Ext.swift"; sourceTree = "<group>"; };
 		3D93D57D29183FF400293FE2 /* LayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerView.swift; sourceTree = "<group>"; };
 		3DD199D62917E0E00005886E /* MainNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationView.swift; sourceTree = "<group>"; };
+		3DD46B10292A3FB5009A902F /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
+		3DD46B12292A468D009A902F /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		E9300DF8292653D300D78892 /* PinLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -223,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				3DD199D62917E0E00005886E /* MainNavigationView.swift */,
+				3DD46B12292A468D009A902F /* DebugView.swift */,
 				1405B34E29266CB6009D7759 /* ResponsivityControl */,
 				3D580C992917A07F00BA58DA /* PanelsView */,
 				3D2472E2291941B10000583C /* PanelView */,
@@ -278,6 +283,7 @@
 				3D580CBC2917AD3C00BA58DA /* View+Ext.swift */,
 				3D580CC22917BBB200BA58DA /* Image+Ext.swift */,
 				1447CDFD29257ADB0047407A /* Comparable+Ext.swift */,
+				3DD46B10292A3FB5009A902F /* Array+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -398,6 +404,7 @@
 				1405B35B2926FB9B009D7759 /* KeyframeGizmo.swift in Sources */,
 				14EB30CF2916C94D00744608 /* DrawingTransformer.swift in Sources */,
 				146976882923EF5300F4BF76 /* DrawToolPickerState.swift in Sources */,
+				3DD46B11292A3FB5009A902F /* Array+Ext.swift in Sources */,
 				3D580CBB2917AC3C00BA58DA /* CGFloat+Ext.swift in Sources */,
 				1405B3572926D5EF009D7759 /* ScaleReactiveButtonStyle.swift in Sources */,
 				3D580CBD2917AD3C00BA58DA /* View+Ext.swift in Sources */,
@@ -410,6 +417,7 @@
 				14EB30D42916D0CE00744608 /* Layer.swift in Sources */,
 				3D2472E4291942040000583C /* PanelViewModel.swift in Sources */,
 				14752FE62916B92A0084BF7E /* PersistenceLayer.swift in Sources */,
+				3DD46B13292A468D009A902F /* DebugView.swift in Sources */,
 				3D580C98291796E100BA58DA /* PanelsViewModel.swift in Sources */,
 				E9300DF9292653D300D78892 /* PinLocation.swift in Sources */,
 				3D2472EC2919A01D0000583C /* FSToolCircleButton.swift in Sources */,
@@ -559,7 +567,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Flex Studio/Preview Content\"";
-				DEVELOPMENT_TEAM = 2WC6CZUK4Q;
+				DEVELOPMENT_TEAM = M4J79LU3NC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Flex-Studio-Info.plist";
@@ -589,7 +597,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Flex Studio/Preview Content\"";
-				DEVELOPMENT_TEAM = 2WC6CZUK4Q;
+				DEVELOPMENT_TEAM = M4J79LU3NC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Flex-Studio-Info.plist";

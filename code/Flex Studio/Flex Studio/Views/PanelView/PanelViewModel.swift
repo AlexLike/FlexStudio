@@ -108,10 +108,10 @@ class PanelViewModel: ObservableObject {
             image.draw(in: areaSize, blendMode: .normal, alpha: 1.0)
         }
 
-        let allLayersImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-
-        panel.previewImage = allLayersImage
+        if let allLayersImage: UIImage = UIGraphicsGetImageFromCurrentImageContext() {
+            UIGraphicsEndImageContext()
+            panel.previewImage = allLayersImage
+        }
     }
 
     // MARK: - PanelLayerSelectionView

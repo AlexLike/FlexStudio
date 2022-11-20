@@ -11,6 +11,7 @@ import SwiftUI
 struct PanelsView: View {
     @FetchRequest(fetchRequest: Panel.fetchRequestOldestToNewest) var panels: FetchedResults<Panel>
     private let viewModel = PanelsViewModel()
+    @State private var onDelete: (show: Bool, panel: Panel?) = (false, nil)
 
     var body: some View {
         ZStack {
@@ -23,9 +24,12 @@ struct PanelsView: View {
                             destination: PanelView(panel: panel)
                         ) {
                             PanelItemView(panel: panel, viewModel: viewModel)
+//                                .highPriorityGesture(LongPressGesture().onEnded { _ in
+//                                    onDelete = (true, panel)
+//                                })
                         }
                         .fsButtonStyleScale()
-                    }
+                     }
 
                     Button(action: viewModel.addItem) {
                         AddItemView(viewModel: viewModel)
@@ -37,13 +41,18 @@ struct PanelsView: View {
             }
         }
         .navigationTitle("Panels")
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {}) {
-                    Text("Select") // TODO: - Implement selecting logic
+        .overlay(
+            DebugView()
+        )
+        .alert("Delete", isPresented: $onDelete.show, actions: {
+            Button("Delete", action: {
+                if let panel = onDelete.panel {
+                    viewModel.deleteItem(panel: panel)
                 }
-            }
-        }
+            })
+            Button("Cancel", role: .cancel, action: {})
+        })
+        
     }
 
     private struct PanelItemView: View {
@@ -102,3 +111,5 @@ struct PanelsView_Previews: PreviewProvider {
             .environment(\.managedObjectContext, PersistenceLayer.preview.viewContext)
     }
 }
+
+
