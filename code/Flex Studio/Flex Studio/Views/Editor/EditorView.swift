@@ -10,11 +10,11 @@ import SwiftUI
 struct EditorView: View {
     @Environment(\.dismiss) var dismiss: DismissAction
     @StateObject var viewModel: EditorViewModel
-    
+    @State var isFullyVisible = false
+
     init(panel: Panel) {
         _viewModel = StateObject(wrappedValue: EditorViewModel(panel: panel))
     }
-    
 
     var body: some View {
         ZStack {
@@ -22,7 +22,7 @@ struct EditorView: View {
             Color.fsWhite
 
             // Layers
-            ForEach(viewModel.panel.sortedLayers) { layer in
+            ForEach(viewModel.translationAnnotatedSortedLayers, id: \.0) { (layer, translation) in
                 let isSelected = layer == viewModel.selectedLayer
                 LayerView(
                     layer: layer,
@@ -30,9 +30,13 @@ struct EditorView: View {
                         .selected(tool: viewModel.selectedTool) :
                         .static
                 )
+                .offset(translation)
+                .frame(width: Dimensions.canvasLength, height: Dimensions.canvasLength)
                 .allowsHitTesting(isSelected)
                 .opacity(layer.isVisible ? 1 : 0)
+                .disabled(!isFullyVisible)
             }
+            .layoutPriority(-1)
 
             // Frame
             FrameView(
@@ -85,6 +89,7 @@ struct EditorView: View {
         .navigationBarBackButtonHidden()
         .onAppear {
             viewModel.selectedLayer = viewModel.panel.layers.first!
+            isFullyVisible = true
         }
         .onDisappear {
             viewModel.savePreviewImage()

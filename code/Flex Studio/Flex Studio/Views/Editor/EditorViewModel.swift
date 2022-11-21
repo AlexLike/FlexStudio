@@ -15,14 +15,18 @@ class EditorViewModel: ObservableObject {
     private var panelSubscription: AnyCancellable?
 
     // Mode
-    @Published var responsivityInterfaceVariant: ResponsivityInterfaceVariant = .direct
+    @Published var responsivityInterfaceVariant: ResponsivityInterfaceVariant = .indirect
     @Published var selectedTool: EditorTool? = .defaultDraw
     private var lruTool: EditorTool?
 
-    // Display
+    /// A value ∈ [0,1] that linearizes `aspectRatio`, i.e. it linearly interpolates width ∈ [0,0.5]
+    /// and height ∈ [0.5,1].
+    /// - A value of 0.5 corresponds to a 1:1 aspect ratio.
+    /// - A value of 0 corresponds to a 2:1 aspect ratio.
+    /// - A value of 1 corresponds to a 1:2 aspect ratio.
     @Published var aspectProgression: CGFloat = 0.5
 
-    // Panel
+    // Panel (deprecated)
     @Published var panelScale: CGFloat = 1
     @Published var panelScaleCurrent: CGFloat = 1
     @Published var dragOffset: CGSize = .zero
@@ -30,10 +34,27 @@ class EditorViewModel: ObservableObject {
     // Layer
     @Published var selectedLayer: Layer {
         willSet {
-            layerSubscription = newValue.objectWillChange.sink { self.objectWillChange.send() }
+            selectedLayerSubscription = newValue.objectWillChange
+                .sink { self.objectWillChange.send() }
         }
     }
-    private var layerSubscription: AnyCancellable?
+
+    private var selectedLayerSubscription: AnyCancellable?
+
+    var translationAnnotatedSortedLayers: [(Layer, CGSize)] {
+        switch responsivityInterfaceVariant {
+        case .indirect:
+            return panel.sortedLayers
+                .map { (
+                    $0,
+                    computeIndirectTranslation(
+                        for: $0
+                    )
+                ) }
+        case .direct:
+            return panel.sortedLayers.map { ($0, computeDirectTranslation(for: $0)) }
+        }
+    }
 
     init(panel: Panel) {
         self.panel = panel

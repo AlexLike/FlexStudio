@@ -20,4 +20,8 @@ extension EditorViewModel: KeyframeAssistant {
             Keyframe.create(for: selectedLayer, at: aspectProgression, position: .zero)
         }
     }
+    
+    func computeDirectTranslation(for layer: Layer) -> CGSize {
+        .zero
+    }
 }

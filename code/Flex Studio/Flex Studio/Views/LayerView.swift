@@ -67,4 +67,3 @@ struct LayerView_Previews: PreviewProvider {
         )
     }
 }
-
