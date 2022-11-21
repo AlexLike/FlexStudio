@@ -11,6 +11,7 @@ import SwiftUI
 struct PanelsView: View {
     @FetchRequest(fetchRequest: Panel.fetchRequestOldestToNewest) var panels: FetchedResults<Panel>
     private let viewModel = PanelsViewModel()
+    @State private var onDelete: (show: Bool, panel: Panel?) = (false, nil)
 
     var body: some View {
         ZStack {
@@ -23,9 +24,13 @@ struct PanelsView: View {
                             destination: EditorView(panel: panel)
                         ) {
                             PanelItemView(panel: panel, viewModel: viewModel)
+//                                .highPriorityGesture(LongPressGesture().onEnded { _ in
+//                                    onDelete = (true, panel)
+//                                })
                         }
                         .buttonStyle(.scaleReactive(factor: 1.05))
                     }
+ 
 
                     Button(action: viewModel.addItem) {
                         AddItemView(viewModel: viewModel)
@@ -37,13 +42,18 @@ struct PanelsView: View {
             }
         }
         .navigationTitle("Panels")
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {}) {
-                    Text("Select") // TODO: - Implement selecting logic
+        .overlay(
+            DebugView()
+        )
+        .alert("Delete", isPresented: $onDelete.show, actions: {
+            Button("Delete", action: {
+                if let panel = onDelete.panel {
+                    viewModel.deleteItem(panel: panel)
                 }
-            }
-        }
+            })
+            Button("Cancel", role: .cancel, action: {})
+        })
+        
     }
 
     private struct PanelItemView: View {
@@ -54,7 +64,7 @@ struct PanelsView: View {
             VStack(spacing: .fsPaddingMedium) {
                 Image(uiImage: panel.previewImage ?? UIImage())
                     .resizable()
-                    .frame(height: (panel.size.height / panel.size.width) * viewModel.itemWidth)
+                    .aspectRatio(.init(width: 1.0, height: 1.0), contentMode: .fit)
                     .background(Color.fsWhite)
                     .cornerRadius(10)
                     .clipped()
@@ -76,7 +86,7 @@ struct PanelsView: View {
             VStack {
                 RoundedRectangle(cornerRadius: 15)
                     .stroke(Color.fsGray, style: StrokeStyle(lineWidth: 4, dash: [15.0]))
-                    .frame(height: (Panel.defaultSize.height / Panel.defaultSize.width) * viewModel.itemWidth)
+                    .frame(height: 200)
                     .cornerRadius(10)
                     .overlay(
                         VStack(spacing: .fsPaddingSmall) {
@@ -102,3 +112,5 @@ struct PanelsView_Previews: PreviewProvider {
             .environment(\.managedObjectContext, PersistenceLayer.preview.viewContext)
     }
 }
+
+

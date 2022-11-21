@@ -47,6 +47,7 @@ struct EditorView: View {
             // Tools
             DrawToolPickerView(state: $viewModel.drawToolPickerState)
                 .allowsHitTesting(false)
+            
             HStack {
                 LayerSelectionView(viewModel: viewModel)
                 Spacer()
@@ -90,9 +91,6 @@ struct EditorView: View {
         .onAppear {
             viewModel.selectedLayer = viewModel.panel.layers.first!
             isFullyVisible = true
-        }
-        .onDisappear {
-            viewModel.savePreviewImage()
         }
     }
 }

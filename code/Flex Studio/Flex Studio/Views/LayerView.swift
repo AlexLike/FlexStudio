@@ -18,7 +18,7 @@ struct LayerView: UIViewRepresentable {
 
     func makeUIView(context: Context) -> PKCanvasView {
         let canvas = PKCanvasView()
-        canvas.drawingPolicy = .anyInput
+        canvas.drawingPolicy = .pencilOnly
         canvas.isOpaque = false
         canvas.overrideUserInterfaceStyle = .light
         canvas.drawing = layer.drawing

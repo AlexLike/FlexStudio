@@ -64,33 +64,6 @@ class EditorViewModel: ObservableObject {
 
     // MARK: - EditorView
 
-    lazy var magnificationGesture = MagnificationGesture()
-        .onChanged { [weak self] value in
-            guard let self = self else { return }
-            self.panelScale = self.panelScaleCurrent * value
-        }
-        .onEnded { [weak self] _ in
-            guard let self = self else { return }
-            let newScale = CGFloat.minimum(.maximum(self.panelScale, 0.5), 1.5)
-            self.panelScaleCurrent = newScale
-
-            withAnimation {
-                self.panelScale = newScale
-            }
-        }
-
-    lazy var canvasWidth: (GeometryProxy, Panel) -> CGFloat? = { [weak self] proxy, panel in
-        guard let self = self else { return nil }
-        guard !proxy.size.height.isZero else { return nil }
-        return (panel.size.width / 1000) * (1000 * 0.7) + self.dragOffset.width
-    }
-
-    lazy var canvasHeight: (GeometryProxy, Panel) -> CGFloat? = { [weak self] proxy, panel in
-        guard let self = self else { return nil }
-        guard !proxy.size.height.isZero else { return nil }
-        return (panel.size.height / 1000) * (1000 * 0.7) + self.dragOffset.height
-    }
-
     private func stateForLayer(_ layer: Layer) -> LayerState {
         if layer == selectedLayer, let selectedTool {
             return .editable(tool: selectedTool)
@@ -124,26 +97,43 @@ class EditorViewModel: ObservableObject {
 
     // MARK: - PanelResizingView
 
-    @MainActor
-    func savePreviewImage() {
-        UIGraphicsBeginImageContext(panel.size)
-
-        let areaSize = CGRect(origin: .zero,
-                              size: panel.size) // TODO: - Find out center point of all layers
-
-        for layer in panel.layers {
-            let image = layer.drawing.image(
-                from: CGRect(origin: .zero, size: panel.size),
-                scale: 1.0
-            )
-            image.draw(in: areaSize, blendMode: .normal, alpha: 1.0)
-        }
-
-        let allLayersImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-
-        panel.previewImage = allLayersImage
-    }
+//    @MainActor
+//    func savePreviewImage() {
+//        UIGraphicsBeginImageContext(panel.size)
+//
+//        let areaSize = CGRect(origin: .zero, size: panel.size)
+//
+//        for layer in panel.layers {
+//            let image = layer.drawing.image(
+//                from: CGRect(origin: .zero, size: panel.size),
+//                scale: 1.0
+//            )
+//            image.draw(in: areaSize, blendMode: .normal, alpha: 1.0)
+//        }
+//
+//        if let allLayersImage: UIImage = UIGraphicsGetImageFromCurrentImageContext() {
+//            UIGraphicsEndImageContext()
+//            panel.previewImage = allLayersImage
+//        }
+//    }
+//    
+//    @MainActor
+//    func savePreviewImage(for layer: Layer) {
+//        UIGraphicsBeginImageContext(panel.size)
+//        
+//        let areaSize = CGRect(origin: .zero, size: panel.size)
+//
+//        let image = layer.drawing.image(
+//            from: CGRect(origin: .zero, size: panel.size),
+//            scale: 1.0
+//        )
+//        image.draw(in: areaSize, blendMode: .normal, alpha: 1.0)
+//
+//        if let layerImage: UIImage = UIGraphicsGetImageFromCurrentImageContext() {
+//            UIGraphicsEndImageContext()
+//            layer.previewImage = layerImage
+//        }
+//    }
 
     // MARK: - LayerSelectionView
 

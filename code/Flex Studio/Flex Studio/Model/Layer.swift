@@ -28,6 +28,18 @@ extension Layer {
         get { isVisible_ }
         set { isVisible_ = newValue }
     }
+    
+    var previewImage: UIImage? {
+        get {
+            if let imageData = previewImage_ {
+                return UIImage(data: imageData)
+            }
+            return nil
+        }
+        set {
+            previewImage_ = newValue?.pngData()
+        }
+    }
 
     var pinLocation: PinLocation? {
         get { pinLocation_ >= 0 ? .from(id: pinLocation_) : nil }

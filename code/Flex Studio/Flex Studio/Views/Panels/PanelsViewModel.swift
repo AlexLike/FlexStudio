@@ -32,6 +32,4 @@ struct PanelsViewModel {
                        GridItem(.flexible(), spacing: 20),
                        GridItem(.flexible(), spacing: 20)
     ]
-    
-    let itemWidth: CGFloat = (UIScreen.main.bounds.width - 80) / 3 // Better solution?
 }

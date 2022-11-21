@@ -34,7 +34,6 @@ struct LayerSelectionView: View {
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
                 .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
-                
             }
             .listStyle(.plain)
             .scrollContentBackground(.hidden)
@@ -60,17 +59,16 @@ struct LayerSelectionView: View {
         var body: some View {
             ZStack {
                 RoundedRectangle(cornerRadius: 15)
-                    .frame(height: 60)
+                    .frame(height: 70)
                     .foregroundColor(viewModel.selectedLayer == layer ? .fsGray : .clear)
                 
                 HStack{
-                    RoundedRectangle(cornerRadius: 15)
-                        .frame(width: 60, height: 45)
-                        .foregroundColor(.fsBlack)
-                        .overlay(
-                            Text(String(layer.order))
-                                .foregroundColor(.fsWhite)
-                        )
+                    Image(uiImage: layer.previewImage ?? UIImage())
+                        .resizable()
+                        .frame(width: 55, height: 55)
+                        .background(Color.fsWhite)
+                        .cornerRadius(5)
+                        .clipped()
                     
                     Spacer()
                     

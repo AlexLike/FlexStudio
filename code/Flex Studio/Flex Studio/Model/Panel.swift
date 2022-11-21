@@ -20,14 +20,6 @@ extension Panel {
         set { creationDate_ = newValue }
     }
     
-    var size: CGSize {
-        get { .init(width: CGFloat(width_), height: CGFloat(height_)) }
-        set {
-            width_ = Float(newValue.width)
-            height_ = Float(newValue.height)
-        }
-    }
-    
     var previewImage: UIImage? {
         get {
             if let imageData = previewImage_ {
@@ -50,11 +42,6 @@ extension Panel {
     
     /// All layers this panel consists of, sorted from furthest away to closest to the viewer.
     var sortedLayers: [Layer] { layers.sorted(using: KeyPathComparator(\.order)) }
-    
-    // MARK: - Global
-    
-    static let defaultSize: CGSize = .init(width: 1000, height: 700)
-    static let minSize: CGSize = .init(width: 200, height: 200)
 
     // MARK: - CRD operations
     
@@ -63,8 +50,6 @@ extension Panel {
         let p = Panel(context: ctx)
         p.uid_ = UUID()
         p.creationDate_ = creationDate
-        p.width_ = Float(defaultSize.width)
-        p.height_ = Float(defaultSize.height)
         p.layers = []
         Layer.create(for: p, order: 0)
         return p
