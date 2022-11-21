@@ -94,11 +94,10 @@ class PanelViewModel: ObservableObject {
     // MARK: - PanelResizingView
 
     @MainActor
-    func savePreviewImage(panel: Panel) {
+    func savePreviewImage(for panel: Panel) {
         UIGraphicsBeginImageContext(panel.size)
 
-        let areaSize = CGRect(origin: .zero,
-                              size: panel.size) // TODO: - Find out center point of all layers
+        let areaSize = CGRect(origin: .zero, size: panel.size)
 
         for layer in panel.layers {
             let image = layer.drawing.image(
@@ -111,6 +110,24 @@ class PanelViewModel: ObservableObject {
         if let allLayersImage: UIImage = UIGraphicsGetImageFromCurrentImageContext() {
             UIGraphicsEndImageContext()
             panel.previewImage = allLayersImage
+        }
+    }
+    
+    @MainActor
+    func savePreviewImage(for layer: Layer, panel: Panel) {
+        UIGraphicsBeginImageContext(panel.size)
+        
+        let areaSize = CGRect(origin: .zero, size: panel.size)
+
+        let image = layer.drawing.image(
+            from: CGRect(origin: .zero, size: panel.size),
+            scale: 1.0
+        )
+        image.draw(in: areaSize, blendMode: .normal, alpha: 1.0)
+
+        if let layerImage: UIImage = UIGraphicsGetImageFromCurrentImageContext() {
+            UIGraphicsEndImageContext()
+            layer.previewImage = layerImage
         }
     }
 

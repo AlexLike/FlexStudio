@@ -76,7 +76,7 @@ struct ResponsivityControlView<G: ResponsivityGizmo>: View {
                 .clipShape(Circle())
             }
         }
-        .background(Color.fsWhite)
+        .background(Color.fsBackground)
         .cornerRadius(cornerRadius)
         .shadow(color: .black.opacity(0.1), radius: 10)
     }

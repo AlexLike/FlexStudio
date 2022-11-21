@@ -39,6 +39,11 @@ struct FrameView: View {
                     * (aspectProgression - 0.5) * 2
             )
     }
+    
+    /// The color of the frame
+    var frameColor: Color {
+        isResizable ? (onDrag ? .fsTint : .fsGray) : .fsWhite
+    }
 
     /// The minimum width and height.
     static let minLength: CGFloat = 400
@@ -81,15 +86,15 @@ struct FrameView: View {
 
             Canvas(rendersAsynchronously: true) { context, _ in
                 context.fill(outer, with: .color(.fsBackground))
-                context.stroke(boundary, with: .color(.gray), style: .init(lineWidth: 3))
+                context.stroke(boundary, with: .color(frameColor), style: .init(lineWidth: 3))
                 if isResizable {
                     if aspectProgression <= 0.5 {
-                        context.fill(leftDragger, with: .color(.gray))
-                        context.fill(rightDragger, with: .color(.gray))
+                        context.fill(leftDragger, with: .color(frameColor))
+                        context.fill(rightDragger, with: .color(frameColor))
                     }
                     if aspectProgression >= 0.5 {
-                        context.fill(topDragger, with: .color(.gray))
-                        context.fill(bottomDragger, with: .color(.gray))
+                        context.fill(topDragger, with: .color(frameColor))
+                        context.fill(bottomDragger, with: .color(frameColor))
                     }
                 }
             }
@@ -111,6 +116,7 @@ struct FrameView: View {
         }
     }
 
+    @State private var onDrag: Bool = false
     @State private var convert: ((CGSize) -> CGFloat)? = nil
     private func resizeGesture(for viewSize: CGSize) -> some Gesture {
         return DragGesture()
@@ -180,10 +186,13 @@ struct FrameView: View {
                 if let convert {
                     aspectProgression = convert(g.translation)
                 }
+                
+                onDrag = true
             }
             .onEnded { _ in
                 print("Stopped dragging.")
                 convert = nil
+                onDrag = false
             }
     }
 

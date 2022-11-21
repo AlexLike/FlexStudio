@@ -4,6 +4,7 @@
         <attribute name="drawing_" attributeType="Transformable" valueTransformerName="DrawingTransformer"/>
         <attribute name="isVisible_" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="order_" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="previewImage_" optional="YES" attributeType="Binary"/>
         <relationship name="panel_" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Panel" inverseName="layers_" inverseEntity="Panel"/>
         <uniquenessConstraints>
             <uniquenessConstraint>

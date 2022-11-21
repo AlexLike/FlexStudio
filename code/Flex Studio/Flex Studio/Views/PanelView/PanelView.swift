@@ -21,6 +21,7 @@ struct PanelView: View {
             ForEach(panel.sortedLayers) { layer in
                 let isSelected = layer == viewModel.selectedLayer
                 LayerView(
+                    viewModel: viewModel,
                     layer: layer,
                     state: isSelected ?
                         .selected(tool: viewModel.selectedTool) :
@@ -39,6 +40,7 @@ struct PanelView: View {
             // Tools
             DrawToolPickerView(state: $viewModel.drawToolPickerState)
                 .allowsHitTesting(false)
+            
             HStack {
                 PanelLayerSelectionView(panel: panel, viewModel: viewModel)
                 Spacer()
@@ -82,7 +84,7 @@ struct PanelView: View {
             viewModel.selectedLayer = panel.layers.first
         }
         .onDisappear {
-            viewModel.savePreviewImage(panel: panel)
+            viewModel.savePreviewImage(for: panel)
         }
     }
 }

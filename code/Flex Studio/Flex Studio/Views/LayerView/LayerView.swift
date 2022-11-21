@@ -9,11 +9,12 @@ import PencilKit
 import SwiftUI
 
 struct LayerView: UIViewRepresentable {
+    @ObservedObject var viewModel: PanelViewModel
     @ObservedObject var layer: Layer
     let state: LayerState
 
     func makeCoordinator() -> CanvasManager {
-        CanvasManager(layer: layer)
+        CanvasManager(viewModel: viewModel, layer: layer)
     }
 
     func makeUIView(context: Context) -> PKCanvasView {
@@ -47,24 +48,18 @@ struct LayerView: UIViewRepresentable {
     }
 
     class CanvasManager: NSObject, PKCanvasViewDelegate {
+        let viewModel: PanelViewModel
         let layer: Layer
 
-        init(layer: Layer) {
+        init(viewModel: PanelViewModel, layer: Layer) {
+            self.viewModel = viewModel
             self.layer = layer
         }
 
         func canvasViewDrawingDidChange(_ canvas: PKCanvasView) {
             layer.drawing = canvas.drawing
+            viewModel.savePreviewImage(for: layer, panel: layer.panel)
         }
-    }
-}
-
-struct LayerView_Previews: PreviewProvider {
-    static var previews: some View {
-        LayerView(
-            layer: try! PersistenceLayer.preview.viewContext.fetch(Layer.fetchRequest()).first!,
-            state: .editable(tool: .defaultDraw)
-        )
     }
 }
 
