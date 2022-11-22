@@ -23,6 +23,7 @@ struct ScaleReactiveButtonStyle: ButtonStyle {
 }
 
 extension ButtonStyle where Self == ScaleReactiveButtonStyle {
+    /// While the button is being touched, scale its label by a given factor.
     static func scaleReactive(
         factor: CGFloat = 1.02,
         growAnimation: Animation? = nil,

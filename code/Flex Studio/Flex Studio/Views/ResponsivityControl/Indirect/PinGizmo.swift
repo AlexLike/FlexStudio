@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-protocol PinAssistant: ObservableObject {
-    var selectedPinLocation: PinLocation? { get set }
-}
-
 struct PinGizmo<A: PinAssistant>: ResponsivityGizmo {
     let logger = Logger.forType(PinGizmo.self)
     @ObservedObject var assistant: A
@@ -75,6 +71,7 @@ struct PinGizmo<A: PinAssistant>: ResponsivityGizmo {
 struct Previews_PinGizmo_Previews: PreviewProvider {
     
     class MockAssistant: PinAssistant {
+        let isEditingResponsivity = true
         @Published var selectedPinLocation: PinLocation? = .loc(.center, .center)
     }
     

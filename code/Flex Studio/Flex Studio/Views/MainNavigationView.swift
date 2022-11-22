@@ -12,14 +12,7 @@ struct MainNavigationView: View {
     
     var body: some View {
         NavigationStack {
-            ZStack {
-                GeometryReader { proxy in
-                    Color.clear.onAppear { safeAreaInsets = (proxy.safeAreaInsets.top, proxy.safeAreaInsets.bottom) }
-                }
-                
-                PanelsView()
-                    .environment(\.safeAreaInsets, safeAreaInsets)
-            }
+            PanelsView()
         }
         .tint(.fsBlack)
     }

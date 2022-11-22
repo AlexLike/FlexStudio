@@ -2,7 +2,7 @@
 //  EditorViewModel.swift
 //  Flex Studio
 //
-//  Created by Kai Zheng on 07.11.22.
+//  Created by Kai Zheng & Alexander Zank on 07.11.22.
 //
 
 import Combine
@@ -10,28 +10,24 @@ import SwiftUI
 
 /// A service for manipulating a given panel.
 class EditorViewModel: ObservableObject {
-    // Panel
+    /// The panel this editor is manipulating.
     let panel: Panel
-    private var panelSubscription: AnyCancellable?
 
-    // Mode
-    @Published var responsivityInterfaceVariant: ResponsivityInterfaceVariant = .indirect
+    /// The currently employed undelying responsivity concept.
+    @Published var responsivityInterfaceVariant: ResponsivityInterfaceVariant = .direct
+
+    /// The currrently active tool.
     @Published var selectedTool: EditorTool? = .defaultDraw
     private var lruTool: EditorTool?
 
-    /// A value ∈ [0,1] that linearizes `aspectRatio`, i.e. it linearly interpolates width ∈ [0,0.5]
-    /// and height ∈ [0.5,1].
+    /// A value ∈ [0,1] that linearizes the panel's aspect ration, i.e. it linearly interpolates
+    /// width ∈ [0,0.5] and height ∈ [0.5,1].
     /// - A value of 0.5 corresponds to a 1:1 aspect ratio.
     /// - A value of 0 corresponds to a 2:1 aspect ratio.
     /// - A value of 1 corresponds to a 1:2 aspect ratio.
     @Published var aspectProgression: CGFloat = 0.5
 
-    // Panel (deprecated)
-    @Published var panelScale: CGFloat = 1
-    @Published var panelScaleCurrent: CGFloat = 1
-    @Published var dragOffset: CGSize = .zero
-
-    // Layer
+    /// The layer being currently manipulated.
     @Published var selectedLayer: Layer {
         willSet {
             selectedLayerSubscription = newValue.objectWillChange
@@ -39,22 +35,32 @@ class EditorViewModel: ObservableObject {
         }
     }
 
-    private var selectedLayerSubscription: AnyCancellable?
-
+    /// An array of layers with their computed translations for the current aspectProgression under
+    /// the current responsivityInterfaceVariant.
     var translationAnnotatedSortedLayers: [(Layer, CGSize)] {
         switch responsivityInterfaceVariant {
         case .indirect:
             return panel.sortedLayers
                 .map { (
                     $0,
-                    computeIndirectTranslation(
-                        for: $0
+                    Geometry.computeIndirectTranslation(
+                        for: $0,
+                        at: aspectProgression
                     )
                 ) }
         case .direct:
-            return panel.sortedLayers.map { ($0, computeDirectTranslation(for: $0)) }
+            return panel.sortedLayers.map { (
+                $0,
+                Geometry.computeDirectTranslation(
+                    for: $0,
+                    at: aspectProgression
+                )
+            ) }
         }
     }
+
+    private var panelSubscription: AnyCancellable?
+    private var selectedLayerSubscription: AnyCancellable?
 
     init(panel: Panel) {
         self.panel = panel
@@ -116,11 +122,11 @@ class EditorViewModel: ObservableObject {
 //            panel.previewImage = allLayersImage
 //        }
 //    }
-//    
+//
 //    @MainActor
 //    func savePreviewImage(for layer: Layer) {
 //        UIGraphicsBeginImageContext(panel.size)
-//        
+//
 //        let areaSize = CGRect(origin: .zero, size: panel.size)
 //
 //        let image = layer.drawing.image(

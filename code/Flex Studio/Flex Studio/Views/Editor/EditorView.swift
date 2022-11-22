@@ -22,7 +22,7 @@ struct EditorView: View {
             Color.fsWhite
 
             // Layers
-            ForEach(viewModel.translationAnnotatedSortedLayers, id: \.0) { (layer, translation) in
+            ForEach(viewModel.translationAnnotatedSortedLayers, id: \.0) { layer, translation in
                 let isSelected = layer == viewModel.selectedLayer
                 LayerView(
                     layer: layer,
@@ -31,12 +31,26 @@ struct EditorView: View {
                         .static
                 )
                 .offset(translation)
-                .frame(width: Dimensions.canvasLength, height: Dimensions.canvasLength)
+                .frame(width: Geometry.canvasLength, height: Geometry.canvasLength)
                 .allowsHitTesting(isSelected)
                 .opacity(layer.isVisible ? 1 : 0)
                 .disabled(!isFullyVisible)
             }
             .layoutPriority(-1)
+
+            // Interactive Anchoring
+            switch viewModel.responsivityInterfaceVariant {
+            case .indirect:
+                ResponsivityOverlayView.indirect(
+                    isActive: viewModel.isEditingResponsivity,
+                    assistant: viewModel
+                )
+            case .direct:
+                ResponsivityOverlayView.direct(
+                    isActive: viewModel.isEditingResponsivity,
+                    assistant: viewModel
+                )
+            }
 
             // Frame
             FrameView(
@@ -47,7 +61,7 @@ struct EditorView: View {
             // Tools
             DrawToolPickerView(state: $viewModel.drawToolPickerState)
                 .allowsHitTesting(false)
-            
+
             HStack {
                 LayerSelectionView(viewModel: viewModel)
                 Spacer()
@@ -75,13 +89,23 @@ struct EditorView: View {
         .edgesIgnoringSafeArea(.all)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: { dismiss() }, label: {
+                Button {
+                    dismiss()
+                } label: {
                     Image.fsPanels
-                })
+                }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {}) { // Sidebar menu functionality
-                    Image.fsSidemenu
+                let o: ResponsivityInterfaceVariant = {
+                    switch viewModel.responsivityInterfaceVariant {
+                    case .indirect: return .direct
+                    case .direct: return .indirect
+                    }
+                }()
+                Button {
+                    viewModel.responsivityInterfaceVariant = o
+                } label: {
+                    Image(systemName: "repeat")
                 }
             }
         }

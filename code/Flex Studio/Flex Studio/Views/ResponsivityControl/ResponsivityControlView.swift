@@ -109,11 +109,18 @@ extension ResponsivityControlView where G == KeyframeGizmo<A> {
 
 struct ResponsivityControl_Previews: PreviewProvider {
     class MockAssistant: PinAssistant, KeyframeAssistant {
+        var currentOffset: CGSize = .zero
+        
+        func modifyCurrentKeyframePosition(to target: CGSize) {
+        }
+        
+        let isEditingResponsivity = true
         @Published var aspectProgression: CGFloat = 0.75
 
         @Published var selectedPinLocation: PinLocation? = .loc(.center, .center)
         @Published var sortedKeyframeProgressions: [CGFloat] = [0.2, 0.45, 0.77]
-
+        
+        var currentKeyframe: Keyframe? = nil
         func toggleKeyframe() {}
     }
 

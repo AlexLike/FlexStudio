@@ -12,11 +12,11 @@ extension Keyframe {
 
     var aspectProgression: CGFloat { aspectProgression_ }
 
-    var position: CGPoint {
-        get { .init(x: positionX_, y: positionY_) }
+    var position: CGSize {
+        get { .init(width: positionX_, height: positionY_) }
         set {
-            positionX_ = newValue.x
-            positionY_ = newValue.y
+            positionX_ = newValue.width
+            positionY_ = newValue.height
         }
     }
 
@@ -31,7 +31,7 @@ extension Keyframe {
 
     @discardableResult
     static func create(for layer: Layer, at aspectProgression: CGFloat,
-                       position: CGPoint) -> Keyframe
+                       position: CGSize) -> Keyframe
     {
         let k = Keyframe(context: layer.managedObjectContext!)
         k.aspectProgression_ = aspectProgression

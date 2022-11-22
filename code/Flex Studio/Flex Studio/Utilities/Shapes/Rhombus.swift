@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+/// A rhombus shape of variable aspect ratio that fills its entire container.
+/// ```
+///    ╱╲
+///   ╱  ╲
+///   ╲  ╱
+///    ╲╱
+/// ```
 struct Rhombus: Shape {
     func path(in rect: CGRect) -> Path {
         Path { p in

@@ -12,16 +12,38 @@ extension EditorViewModel: KeyframeAssistant {
         selectedLayer.sortedKeyframes.map(\.aspectProgression)
     }
 
+    var currentKeyframe: Keyframe? {
+        selectedLayer.keyframes.first { $0.aspectProgression == aspectProgression }
+    }
+
+    var currentOffset: CGSize {
+        Geometry.computeDirectTranslation(for: selectedLayer, at: aspectProgression)
+    }
+
+    func modifyCurrentKeyframePosition(to target: CGSize) {
+        if currentKeyframe == nil {
+            toggleKeyframe()
+        }
+        let currentKeyframe = currentKeyframe!
+
+        currentKeyframe.position = target
+        selectedLayer.objectWillChange.send()
+    }
+
     func toggleKeyframe() {
         if let k = selectedLayer.keyframes
-            .first(where: { $0.aspectProgression == aspectProgression }) {
+            .first(where: { $0.aspectProgression == aspectProgression })
+        {
             k.delete(removingFromLayer: true)
         } else {
-            Keyframe.create(for: selectedLayer, at: aspectProgression, position: .zero)
+            Keyframe.create(
+                for: selectedLayer,
+                at: aspectProgression,
+                position: Geometry.computeDirectTranslation(
+                    for: selectedLayer,
+                    at: aspectProgression
+                )
+            )
         }
-    }
-    
-    func computeDirectTranslation(for layer: Layer) -> CGSize {
-        .zero
     }
 }

@@ -86,7 +86,7 @@ struct PanelsView: View {
             VStack {
                 RoundedRectangle(cornerRadius: 15)
                     .stroke(Color.fsGray, style: StrokeStyle(lineWidth: 4, dash: [15.0]))
-                    .frame(height: 200)
+                    .aspectRatio(1, contentMode: .fit)
                     .cornerRadius(10)
                     .overlay(
                         VStack(spacing: .fsPaddingSmall) {

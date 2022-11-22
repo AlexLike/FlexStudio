@@ -13,6 +13,7 @@ struct StaticButtonStyle: ButtonStyle {
     }
 }
 
-extension ButtonStyle where Self == StaticButtonStyle  {
+extension ButtonStyle where Self == StaticButtonStyle {
+    /// Render only the label, exactly as described and without gesture-induced changes.
     static var `static`: Self { .init() }
 }

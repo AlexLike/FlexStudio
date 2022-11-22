@@ -7,18 +7,11 @@
 
 import SwiftUI
 
-protocol KeyframeAssistant: ObservableObject {
-    var aspectProgression: CGFloat { get set }
-    var sortedKeyframeProgressions: [CGFloat] { get }
-
-    func toggleKeyframe()
-}
-
 struct KeyframeGizmo<A: KeyframeAssistant>: ResponsivityGizmo {
     @ObservedObject var assistant: A
 
     var isOnKeyframe: Bool {
-        assistant.sortedKeyframeProgressions.contains(assistant.aspectProgression)
+        assistant.currentKeyframe != nil
     }
 
     let timelineSize: CGSize = .init(width: 300, height: 24)
@@ -174,9 +167,17 @@ struct KeyframeGizmo<A: KeyframeAssistant>: ResponsivityGizmo {
 
 struct KeyframeGizmo_Previews: PreviewProvider {
     class MockAssistant: KeyframeAssistant {
+        var currentOffset: CGSize = .zero
+        
+        func modifyCurrentKeyframePosition(to target: CGSize) {
+            
+        }
+        
+        let isEditingResponsivity = true
         @Published var aspectProgression: CGFloat = 0.22
         @Published var sortedKeyframeProgressions: [CGFloat] = [0, 0.2, 0.45, 0.88, 1]
-
+        
+        var currentKeyframe: Keyframe? = nil
         func toggleKeyframe() {}
     }
 

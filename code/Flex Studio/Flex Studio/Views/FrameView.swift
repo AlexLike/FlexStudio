@@ -9,23 +9,23 @@ import SwiftUI
 
 struct FrameView: View {
     static let logger = Logger.forType(FrameView.self)
-    
+
     @Binding var aspectProgression: CGFloat
     /// A flag that enables or hides the resize gizmos.
     let isResizable: Bool
     /// The size of the currently framed area.
-    var size: CGSize { Dimensions.panelSize(for: aspectProgression) }
-    
+    var size: CGSize { Geometry.panelSize(for: aspectProgression) }
+
     /// The color of the frame
     var frameColor: Color {
-        isResizable ? (onDrag ? .fsTint : .fsGray) : .fsWhite
+        isResizable ? (isDragging ? .fsTint : .fsGray) : .fsWhite
     }
 
     var body: some View {
         GeometryReader { geo in
 
             // The frame's enclosing rectagle in view space (excluding draggers).
-            let frame = Dimensions.rect(for: size, in: geo.size)
+            let frame = Geometry.rect(for: size, in: geo.size)
 
             // The shape defining the thin boundary.
             let boundaryTemplate = CGPath(
@@ -71,20 +71,22 @@ struct FrameView: View {
                 }
             }
             .contentShape(outer)
-            .highPriorityGesture(resizeGesture(for: geo.size), including: .gesture)
+            .gesture(resizeGesture(for: geo.size))
             .allowsHitTesting(isResizable)
         }
         .ignoresSafeArea(.all)
     }
-    
-    @State private var onDrag: Bool = false
-    
+
+    @State private var isDragging: Bool = false
     @State private var convert: ((CGSize) -> CGFloat)? = nil
     private func resizeGesture(for viewSize: CGSize) -> some Gesture {
+        
         return DragGesture()
             .onChanged { g in
                 if convert == nil {
-                    let initialFrame = Dimensions.rect(for: size, in: viewSize)
+                    isDragging = true
+
+                    let initialFrame = Geometry.rect(for: size, in: viewSize)
                     let initialAspectProgression = aspectProgression
 
                     let widthRangeLeftRight = (initialFrame.midY - Self.draggerSize
@@ -104,7 +106,7 @@ struct FrameView: View {
                         widthRangeLeftRight
                     ): convert = { p in
                             (initialAspectProgression + p.width
-                                / ((Dimensions.maxFrameScale - 1) * Dimensions.minFrameLength))
+                                / ((Geometry.maxFrameScale - 1) * Geometry.minFrameLength))
                                 .clamped(to: aspectProgressionRangeWide)
                         }
                         Self.logger.notice("Began dragging the left edge.")
@@ -115,7 +117,7 @@ struct FrameView: View {
                         widthRangeLeftRight
                     ): convert = { p in
                             (initialAspectProgression - p.width
-                                / ((Dimensions.maxFrameScale - 1) * Dimensions.minFrameLength))
+                                / ((Geometry.maxFrameScale - 1) * Geometry.minFrameLength))
                                 .clamped(to: aspectProgressionRangeWide)
                         }
                         Self.logger.notice("Began dragging the right edge.")
@@ -126,7 +128,7 @@ struct FrameView: View {
                         (initialFrame.minY - Self.draggerSize.height)...(initialFrame.minY)
                     ): convert = { p in
                             (initialAspectProgression - p.height
-                                / ((Dimensions.maxFrameScale - 1) * Dimensions.minFrameLength))
+                                / ((Geometry.maxFrameScale - 1) * Geometry.minFrameLength))
                                 .clamped(to: aspectProgressionRangeTall)
                         }
                         Self.logger.notice("Began dragging the top edge.")
@@ -137,24 +139,24 @@ struct FrameView: View {
                         (initialFrame.maxY)...(initialFrame.maxY + Self.draggerSize.height)
                     ): convert = { p in
                             (initialAspectProgression + p.height
-                                / ((Dimensions.maxFrameScale - 1) * Dimensions.minFrameLength))
+                                / ((Geometry.maxFrameScale - 1) * Geometry.minFrameLength))
                                 .clamped(to: aspectProgressionRangeTall)
                         }
                         Self.logger.notice("Began dragging the bottom edge.")
-                    default: convert = { _ in initialAspectProgression }
+                    default:
+                        convert = { _ in initialAspectProgression }
+                        isDragging = false
                     }
                 }
 
                 if let convert {
                     aspectProgression = convert(g.translation)
                 }
-                
-                onDrag = true
             }
             .onEnded { _ in
                 Self.logger.notice("Stopped dragging.")
                 convert = nil
-                onDrag = false
+                isDragging = false
             }
     }
 
