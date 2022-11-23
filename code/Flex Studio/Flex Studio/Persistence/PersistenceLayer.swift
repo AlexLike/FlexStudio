@@ -80,33 +80,58 @@ struct PersistenceLayer {
 
 // MARK: - Debug
 
+extension PersistenceLayer {
+    static var storedBackupIdentifiers: [String] {
+        guard
+            let folder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first,
+            let contents = try? FileManager.default.contentsOfDirectory(
+            at: folder,
+            includingPropertiesForKeys: [.nameKey]
+            )
+        else { return [] }
+        
+        
+        return contents.compactMap {
+            let name = $0.deletingPathExtension().lastPathComponent
+            return name.isEmpty ? nil : name
+        }
+    }
+}
+
 extension NSPersistentContainer {
     enum CopyPersistentStoreErrors: Error {
         case destinationError(String)
         case destinationNotRemoved(String)
         case copyStoreError(String)
     }
-    
-    @MainActor func copyPersistentStores(identifier: String) throws -> Void {
+
+    @MainActor func copyPersistentStores(identifier: String) throws {
         DrawingTransformer.register()
         PersistenceLayer.shared.save()
-        
-        let backupURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent(identifier + ".sqlite")
-        
+
+        let backupURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+            .first!.appendingPathComponent(identifier + ".sqlite")
+
         if FileManager.default.fileExists(atPath: backupURL.path) {
             do {
                 try FileManager.default.removeItem(at: backupURL)
             } catch {
-                throw CopyPersistentStoreErrors.destinationNotRemoved("Can't overwrite destination at \(backupURL)")
+                throw CopyPersistentStoreErrors
+                    .destinationNotRemoved("Can't overwrite destination at \(backupURL)")
             }
         }
 
         do {
-            try FileManager.default.createDirectory(at: backupURL, withIntermediateDirectories: true, attributes: nil)
+            try FileManager.default.createDirectory(
+                at: backupURL,
+                withIntermediateDirectories: true,
+                attributes: nil
+            )
         } catch {
-            throw CopyPersistentStoreErrors.destinationError("Could not create destination directory at \(backupURL)")
+            throw CopyPersistentStoreErrors
+                .destinationError("Could not create destination directory at \(backupURL)")
         }
-        
+
         for persistentStoreDescription in persistentStoreDescriptions {
             guard let storeURL = persistentStoreDescription.url else {
                 continue
@@ -114,12 +139,24 @@ extension NSPersistentContainer {
             guard persistentStoreDescription.type != NSInMemoryStoreType else {
                 continue
             }
-            let temporaryPSC = NSPersistentStoreCoordinator(managedObjectModel: persistentStoreCoordinator.managedObjectModel)
+            let temporaryPSC =
+                NSPersistentStoreCoordinator(managedObjectModel: persistentStoreCoordinator
+                    .managedObjectModel)
             let destinationStoreURL = backupURL.appendingPathComponent(storeURL.lastPathComponent)
 
             do {
-                let newStore = try temporaryPSC.addPersistentStore(ofType: persistentStoreDescription.type, configurationName: persistentStoreDescription.configuration, at: persistentStoreDescription.url, options: persistentStoreDescription.options)
-                let restoredTemporaryStore = try temporaryPSC.migratePersistentStore(newStore, to: destinationStoreURL, options: persistentStoreDescription.options, withType: persistentStoreDescription.type)
+                let newStore = try temporaryPSC.addPersistentStore(
+                    ofType: persistentStoreDescription.type,
+                    configurationName: persistentStoreDescription.configuration,
+                    at: persistentStoreDescription.url,
+                    options: persistentStoreDescription.options
+                )
+                let restoredTemporaryStore = try temporaryPSC.migratePersistentStore(
+                    newStore,
+                    to: destinationStoreURL,
+                    options: persistentStoreDescription.options,
+                    withType: persistentStoreDescription.type
+                )
                 print("Copied to temp store: \(restoredTemporaryStore)")
             } catch {
                 throw CopyPersistentStoreErrors.copyStoreError("\(error.localizedDescription)")
@@ -127,11 +164,12 @@ extension NSPersistentContainer {
         }
     }
 
-    @MainActor func restorePersistentStore(identifier: String) throws -> Void {
+    @MainActor func restorePersistentStore(identifier: String) throws {
         DrawingTransformer.register()
         PersistenceLayer.shared.save()
-        
-        let backupURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent(identifier + ".sqlite")
+
+        let backupURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+            .first!.appendingPathComponent(identifier + ".sqlite")
 
         for persistentStore in persistentStoreCoordinator.persistentStores {
             guard let loadedStoreURL = persistentStore.url else {
@@ -142,15 +180,31 @@ extension NSPersistentContainer {
                 try persistentStoreCoordinator.remove(persistentStore)
             } catch {
                 print("Error removing store: \(error)")
-                throw CopyPersistentStoreErrors.copyStoreError("Could not remove persistent store before restore")
+                throw CopyPersistentStoreErrors
+                    .copyStoreError("Could not remove persistent store before restore")
             }
             do {
-                try persistentStoreCoordinator.destroyPersistentStore(at: loadedStoreURL, ofType: persistentStore.type, options: persistentStore.options)
-                let backupStore = try persistentStoreCoordinator.addPersistentStore(ofType: persistentStore.type, configurationName: persistentStore.configurationName, at: backupStoreURL, options: persistentStore.options)
-                let restoredTemporaryStore = try persistentStoreCoordinator.migratePersistentStore(backupStore, to: loadedStoreURL, options: persistentStore.options, withType: persistentStore.type)
+                try persistentStoreCoordinator.destroyPersistentStore(
+                    at: loadedStoreURL,
+                    ofType: persistentStore.type,
+                    options: persistentStore.options
+                )
+                let backupStore = try persistentStoreCoordinator.addPersistentStore(
+                    ofType: persistentStore.type,
+                    configurationName: persistentStore.configurationName,
+                    at: backupStoreURL,
+                    options: persistentStore.options
+                )
+                let restoredTemporaryStore = try persistentStoreCoordinator.migratePersistentStore(
+                    backupStore,
+                    to: loadedStoreURL,
+                    options: persistentStore.options,
+                    withType: persistentStore.type
+                )
                 print("Restored temp store: \(restoredTemporaryStore)")
             } catch {
-                throw CopyPersistentStoreErrors.copyStoreError("Could not restore: \(error.localizedDescription)")
+                throw CopyPersistentStoreErrors
+                    .copyStoreError("Could not restore: \(error.localizedDescription)")
             }
         }
     }

@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct DatabaseDebugView: View {
-    @AppStorage(PersistenceLayer.debugBackupsKey) private var debugBackupIdentifiers: [String] = []
     @State private var debugShowInputIdentifierAlert: Bool = false
     @State private var debugInputIdentifier: String = ""
+    @State private var debugBackupIdentifiers: [String] = PersistenceLayer.storedBackupIdentifiers
     
     var body: some View {
         EmptyView()
@@ -18,11 +18,11 @@ struct DatabaseDebugView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
                         Section {
-                            Button("Store", action: { debugShowInputIdentifierAlert = true })
+                            Button("Backup State", action: { debugShowInputIdentifierAlert = true })
                         }
                         Section {
                             ForEach(debugBackupIdentifiers, id: \.self) { identifier in
-                                Button("Apply \"\(identifier)\"", action: { applySecondaryPersistentStore(from: identifier) })
+                                Button("Restore \"\(identifier)\"", action: { applySecondaryPersistentStore(from: identifier) })
                             }
                         }
                     } label: {
@@ -33,12 +33,12 @@ struct DatabaseDebugView: View {
                     }
                 }
             }
-            .alert("Identifier", isPresented: $debugShowInputIdentifierAlert, actions: {
+            .alert("Backup State", isPresented: $debugShowInputIdentifierAlert, actions: {
                 TextField("Identifier", text: $debugInputIdentifier)
                 Button("Store", action: { storeToSecondaryPersistentStore() })
                 Button("Cancel", role: .cancel, action: {})
             }, message: {
-                Text("Enter an identifier")
+                Text("Store a copy of the underlying database to this app's documents folder.")
             })
     }
     
