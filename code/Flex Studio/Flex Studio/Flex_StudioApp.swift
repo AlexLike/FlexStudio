@@ -36,17 +36,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         // Global NavigationBar styling
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.titleTextAttributes = [
-            .font: UIFont.fs_title!,
-            .foregroundColor: UIColor(Color.fsBlack),
-        ]
-        appearance.largeTitleTextAttributes = [
-            .font: UIFont.fs_header!,
-            .foregroundColor: UIColor(Color.fsBlack),
-        ]
-        appearance.backgroundColor = UIColor(Color.fsBackground)
-        appearance.shadowImage = UIImage()
-        appearance.shadowColor = .clear
+        appearance.backgroundColor = UIColor(Color.background)
+        appearance.shadowColor = nil
 
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().compactAppearance = appearance

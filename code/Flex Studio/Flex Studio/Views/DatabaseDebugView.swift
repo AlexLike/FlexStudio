@@ -1,5 +1,5 @@
 //
-//  DebugView.swift
+//  DatabaseDebugView.swift
 //  Flex Studio
 //
 //  Created by Kai Zheng on 20.11.22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DebugView: View {
+struct DatabaseDebugView: View {
     @AppStorage(PersistenceLayer.debugBackupsKey) private var debugBackupIdentifiers: [String] = []
     @State private var debugShowInputIdentifierAlert: Bool = false
     @State private var debugInputIdentifier: String = ""
@@ -16,7 +16,7 @@ struct DebugView: View {
         EmptyView()
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Menu("Debug") {
+                    Menu {
                         Section {
                             Button("Store", action: { debugShowInputIdentifierAlert = true })
                         }
@@ -25,6 +25,11 @@ struct DebugView: View {
                                 Button("Apply \"\(identifier)\"", action: { applySecondaryPersistentStore(from: identifier) })
                             }
                         }
+                    } label: {
+                        Label("Debug", systemImage: "wand.and.stars")
+                            .symbolRenderingMode(.palette)
+                            .foregroundStyle(.primary, .pink)
+                            
                     }
                 }
             }

@@ -32,6 +32,7 @@ struct LayerView: UIViewRepresentable {
             // A concurrent version of this layer was updated.
             canvas.drawing = layer.drawing
         }
+        canvas.isHidden = !layer.isVisible
         reconfigure(canvas)
     }
 
@@ -55,6 +56,10 @@ struct LayerView: UIViewRepresentable {
 
         func canvasViewDrawingDidChange(_ canvas: PKCanvasView) {
             layer.drawing = canvas.drawing
+            
+            Task(priority: .utility) { @MainActor in
+                layer.thumbnail = canvas.drawing.thumbnailImage
+            }
         }
     }
 }

@@ -56,14 +56,14 @@ extension Panel {
     }
     
     func createLayer() {
-        Layer.create(for: self, order: Int16(self.layers.count))
+        Layer.create(for: self, order: Int16(layers.count))
     }
     
     func deleteLayer(layer : Layer) {
         let deletedOrder = Int(layer.order)
         layer.delete(removingFromPanel: true)
         
-        if layers.count >= 1 {
+        if !layers.isEmpty {
             for i in deletedOrder ..< layers.count {
                 self.sortedLayers[i].order -= 1
             }

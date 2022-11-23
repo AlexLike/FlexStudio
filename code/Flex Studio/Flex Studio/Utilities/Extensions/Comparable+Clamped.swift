@@ -1,5 +1,5 @@
 //
-//  Comparable+Ext.swift
+//  Comparable+Clamped.swift
 //  Flex Studio
 //
 //  Created by Alexander Zank on 16.11.22.

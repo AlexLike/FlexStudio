@@ -15,18 +15,15 @@ struct PanelsView: View {
 
     var body: some View {
         ZStack {
-            Color.fsBackground.edgesIgnoringSafeArea(.all)
+            Color.background.edgesIgnoringSafeArea(.all)
 
             ScrollView(showsIndicators: false) {
-                LazyVGrid(columns: viewModel.itemColumns, spacing: .fsPaddingLarge) {
+                LazyVGrid(columns: viewModel.itemColumns, spacing: 32) {
                     ForEach(panels) { panel in
                         NavigationLink(
                             destination: EditorView(panel: panel)
                         ) {
                             PanelItemView(panel: panel, viewModel: viewModel)
-//                                .highPriorityGesture(LongPressGesture().onEnded { _ in
-//                                    onDelete = (true, panel)
-//                                })
                         }
                         .buttonStyle(.scaleReactive(factor: 1.05))
                     }
@@ -37,13 +34,51 @@ struct PanelsView: View {
                     }
                     .buttonStyle(.scaleReactive(factor: 1.05))
                 }
-                .padding(.fsPaddingMedium)
-                .padding(.bottom, .fsPaddingLarge)
+                .padding(24)
+                .padding(.bottom, 32)
+                
+                VStack(spacing: 8) {
+                    HStack {
+                        Text("Made with")
+                        Image(systemName: "heart.fill")
+                            .foregroundColor(.pink)
+                        Text("in Zürich for")
+                    }
+                    HStack {
+                        Image("siplab-logo")
+                            .renderingMode(.template)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 140)
+                        Image("ait-logo")
+                            .renderingMode(.template)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 190)
+                    }
+                    .padding(.top)
+                    Image("eth-logo")
+                        .renderingMode(.template)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 40)
+                        .padding(.bottom)
+                    
+                    HStack(spacing: 16) {
+                        ForEach(["Kai Zheng", "Cashen Adkins", "Tim Kluser", "Karl Robert Kristenprun", "Alexander Zank"], id: \.self) {
+                            Text($0)
+                                .multilineTextAlignment(.center)
+                        }
+                    }
+                }
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+                .padding(.bottom, 32)
             }
         }
         .navigationTitle("Panels")
         .overlay(
-            DebugView()
+            DatabaseDebugView()
         )
         .alert("Delete", isPresented: $onDelete.show, actions: {
             Button("Delete", action: {
@@ -61,17 +96,17 @@ struct PanelsView: View {
         var viewModel: PanelsViewModel
 
         var body: some View {
-            VStack(spacing: .fsPaddingMedium) {
+            VStack(spacing: 24) {
                 Image(uiImage: panel.previewImage ?? UIImage())
                     .resizable()
                     .aspectRatio(.init(width: 1.0, height: 1.0), contentMode: .fit)
-                    .background(Color.fsWhite)
+                    .background(Color.white)
                     .cornerRadius(10)
                     .clipped()
 
                 // TODO: - Number in Comic (in final product)
                 Text("\(panel.creationDate?.toString() ?? Date.nilString)")
-                    .font(.fsSubtitle)
+                    .font(.subheadline)
                     .foregroundColor(.gray)
                 
                 Spacer()
@@ -85,17 +120,17 @@ struct PanelsView: View {
         var body: some View {
             VStack {
                 RoundedRectangle(cornerRadius: 15)
-                    .stroke(Color.fsGray, style: StrokeStyle(lineWidth: 4, dash: [15.0]))
+                    .stroke(Color.tertiary, style: StrokeStyle(lineWidth: 4, dash: [15.0]))
                     .aspectRatio(1, contentMode: .fit)
                     .cornerRadius(10)
                     .overlay(
-                        VStack(spacing: .fsPaddingSmall) {
-                            Image.fsPaint
+                        VStack(spacing: 8) {
+                            Image(systemName: "paintbrush.fill")
                                 .font(.system(size: 32))
-                                .foregroundColor(.fsGray)
+                                .foregroundColor(.tertiary)
                             Text("New panel")
-                                .font(.fsSubtitle)
-                                .foregroundColor(.fsGray)
+                                .font(.subheadline)
+                                .foregroundColor(.tertiary)
                         }
                     )
 

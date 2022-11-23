@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct KeyframeOverlay<A: KeyframeAssistant>: ResponsivityOverlay {
-    let assistant: A
+    @ObservedObject var assistant: A
 
     @State private var initialOffset: CGSize?
     var gesture: some Gesture {
@@ -27,6 +27,7 @@ struct KeyframeOverlay<A: KeyframeAssistant>: ResponsivityOverlay {
         }
         .onEnded { _ in
             initialOffset = nil
+            Logger.forStudy.critical("Moved position in keyframe.")
         }
     }
     

@@ -28,6 +28,7 @@ struct PinGizmo<A: PinAssistant>: ResponsivityGizmo {
                                 assistant.selectedPinLocation = nil
                                 logger.notice("Unpinned layer.")
                             }
+                            Logger.forStudy.critical("Toggled pin location.")
                         } label: {
                             Image(systemName: isSelected ? "pin.circle" : "circle")
                                 .font(.system(size: 26))

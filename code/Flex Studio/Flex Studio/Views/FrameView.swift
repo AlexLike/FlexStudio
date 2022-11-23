@@ -11,6 +11,7 @@ struct FrameView: View {
     static let logger = Logger.forType(FrameView.self)
 
     @Binding var aspectProgression: CGFloat
+
     /// A flag that enables or hides the resize gizmos.
     let isResizable: Bool
     /// The size of the currently framed area.
@@ -18,7 +19,7 @@ struct FrameView: View {
 
     /// The color of the frame
     var frameColor: Color {
-        isResizable ? (isDragging ? .fsTint : .fsGray) : .fsWhite
+        isResizable ? (isDragging ? .accent : .tertiary) : .white
     }
 
     var body: some View {
@@ -57,7 +58,7 @@ struct FrameView: View {
                     .rotated(by: .pi))
 
             Canvas(rendersAsynchronously: true) { context, _ in
-                context.fill(outer, with: .color(.fsBackground))
+                context.fill(outer, with: .color(.background))
                 context.stroke(boundary, with: .color(frameColor), style: .init(lineWidth: 3))
                 if isResizable {
                     if aspectProgression <= 0.5 {
@@ -80,7 +81,6 @@ struct FrameView: View {
     @State private var isDragging: Bool = false
     @State private var convert: ((CGSize) -> CGFloat)? = nil
     private func resizeGesture(for viewSize: CGSize) -> some Gesture {
-        
         return DragGesture()
             .onChanged { g in
                 if convert == nil {
@@ -157,6 +157,7 @@ struct FrameView: View {
                 Self.logger.notice("Stopped dragging.")
                 convert = nil
                 isDragging = false
+                Logger.forStudy.critical("Resized frame.")
             }
     }
 

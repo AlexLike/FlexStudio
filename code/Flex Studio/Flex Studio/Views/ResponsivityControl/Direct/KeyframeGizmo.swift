@@ -28,6 +28,7 @@ struct KeyframeGizmo<A: KeyframeAssistant>: ResponsivityGizmo {
                     assistant.aspectProgression = assistant.sortedKeyframeProgressions
                         .last(where: { $0 < assistant.aspectProgression })
                         ?? 0
+                    Logger.forStudy.critical("Jumped left to keyframe.")
                 } label: {
                     Image(systemName: "chevron.left.2")
                         .fontWeight(.medium)
@@ -35,6 +36,7 @@ struct KeyframeGizmo<A: KeyframeAssistant>: ResponsivityGizmo {
                 }
                 Button {
                     assistant.toggleKeyframe()
+                    Logger.forStudy.critical("Toggled keyframe.")
                 } label: {
                     ZStack {
                         if isOnKeyframe {
@@ -52,6 +54,7 @@ struct KeyframeGizmo<A: KeyframeAssistant>: ResponsivityGizmo {
                     assistant.aspectProgression = assistant.sortedKeyframeProgressions
                         .first(where: { $0 > assistant.aspectProgression })
                         ?? 1
+                    Logger.forStudy.critical("Jumped right to keyframe.")
                 } label: {
                     Image(systemName: "chevron.right.2")
                         .fontWeight(.medium)
@@ -94,10 +97,10 @@ struct KeyframeGizmo<A: KeyframeAssistant>: ResponsivityGizmo {
             )
 
             Canvas(rendersAsynchronously: true) { context, _ in
-                context.stroke(bottomLine, with: .color(.fsGray))
+                context.stroke(bottomLine, with: .color(.tertiary))
 
                 for shortLedger in shortLedgers {
-                    context.stroke(shortLedger, with: .color(.fsGray))
+                    context.stroke(shortLedger, with: .color(.tertiary))
                 }
 
                 for tallLedger in tallLedgers {
@@ -108,7 +111,7 @@ struct KeyframeGizmo<A: KeyframeAssistant>: ResponsivityGizmo {
                     context.fill(keyframeMarker, with: .color(.yellow))
                 }
 
-                context.fill(indicator, with: .color(.red))
+                context.fill(indicator, with: .color(.pink))
             }
             .frame(width: timelineSize.width, height: timelineSize.height)
         }
@@ -168,16 +171,14 @@ struct KeyframeGizmo<A: KeyframeAssistant>: ResponsivityGizmo {
 struct KeyframeGizmo_Previews: PreviewProvider {
     class MockAssistant: KeyframeAssistant {
         var currentOffset: CGSize = .zero
-        
-        func modifyCurrentKeyframePosition(to target: CGSize) {
-            
-        }
-        
+
+        func modifyCurrentKeyframePosition(to _: CGSize) {}
+
         let isEditingResponsivity = true
         @Published var aspectProgression: CGFloat = 0.22
         @Published var sortedKeyframeProgressions: [CGFloat] = [0, 0.2, 0.45, 0.88, 1]
-        
-        var currentKeyframe: Keyframe? = nil
+
+        var currentKeyframe: Keyframe?
         func toggleKeyframe() {}
     }
 

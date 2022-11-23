@@ -19,7 +19,7 @@ struct EditorView: View {
     var body: some View {
         ZStack {
             // Paper Background
-            Color.fsWhite
+            Color.white
 
             // Layers
             ForEach(viewModel.translationAnnotatedSortedLayers, id: \.0) { layer, translation in
@@ -33,7 +33,6 @@ struct EditorView: View {
                 .offset(translation)
                 .frame(width: Geometry.canvasLength, height: Geometry.canvasLength)
                 .allowsHitTesting(isSelected)
-                .opacity(layer.isVisible ? 1 : 0)
                 .disabled(!isFullyVisible)
             }
             .layoutPriority(-1)
@@ -63,7 +62,7 @@ struct EditorView: View {
                 .allowsHitTesting(false)
 
             HStack {
-                LayerSelectionView(viewModel: viewModel)
+                LayerSelectionView(assistant: viewModel, allowsAddingLayers: !viewModel.isEditingResponsivity)
                 Spacer()
                 VStack {
                     Spacer()
@@ -91,24 +90,13 @@ struct EditorView: View {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button {
                     dismiss()
+                    Logger.forStudy.critical("Dismissed EditorView.")
                 } label: {
-                    Image.fsPanels
-                }
-            }
-            ToolbarItem(placement: .navigationBarTrailing) {
-                let o: ResponsivityInterfaceVariant = {
-                    switch viewModel.responsivityInterfaceVariant {
-                    case .indirect: return .direct
-                    case .direct: return .indirect
-                    }
-                }()
-                Button {
-                    viewModel.responsivityInterfaceVariant = o
-                } label: {
-                    Image(systemName: "repeat")
+                    Image(systemName: "square.grid.2x2")
                 }
             }
         }
+        .overlay(StudyControlView(responsivityInterfaceVariant: $viewModel.responsivityInterfaceVariant))
         .navigationTitle("Panel \(viewModel.panel.creationDate?.toString() ?? Date.nilString)")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()

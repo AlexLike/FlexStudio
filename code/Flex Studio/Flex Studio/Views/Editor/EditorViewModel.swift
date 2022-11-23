@@ -140,16 +140,4 @@ class EditorViewModel: ObservableObject {
 //            layer.previewImage = layerImage
 //        }
 //    }
-
-    // MARK: - LayerSelectionView
-
-    func move(fromOffsets source: IndexSet, toOffset destination: Int) {
-        var sortedLayers = panel.sortedLayers
-        sortedLayers.move(fromOffsets: source, toOffset: destination)
-
-        for (i, layer) in sortedLayers.enumerated() {
-            layer.order = Int16(i)
-        }
-        panel.objectWillChange.send()
-    }
 }

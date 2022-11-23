@@ -15,30 +15,32 @@ extension Layer {
     /// is furthest to the back.)
     var order: Int16 {
         get { order_ }
-        set { order_ = newValue }
+        set {
+            panel_?.objectWillChange.send()
+            order_ = newValue
+        }
     }
 
     /// The drawing pictured by this layer.
     var drawing: PKDrawing {
         get { (drawing_ as? PKDrawingReference) as? PKDrawing ?? .init() }
-        set { drawing_ = newValue as PKDrawingReference }
+        set {
+            panel_?.objectWillChange.send()
+            drawing_ = newValue as PKDrawingReference
+        }
     }
 
     var isVisible: Bool {
         get { isVisible_ }
         set { isVisible_ = newValue }
     }
-    
-    var previewImage: UIImage? {
+
+    var thumbnail: UIImage? {
         get {
-            if let imageData = previewImage_ {
-                return UIImage(data: imageData)
-            }
-            return nil
+            guard let imageData = thumbnail_ else { return nil }
+            return .init(data: imageData)
         }
-        set {
-            previewImage_ = newValue?.pngData()
-        }
+        set { thumbnail_ = newValue?.pngData() }
     }
 
     var pinLocation: PinLocation? {
@@ -64,8 +66,9 @@ extension Layer {
         get { keyframes_ as? Set<Keyframe> ?? [] }
         set { keyframes_ = newValue as NSSet }
     }
-    
-    var sortedKeyframes: [Keyframe] { keyframes.sorted(using: KeyPathComparator(\Keyframe.aspectProgression))
+
+    var sortedKeyframes: [Keyframe] {
+        keyframes.sorted(using: KeyPathComparator(\Keyframe.aspectProgression))
     }
 
     // MARK: - CD operations
@@ -83,7 +86,7 @@ extension Layer {
 
     func delete(removingFromPanel: Bool = true) {
         let context = managedObjectContext!
-        
+
         if removingFromPanel {
             panel.removeFromLayers_(self)
         }

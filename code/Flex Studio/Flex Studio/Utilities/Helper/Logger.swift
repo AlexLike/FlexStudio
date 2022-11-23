@@ -11,4 +11,6 @@ enum Logger {
     static func forType<T>(_ type: T.Type) -> os.Logger {
         os.Logger(subsystem: Bundle.main.bundleIdentifier!, category: String(describing: type))
     }
+    
+    static let forStudy = os.Logger(subsystem: Bundle.main.bundleIdentifier!, category: "Study")
 }

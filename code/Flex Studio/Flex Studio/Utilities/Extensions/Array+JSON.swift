@@ -1,5 +1,5 @@
 //
-//  Array+Ext.swift
+//  Array+JSON.swift
 //  Flex Studio
 //
 //  Created by Kai Zheng on 20.11.22.

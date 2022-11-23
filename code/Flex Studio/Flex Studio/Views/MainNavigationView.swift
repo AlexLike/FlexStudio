@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct MainNavigationView: View {
-    @State private var safeAreaInsets: (top: CGFloat, bottom: CGFloat) = (0, 0)
-    
     var body: some View {
         NavigationStack {
             PanelsView()
         }
-        .tint(.fsBlack)
+        .tint(.accent)
     }
 }
 

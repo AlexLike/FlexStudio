@@ -15,6 +15,7 @@ extension Keyframe {
     var position: CGSize {
         get { .init(width: positionX_, height: positionY_) }
         set {
+            layer_?.objectWillChange.send()
             positionX_ = newValue.width
             positionY_ = newValue.height
         }

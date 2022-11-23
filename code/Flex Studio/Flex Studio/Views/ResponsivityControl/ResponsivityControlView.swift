@@ -64,22 +64,28 @@ struct ResponsivityControlView<G: ResponsivityGizmo, A>: View {
                     ) {
                         isExpanded.toggle()
                     }
+                    Logger.forStudy.critical("Toggled ResponsivityControlView.")
                 } label: {
                     Image(systemName: isExpanded ? "pencil.and.outline" : "lasso.and.sparkles")
+                        .symbolRenderingMode(.palette)
+                        .foregroundStyle(
+                            isExpanded ? Color.accent : .orange,
+                            Color.accent
+                        )
                         .font(.title2)
                         .frame(
                             minWidth: 2 * cornerRadius,
                             minHeight: 2 * cornerRadius
                         )
-                        .background(isExpanded ? Color.fsGray : Color.fsWhite)
+                        .background(isExpanded ? Color.accent.opacity(0.25) : nil)
                 }
                 .buttonStyle(.static)
                 .clipShape(Circle())
             }
         }
-        .background(Color.fsWhite)
+        .background(Color.toolPickerWhite)
         .cornerRadius(cornerRadius)
-        .shadow(color: .black.opacity(0.1), radius: 10)
+        .toolShadow(strength: isExpanded ? 1 : 2)
     }
 }
 
