@@ -156,8 +156,10 @@ struct FrameView: View {
             .onEnded { _ in
                 Self.logger.notice("Stopped dragging.")
                 convert = nil
+                if isDragging {
+                    Logger.forStudy.critical("Resized frame.")
+                }
                 isDragging = false
-                Logger.forStudy.critical("Resized frame.")
             }
     }
 
