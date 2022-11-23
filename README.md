@@ -209,9 +209,10 @@ To measure our goals, we task participants with
 ---
 
 ### Protocol
-(For test person #i)
+{Information for the tester is in cury brackets {}} <br>
+{We'll be testing our prototypes A and B on 8 or 12 people. The probands are identified uniquely as #i in (1, ..., 8/12) } <br>
 ### Introduction
-Hi [user's name]. Today we are looking for ways to improve the user experience of the responsivity editor in our drawing-app. With our responsivity editor we want to achieve the user to define how the layers should behave he resizes the panel he's drawing on. This is a test of the component; we are not testing you. If you find something difficult to use, chances are that others will as well, so your feedback helps everyone. This test of the component is simply a means of evaluating the component's design and to discover any issues we need to address.
+Hi [#i's name]. Today we are looking for ways to improve the user experience of the responsivity editor in our drawing-app. With our responsivity editor we want to achieve the user to define how the layers should behave if he resizes the panel he's drawing on. Imagine being an artist who just drew a cartoon and you decide to change the panel aspect ratio. You're thinking the cartoon might look better if it spans the whole width of a page or you want to see how the drawing would look in an instagram post with an aspect ratio of 1:1. This is a test of the component; we are not testing you. If you find something difficult to use, chances are that others will as well, so your feedback helps everyone. This test of the component is simply a means of evaluating the component's design and to discover any issues we need to address.
 
 The study will take about [nr minutes] minutes. We'll answer any questions you have in the end of the study.
 
@@ -221,21 +222,81 @@ Do you have any questions?
 Otherwise let's get started.
 
 ### Test
-(Consider between subject design ((#i mod 4) + 1 ))
+{Consider between subject design ((#i mod 4) + 1 )} <br>
+{From now on, only }
 
 In the next minutes you're asked to fulfill two tasks, each of them on a different version of our responsivity editor.
 Before we introduce you to the specific task you're asked to get used to working with each of the versions for [y minutes] minutes.
+We'll ansewer any questions you have about the app in the end of the study.
+
+**(V1, V2)1:**
 
 (Perhaps: Show an example of a task (C3) to lead them what they should try out in the following phase)
 
-∀ V1 (V1, O): Here's our first version of the drawing app. Make sure to try out the reference mode by clicking on this button. You're given [y minutes], beginning now.
+*open task 1:* <br>
+ Here's our first version of the drawing app. Make sure to try out the reference mode by clicking on this button. You're given [y minutes] to try the app out, beginning now.
 
-∀ V1 V2. (V1, V2) : As you can see on the IPad screen, you're given a preset. On the first layer there is [...], on the second [...]...
-Now you're shown a video about how the different layers in the drawing should behave in the end when you're resizing the panel. You're asked to create the same behaviour when resizing the panel. You should try to be accurate (or fast). If you're finished say "STOP" (push the button).
+*main task 2:* <br>
+As you can see on the IPad screen, you're given a preset. On the first layer there is [...], on the second [...]...
+Now you're shown a video about how the different layers in the drawing should behave in the end when you're resizing the panel. You're asked to create the same behaviour when resizing the panel. You should try to be as accurate as possible, while also being fast. Before you begin with the task, push the button in the top right to start. If you're finished press the button on the top right again to stop.
 (show video.)
 
+### Questionnaire 1
+**Q1) <br>Mental Demand:** How much mental and perceptual activity was required (e.g. thinking, deciding, calculating, remembering, looking, searching, etc.)? Was the task easy or demanding, simple or complex, exacting or forgiving?
 
+**Q2) <br>Physical Demand:** How much physical activity was required (e.g. tapping, dragging, activating, etc.)? Was the task easy or demanding, slow or fast, restful or laborious, slack or strenous?
 
+**Q3) <br> Performance:** How successful do you think you were in accomplishing the goals of the task set by us, i.e. matching our cartoon in different aspect ratios? How satisfied were with your performance in accomplishing these goals?
+
+**Q4) <br> Effort:**
+How hard did you have to work (mentally or physically) to accomplish your level of performance)?
+
+**Q5) <br> Frustration Level:**
+ How insecure, discouraged, irritated, stressed or annoyed versus secure, gratified, content, relaxed and complacent did you feel during the task?
+
+**Q6) <br> Creativity:**
+ Considering the 5 minutes you were given at the beginning, and the task you just completed, how much do you think the tool allows you to express your creativity? Is it restrictive or extensive, enabling or disabling?
+
+**Q7) <br> Simplicity:** 
+Again, considering your time with the tool sofar, how easy is it to use? How simple, effortless, straighforward versus complex, difficult, unintuitive was the use of the tool when accomplishing your goal.
+
+**(V1, V2)2:** <br>
+*open task 1:* <br>
+Well done, now it's time for our second version: 
+Again you should get used to the responsivity editor that has a new interface now. You'll get 5 min from now on.
+
+*main task 2:* <br>
+Again you'll get a preset and see a video of how the layers should behave when you resize the panel.
+Before you begin with the task, push the button in the top right to start. If you're finished press the button on the top right again to stop.
+(show video.)
+
+### Questionnaire 2
+**Q1) <br>Mental Demand:** How much mental and perceptual activity was required (e.g. thinking, deciding, calculating, remembering, looking, searching, etc.)? Was the task easy or demanding, simple or complex, exacting or forgiving?
+
+**Q2) <br>Physical Demand:** How much physical activity was required (e.g. tapping, dragging, activating, etc.)? Was the task easy or demanding, slow or fast, restful or laborious, slack or strenous?
+
+**Q3) <br> Performance:** How successful do you think you were in accomplishing the goals of the task set by us, i.e. matching our cartoon in different aspect ratios? How satisfied were with your performance in accomplishing these goals?
+
+**Q4) <br> Effort:**
+How hard did you have to work (mentally or physically) to accomplish your level of performance)?
+
+**Q5) <br> Frustration Level:**
+ How insecure, discouraged, irritated, stressed or annoyed versus secure, gratified, content, relaxed and complacent did you feel during the task?
+
+**Q6) <br> Creativity:**
+ Considering the 5 minutes you were given at the beginning, and the task you just completed, how much do you think the tool allows you to express your creativity? Is it restrictive or extensive, enabling or disabling?
+
+**Q7) <br> Simplicity:** 
+Again, considering your time with the tool sofar, how easy is it to use? How simple, effortless, straighforward versus complex, difficult, unintuitive was the use of the tool when accomplishing your goal.
+
+### Questionair 3
+**Q1) <br> Comparison:** 
+(Open question)
+Having used both methods, which one did you prefer? Which one of the key aspects (i.e. mental/physical demand, performance, etc.) in the questionaire was the main reason for your preference?
+
+**Q2) <br> Improvements:**
+(Open question)
+Do you have any suggestions for points of improvement?s
 
 
 
