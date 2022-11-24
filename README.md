@@ -219,7 +219,12 @@ To measure our goals, we task participants with
    - choose "File" > "New Movie Recording" (not "New Screen Recording")
    - tap the arrow to choose the IPad and record it's screen
    - in the end of the study copy/paste all the logs to a file {#i's name}.txt
- <br>}
+
+
+} 
+ 
+ 
+ {Link for questionnaire: https://docs.google.com/forms/d/e/1FAIpQLSc8zU0_1yKfc3mgu-SK4-0RwdJAbGEq76R5gKkZa2THE9VrEw/viewform?usp=sharing}
 ### Introduction
 Hi [#i's name]. 
 Today we are looking for ways to improve the user experience of the responsivity editor in our drawing-app. With our responsivity editor we want to allow the user to define how the layers should behave if they resizes the panel they are drawing on. Imagine being an artist who just drew a cartoon and you decide to change the panel aspect ratio. You're thinking the cartoon might look better if it spans the whole width of a page or you want to see how the drawing would look in an Instagram post with an aspect ratio of 1:1. This is a test of the component; we are not testing you. If you find something difficult to use, chances are that others will as well, so your feedback helps everyone. This test of the component is simply a means of evaluating the component's design and to discover any issues we need to address.
