@@ -249,7 +249,7 @@ Now you're shown a video about how the different layers in the drawing should be
 **Q3) <br> Performance:** How successful do you think you were in accomplishing the goals of the task set by us, i.e. matching our cartoon in different aspect ratios? How satisfied were with your performance in accomplishing these goals?
 
 **Q4) <br> Effort:**
-How hard did you have to work (mentally or physically) to accomplish your level of performance)?
+How hard did you have to work (mentally or physically) to accomplish your level of performance?
 
 **Q5) <br> Frustration Level:**
  How insecure, discouraged, irritated, stressed or annoyed versus secure, gratified, content, relaxed and complacent did you feel during the task?
@@ -278,7 +278,7 @@ Before you begin with the task, push the button in the top right to start. If yo
 **Q3) <br> Performance:** How successful do you think you were in accomplishing the goals of the task set by us, i.e. matching our cartoon in different aspect ratios? How satisfied were with your performance in accomplishing these goals?
 
 **Q4) <br> Effort:**
-How hard did you have to work (mentally or physically) to accomplish your level of performance)?
+How hard did you have to work (mentally or physically) to accomplish your level of performance?
 
 **Q5) <br> Frustration Level:**
  How insecure, discouraged, irritated, stressed or annoyed versus secure, gratified, content, relaxed and complacent did you feel during the task?
