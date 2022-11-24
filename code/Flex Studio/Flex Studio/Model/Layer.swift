@@ -29,20 +29,19 @@ extension Layer {
             drawing_ = newValue as PKDrawingReference
         }
     }
-
+    
+    /// A flag controlling a panel's visibility.
     var isVisible: Bool {
         get { isVisible_ }
         set { isVisible_ = newValue }
     }
 
+    /// A small thumbnail of this layer's drawn-in area.
     var thumbnail: UIImage? {
-        get {
-            guard let imageData = thumbnail_ else { return nil }
-            return .init(data: imageData)
-        }
-        set { thumbnail_ = newValue?.pngData() }
+        get { thumbnail_ as? UIImage }
+        set { thumbnail_ = newValue }
     }
-
+    
     var pinLocation: PinLocation? {
         get { pinLocation_ >= 0 ? .from(id: pinLocation_) : nil }
         set {

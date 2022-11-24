@@ -1,5 +1,5 @@
 //
-//  PanelsView.swift
+//  PanelListView.swift
 //  Flex Studio
 //
 //  Created by Kai Zheng on 06.11.22.
@@ -8,7 +8,7 @@
 import CoreData
 import SwiftUI
 
-struct PanelsView: View {
+struct PanelListView: View {
     @FetchRequest(fetchRequest: Panel.fetchRequestOldestToNewest) var panels: FetchedResults<Panel>
     private let viewModel = PanelsViewModel()
     @State private var onDelete: (show: Bool, panel: Panel?) = (false, nil)
@@ -97,7 +97,7 @@ struct PanelsView: View {
 
         var body: some View {
             VStack(spacing: 24) {
-                Image(uiImage: panel.previewImage ?? UIImage())
+                Image(uiImage: panel.thumbnail ?? UIImage())
                     .resizable()
                     .aspectRatio(.init(width: 1.0, height: 1.0), contentMode: .fit)
                     .background(Color.white)
@@ -143,7 +143,7 @@ struct PanelsView: View {
 
 struct PanelsView_Previews: PreviewProvider {
     static var previews: some View {
-        PanelsView()
+        PanelListView()
             .environment(\.managedObjectContext, PersistenceLayer.preview.viewContext)
     }
 }

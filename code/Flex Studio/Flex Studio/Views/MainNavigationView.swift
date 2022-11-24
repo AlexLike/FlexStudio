@@ -10,7 +10,7 @@ import SwiftUI
 struct MainNavigationView: View {
     var body: some View {
         NavigationStack {
-            PanelsView()
+            PanelListView()
         }
         .tint(.accent)
     }

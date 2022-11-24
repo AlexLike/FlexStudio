@@ -1,5 +1,5 @@
 //
-//  PanelsViewModel.swift
+//  PanelListViewModel.swift
 //  Flex Studio
 //
 //  Created by Kai Zheng on 06.11.22.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct PanelsViewModel {
-    private let logger = Logger.forType(PanelsViewModel.self)
+struct PanelListViewModel {
+    private let logger = Logger.forType(PanelListViewModel.self)
     private let viewContext = PersistenceLayer.shared.viewContext
     
     // MARK: - Data
@@ -28,8 +28,8 @@ struct PanelsViewModel {
     
     // MARK: - UI
     
-    let itemColumns = [GridItem(.flexible(), spacing: 20),
-                       GridItem(.flexible(), spacing: 20),
-                       GridItem(.flexible(), spacing: 20)
+    let itemColumns = [GridItem(.flexible(), spacing: 32),
+                       GridItem(.flexible(), spacing: 32),
+                       GridItem(.flexible(), spacing: 32)
     ]
 }

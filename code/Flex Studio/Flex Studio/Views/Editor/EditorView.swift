@@ -97,12 +97,15 @@ struct EditorView: View {
             }
         }
         .overlay(StudyControlView(responsivityInterfaceVariant: $viewModel.responsivityInterfaceVariant))
-        .navigationTitle("Panel \(viewModel.panel.creationDate?.toString() ?? Date.nilString)")
+        .navigationTitle(viewModel.panel.title ?? "Panel from \(viewModel.panel.creationDate?.formatted(date: .abbreviated, time: .shortened) ?? "some date")")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()
         .onAppear {
             viewModel.selectedLayer = viewModel.panel.layers.first!
             isFullyVisible = true
+        }
+        .onDisappear {
+            viewModel.panel.updateThumbnail(variant: viewModel.responsivityInterfaceVariant)
         }
     }
 }

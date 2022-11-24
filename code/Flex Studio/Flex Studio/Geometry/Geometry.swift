@@ -18,6 +18,9 @@ enum Geometry {
     /// The minimal size required for a backing canvas to cover all aspect progression settings.
     static let canvasLength: CGFloat = 2 * Self.minFrameLength * Self.maxFrameScale
     static let canvasSize: CGSize = .init(width: canvasLength, height: canvasLength)
+    
+    static let layerThumbnailLength: CGFloat = 200
+    static let panelThumbnailLength: CGFloat = 600
 
     /// The size of the panel for a given aspect progression.
     static func panelSize(for aspectProgression: CGFloat) -> CGSize {

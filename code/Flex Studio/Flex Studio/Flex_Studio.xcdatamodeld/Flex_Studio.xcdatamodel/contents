@@ -11,7 +11,7 @@
         <attribute name="isVisible_" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="order_" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="pinLocation_" attributeType="Integer 16" defaultValueString="-1" usesScalarValueType="YES"/>
-        <attribute name="thumbnail_" optional="YES" attributeType="Binary"/>
+        <attribute name="thumbnail_" optional="YES" attributeType="Transformable" valueTransformerName="ImageTransformer"/>
         <relationship name="keyframes_" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Keyframe" inverseName="layer_" inverseEntity="Keyframe"/>
         <relationship name="panel_" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Panel" inverseName="layers_" inverseEntity="Panel"/>
         <uniquenessConstraints>
@@ -23,7 +23,8 @@
     </entity>
     <entity name="Panel" representedClassName="Panel" syncable="YES" codeGenerationType="class">
         <attribute name="creationDate_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="previewImage_" optional="YES" attributeType="Binary"/>
+        <attribute name="thumbnail_" optional="YES" attributeType="Transformable" valueTransformerName="ImageTransformer"/>
+        <attribute name="title_" optional="YES" attributeType="String"/>
         <attribute name="uid_" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="layers_" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Layer" inverseName="panel_" inverseEntity="Layer"/>
         <uniquenessConstraints>

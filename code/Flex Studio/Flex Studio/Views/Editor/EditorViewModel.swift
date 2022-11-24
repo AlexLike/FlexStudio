@@ -14,7 +14,7 @@ class EditorViewModel: ObservableObject {
     let panel: Panel
 
     /// The currently employed undelying responsivity concept.
-    @Published var responsivityInterfaceVariant: ResponsivityInterfaceVariant = .direct
+    @Published var responsivityInterfaceVariant: ResponsivityInterfaceVariant = .indirect
 
     /// The currrently active tool.
     @Published var selectedTool: EditorTool? = .defaultDraw
@@ -100,44 +100,4 @@ class EditorViewModel: ObservableObject {
             }
         }
     }
-
-    // MARK: - PanelResizingView
-
-//    @MainActor
-//    func savePreviewImage() {
-//        UIGraphicsBeginImageContext(panel.size)
-//
-//        let areaSize = CGRect(origin: .zero, size: panel.size)
-//
-//        for layer in panel.layers {
-//            let image = layer.drawing.image(
-//                from: CGRect(origin: .zero, size: panel.size),
-//                scale: 1.0
-//            )
-//            image.draw(in: areaSize, blendMode: .normal, alpha: 1.0)
-//        }
-//
-//        if let allLayersImage: UIImage = UIGraphicsGetImageFromCurrentImageContext() {
-//            UIGraphicsEndImageContext()
-//            panel.previewImage = allLayersImage
-//        }
-//    }
-//
-//    @MainActor
-//    func savePreviewImage(for layer: Layer) {
-//        UIGraphicsBeginImageContext(panel.size)
-//
-//        let areaSize = CGRect(origin: .zero, size: panel.size)
-//
-//        let image = layer.drawing.image(
-//            from: CGRect(origin: .zero, size: panel.size),
-//            scale: 1.0
-//        )
-//        image.draw(in: areaSize, blendMode: .normal, alpha: 1.0)
-//
-//        if let layerImage: UIImage = UIGraphicsGetImageFromCurrentImageContext() {
-//            UIGraphicsEndImageContext()
-//            layer.previewImage = layerImage
-//        }
-//    }
 }

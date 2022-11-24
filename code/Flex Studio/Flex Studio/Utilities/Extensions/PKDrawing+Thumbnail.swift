@@ -9,7 +9,6 @@ import PencilKit
 
 extension PKDrawing {
     var thumbnailImage: UIImage {
-        let l = max(bounds.width, bounds.height)
-        return image(from: bounds, scale: 500 / l)
+        return image(from: bounds, scale: 1)
     }
 }

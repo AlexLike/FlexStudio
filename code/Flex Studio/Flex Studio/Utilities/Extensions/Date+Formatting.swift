@@ -8,9 +8,8 @@
 import Foundation
 
 extension Date {
-    static let nilString: String = "This shouldn't be!"
-    
     func toString() -> String {
+        let date = Date().formatted(date: .abbreviated, time: .shortened)
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         formatter.timeStyle = .short

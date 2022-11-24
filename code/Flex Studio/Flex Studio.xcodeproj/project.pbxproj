@@ -15,6 +15,9 @@
 		1405B35B2926FB9B009D7759 /* KeyframeGizmo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1405B35A2926FB9B009D7759 /* KeyframeGizmo.swift */; };
 		1447CDFE29257ADB0047407A /* Comparable+Clamped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1447CDFD29257ADB0047407A /* Comparable+Clamped.swift */; };
 		14483E8C2927B7330062EB6A /* Rhombus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14483E8B2927B7330062EB6A /* Rhombus.swift */; };
+		145125F4292ECB44008138E3 /* Panel+Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145125F3292ECB44008138E3 /* Panel+Thumbnail.swift */; };
+		145125F6292ED3FE008138E3 /* ImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145125F5292ED3FE008138E3 /* ImageTransformer.swift */; };
+		145125F8292EDCAC008138E3 /* PanelListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145125F7292EDCAC008138E3 /* PanelListCell.swift */; };
 		146976862923EE7A00F4BF76 /* DrawToolPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146976852923EE7A00F4BF76 /* DrawToolPickerView.swift */; };
 		146976882923EF5300F4BF76 /* DrawToolPickerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146976872923EF5300F4BF76 /* DrawToolPickerState.swift */; };
 		14705F20292C17CA00D962E3 /* Geometry+PinLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14705F1F292C17CA00D962E3 /* Geometry+PinLogic.swift */; };
@@ -54,8 +57,8 @@
 		3D2472E4291942040000583C /* EditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2472E3291942040000583C /* EditorViewModel.swift */; };
 		3D2472F1291A3BCB0000583C /* ExecutionEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2472F0291A3BCB0000583C /* ExecutionEnvironment.swift */; };
 		3D39BC242917936500268337 /* Date+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D39BC232917936500268337 /* Date+Formatting.swift */; };
-		3D580C962917969200BA58DA /* PanelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580C952917969200BA58DA /* PanelsView.swift */; };
-		3D580C98291796E100BA58DA /* PanelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580C97291796E100BA58DA /* PanelsViewModel.swift */; };
+		3D580C962917969200BA58DA /* PanelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580C952917969200BA58DA /* PanelListView.swift */; };
+		3D580C98291796E100BA58DA /* PanelListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580C97291796E100BA58DA /* PanelListViewModel.swift */; };
 		3D93D57E29183FF400293FE2 /* LayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D93D57D29183FF400293FE2 /* LayerView.swift */; };
 		3DD199D72917E0E00005886E /* MainNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD199D62917E0E00005886E /* MainNavigationView.swift */; };
 		3DD46B11292A3FB5009A902F /* Array+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD46B10292A3FB5009A902F /* Array+JSON.swift */; };
@@ -72,6 +75,9 @@
 		1405B35A2926FB9B009D7759 /* KeyframeGizmo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyframeGizmo.swift; sourceTree = "<group>"; };
 		1447CDFD29257ADB0047407A /* Comparable+Clamped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comparable+Clamped.swift"; sourceTree = "<group>"; };
 		14483E8B2927B7330062EB6A /* Rhombus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rhombus.swift; sourceTree = "<group>"; };
+		145125F3292ECB44008138E3 /* Panel+Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Panel+Thumbnail.swift"; sourceTree = "<group>"; };
+		145125F5292ED3FE008138E3 /* ImageTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTransformer.swift; sourceTree = "<group>"; };
+		145125F7292EDCAC008138E3 /* PanelListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelListCell.swift; sourceTree = "<group>"; };
 		146976852923EE7A00F4BF76 /* DrawToolPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawToolPickerView.swift; sourceTree = "<group>"; };
 		146976872923EF5300F4BF76 /* DrawToolPickerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawToolPickerState.swift; sourceTree = "<group>"; };
 		14705F1F292C17CA00D962E3 /* Geometry+PinLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Geometry+PinLogic.swift"; sourceTree = "<group>"; };
@@ -112,8 +118,8 @@
 		3D2472E3291942040000583C /* EditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewModel.swift; sourceTree = "<group>"; };
 		3D2472F0291A3BCB0000583C /* ExecutionEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutionEnvironment.swift; sourceTree = "<group>"; };
 		3D39BC232917936500268337 /* Date+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatting.swift"; sourceTree = "<group>"; };
-		3D580C952917969200BA58DA /* PanelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelsView.swift; sourceTree = "<group>"; };
-		3D580C97291796E100BA58DA /* PanelsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelsViewModel.swift; sourceTree = "<group>"; };
+		3D580C952917969200BA58DA /* PanelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelListView.swift; sourceTree = "<group>"; };
+		3D580C97291796E100BA58DA /* PanelListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelListViewModel.swift; sourceTree = "<group>"; };
 		3D93D57D29183FF400293FE2 /* LayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerView.swift; sourceTree = "<group>"; };
 		3DD199D62917E0E00005886E /* MainNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationView.swift; sourceTree = "<group>"; };
 		3DD46B10292A3FB5009A902F /* Array+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+JSON.swift"; sourceTree = "<group>"; };
@@ -249,6 +255,7 @@
 			children = (
 				14752FE52916B92A0084BF7E /* PersistenceLayer.swift */,
 				14EB30CE2916C94D00744608 /* DrawingTransformer.swift */,
+				145125F5292ED3FE008138E3 /* ImageTransformer.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -257,7 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				3DD199D62917E0E00005886E /* MainNavigationView.swift */,
-				3D580C992917A07F00BA58DA /* Panels */,
+				3D580C992917A07F00BA58DA /* PanelList */,
 				1405B34E29266CB6009D7759 /* ResponsivityControl */,
 				3D2472E2291941B10000583C /* Editor */,
 				14EF8435292D1F4B0015B3FD /* LayerSelection */,
@@ -339,18 +346,20 @@
 				1447CDFD29257ADB0047407A /* Comparable+Clamped.swift */,
 				3DD46B10292A3FB5009A902F /* Array+JSON.swift */,
 				14818570292CE70500EFD0C8 /* PKDrawing+Thumbnail.swift */,
+				145125F3292ECB44008138E3 /* Panel+Thumbnail.swift */,
 				14EF8455292DB06E0015B3FD /* UIWindow+Swizzle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		3D580C992917A07F00BA58DA /* Panels */ = {
+		3D580C992917A07F00BA58DA /* PanelList */ = {
 			isa = PBXGroup;
 			children = (
-				3D580C97291796E100BA58DA /* PanelsViewModel.swift */,
-				3D580C952917969200BA58DA /* PanelsView.swift */,
+				3D580C97291796E100BA58DA /* PanelListViewModel.swift */,
+				3D580C952917969200BA58DA /* PanelListView.swift */,
+				145125F7292EDCAC008138E3 /* PanelListCell.swift */,
 			);
-			path = Panels;
+			path = PanelList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,14 +453,14 @@
 				14752FE62916B92A0084BF7E /* PersistenceLayer.swift in Sources */,
 				3DD46B13292A468D009A902F /* DatabaseDebugView.swift in Sources */,
 				14705F20292C17CA00D962E3 /* Geometry+PinLogic.swift in Sources */,
-				3D580C98291796E100BA58DA /* PanelsViewModel.swift in Sources */,
+				3D580C98291796E100BA58DA /* PanelListViewModel.swift in Sources */,
 				E9300DF9292653D300D78892 /* PinLocation.swift in Sources */,
 				14705F22292C191D00D962E3 /* Geometry+KeyframeLogic.swift in Sources */,
 				14EF8437292D1F6B0015B3FD /* LayerSelectionAssistant.swift in Sources */,
 				1405B3592926D8E5009D7759 /* PinGizmo.swift in Sources */,
 				3DD199D72917E0E00005886E /* MainNavigationView.swift in Sources */,
 				14CD95BD29173CAE00BE08FB /* EditorView.swift in Sources */,
-				3D580C962917969200BA58DA /* PanelsView.swift in Sources */,
+				3D580C962917969200BA58DA /* PanelListView.swift in Sources */,
 				1405B35029266D1E009D7759 /* ResponsivityControlView.swift in Sources */,
 				3D2472F1291A3BCB0000583C /* ExecutionEnvironment.swift in Sources */,
 				3D93D57E29183FF400293FE2 /* LayerView.swift in Sources */,
@@ -470,10 +479,13 @@
 				14F2EADA292A7B2100911CA6 /* EditorViewModel+PinAssistant.swift in Sources */,
 				14F2EAE0292AB74C00911CA6 /* Geometry.swift in Sources */,
 				14EF8441292D7EB40015B3FD /* Color+CustomPalette.swift in Sources */,
+				145125F6292ED3FE008138E3 /* ImageTransformer.swift in Sources */,
+				145125F8292EDCAC008138E3 /* PanelListCell.swift in Sources */,
 				14EF843D292D711C0015B3FD /* Color+SystemExtended.swift in Sources */,
 				14EF843B292D36F30015B3FD /* LayerSelectionCell.swift in Sources */,
 				14705F24292C2A9100D962E3 /* ResponsivityOverlayView.swift in Sources */,
 				14BDC2C52924F763004FA02B /* FrameView.swift in Sources */,
+				145125F4292ECB44008138E3 /* Panel+Thumbnail.swift in Sources */,
 				1405B3552926D39A009D7759 /* StaticButtonStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

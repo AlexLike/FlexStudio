@@ -44,6 +44,7 @@ struct PersistenceLayer {
     init(inMemory: Bool) {
         // Register Transformers.
         DrawingTransformer.register()
+        ImageTransformer.register()
 
         // Make Container.
         container = NSPersistentContainer(name: "Flex_Studio")
@@ -107,6 +108,7 @@ extension NSPersistentContainer {
 
     @MainActor func copyPersistentStores(identifier: String) throws {
         DrawingTransformer.register()
+        ImageTransformer.register()
         PersistenceLayer.shared.save()
 
         let backupURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -166,6 +168,7 @@ extension NSPersistentContainer {
 
     @MainActor func restorePersistentStore(identifier: String) throws {
         DrawingTransformer.register()
+        ImageTransformer.register()
         PersistenceLayer.shared.save()
 
         let backupURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
