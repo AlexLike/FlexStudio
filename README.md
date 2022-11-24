@@ -209,8 +209,17 @@ To measure our goals, we task participants with
 ---
 
 ### Protocol
-{Information for the tester is in cury brackets {}} <br>
+{Information for the tester is in curly brackets {}} <br>
 {We'll be testing our prototypes A and B on 8 or 12 people. The probands are identified uniquely as #i in (1, ..., 8/12) } <br>
+{Setup for the tester <br>
+   - connect IPad to the Mac and open the console of the Mac
+   - search for: process: FlexStudio, category: Study
+   - tap "start"
+   - run quick time player
+   - choose "File" > "New Movie Recording" (not "New Screen Recording")
+   - tap the arrow to choose the IPad and record it's screen
+   - in the end of the study copy/paste all the logs to a file {#i's name}.txt
+ <br>}
 ### Introduction
 Hi [#i's name]. 
 Today we are looking for ways to improve the user experience of the responsivity editor in our drawing-app. With our responsivity editor we want to allow the user to define how the layers should behave if they resizes the panel they are drawing on. Imagine being an artist who just drew a cartoon and you decide to change the panel aspect ratio. You're thinking the cartoon might look better if it spans the whole width of a page or you want to see how the drawing would look in an Instagram post with an aspect ratio of 1:1. This is a test of the component; we are not testing you. If you find something difficult to use, chances are that others will as well, so your feedback helps everyone. This test of the component is simply a means of evaluating the component's design and to discover any issues we need to address.
@@ -224,7 +233,6 @@ Otherwise let's get started.
 
 ### Test
 {Consider between subject design ((#i mod 4) + 1 )} <br>
-{From now on, only }
 
 In the next minutes you're asked to fulfill two tasks, each of them on a different version of our responsivity editor.
 Before we introduce you to the specific task you're asked to get used to working with each of the versions for [y minutes] minutes.
@@ -232,16 +240,19 @@ We'll ansewer any questions you have about the app in the end of the study.
 
 **(V1, V2)1:**
 
-(Perhaps: Show an example of a task (C3) to lead them what they should try out in the following phase)
+*introduction to the specific tool:* (~3min) <br>
+To give you some impression of how to use the tool I'll give an example now.
+{Show and example of the direct/indirect tool with a drawing of your own.}
 
-*open task 1:* <br>
- Here's our first version of the drawing app. Make sure to try out the reference mode by clicking on this button. You're given [y minutes] to try the app out, beginning now.
+*open task 1:* (4 min)<br>
+ Here's our first version of the drawing app. Make sure to try out the reference mode by clicking on this button. You're given 4 minutes to try the app out, beginning now.
 
-*main task 2:* <br>
+*main task 2:* <br> (~10 min)
 As you can see on the IPad screen, you're given a preset. On the first layer there is [...], on the second [...]...
 Now you're shown a video about how the different layers in the drawing should behave in the end when you're resizing the panel. You're asked to create the same behaviour when resizing the panel. You should try to be as accurate as possible, while also being fast. Before you begin with the task, push the button in the top right to start. If you're finished press the button on the top right again to stop.
 (show video.)
-
+<br>...<br>
+Well done. Now you can go on filling out the questionnaire. 
 **Questionnaire 1**<br>
 **Q1) <br>Mental Demand:** How much mental and perceptual activity was required (e.g. thinking, deciding, calculating, remembering, looking, searching, etc.)? Was the task easy or demanding, simple or complex, exacting or forgiving?
 
@@ -262,15 +273,21 @@ How hard did you have to work (mentally or physically) to accomplish your level 
 Again, considering your time with the tool sofar, how easy is it to use? How simple, effortless, straighforward versus complex, difficult, unintuitive was the use of the tool when accomplishing your goal.
 
 **(V1, V2)2:** <br>
-*open task 1:* <br>
-Well done, now it's time for our second version: 
-Again you should get used to the responsivity editor that has a new interface now. You'll get 5 min from now on.
+Well done, now it's time for our second version:
 
-*main task 2:* <br>
+*introduction to the specific tool:* (~3min) <br>
+To give you some impression of how to use the tool I'll give an example now.
+{Show and example of the direct/indirect tool with a drawing of your own.}
+
+*open task 1:* (4min) <br>
+Again you should get used to the responsivity editor and it's new interface. You'll get 5 min from now on.
+
+*main task 2:*  (~10 min) <br>
 Again you'll get a preset and see a video of how the layers should behave when you resize the panel.
 Before you begin with the task, push the button in the top right to start. If you're finished press the button on the top right again to stop.
 (show video.)
-
+<br>...<br>
+Well done. Now you can go on filling out the questionnaire. 
 **Questionnaire 2**<br>
 **Q1) <br>Mental Demand:** How much mental and perceptual activity was required (e.g. thinking, deciding, calculating, remembering, looking, searching, etc.)? Was the task easy or demanding, simple or complex, exacting or forgiving?
 
@@ -290,7 +307,7 @@ How hard did you have to work (mentally or physically) to accomplish your level 
 **Q7) <br> Simplicity:** 
 Again, considering your time with the tool sofar, how easy is it to use? How simple, effortless, straighforward versus complex, difficult, unintuitive was the use of the tool when accomplishing your goal.
 
-**Questionair 3**<br>
+**Questionaire 3**<br>
 **Q1) <br> Comparison:** 
 (Open question)
 Having used both methods, which one did you prefer? Which one of the key aspects (i.e. mental/physical demand, performance, etc.) in the questionaire was the main reason for your preference?
@@ -304,7 +321,7 @@ Do you have any previous experiences with constraint based layouting, like in Fi
 **Q4) <br> Improvements:**
 Do you have any suggestions for points of improvements?
 
-
+Thanks a lot for your participation.
 
 
 
