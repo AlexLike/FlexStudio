@@ -56,7 +56,6 @@
 		3D1F1425291E587400850B65 /* LayerSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1423291E587400850B65 /* LayerSelectionView.swift */; };
 		3D2472E4291942040000583C /* EditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2472E3291942040000583C /* EditorViewModel.swift */; };
 		3D2472F1291A3BCB0000583C /* ExecutionEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2472F0291A3BCB0000583C /* ExecutionEnvironment.swift */; };
-		3D39BC242917936500268337 /* Date+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D39BC232917936500268337 /* Date+Formatting.swift */; };
 		3D580C962917969200BA58DA /* PanelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580C952917969200BA58DA /* PanelListView.swift */; };
 		3D580C98291796E100BA58DA /* PanelListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D580C97291796E100BA58DA /* PanelListViewModel.swift */; };
 		3D93D57E29183FF400293FE2 /* LayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D93D57D29183FF400293FE2 /* LayerView.swift */; };
@@ -117,7 +116,6 @@
 		3D1F1423291E587400850B65 /* LayerSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerSelectionView.swift; sourceTree = "<group>"; };
 		3D2472E3291942040000583C /* EditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewModel.swift; sourceTree = "<group>"; };
 		3D2472F0291A3BCB0000583C /* ExecutionEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutionEnvironment.swift; sourceTree = "<group>"; };
-		3D39BC232917936500268337 /* Date+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatting.swift"; sourceTree = "<group>"; };
 		3D580C952917969200BA58DA /* PanelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelListView.swift; sourceTree = "<group>"; };
 		3D580C97291796E100BA58DA /* PanelListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelListViewModel.swift; sourceTree = "<group>"; };
 		3D93D57D29183FF400293FE2 /* LayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerView.swift; sourceTree = "<group>"; };
@@ -342,7 +340,6 @@
 			children = (
 				14EF8440292D7EB40015B3FD /* Color+CustomPalette.swift */,
 				14EF843C292D711C0015B3FD /* Color+SystemExtended.swift */,
-				3D39BC232917936500268337 /* Date+Formatting.swift */,
 				1447CDFD29257ADB0047407A /* Comparable+Clamped.swift */,
 				3DD46B10292A3FB5009A902F /* Array+JSON.swift */,
 				14818570292CE70500EFD0C8 /* PKDrawing+Thumbnail.swift */,
@@ -446,7 +443,6 @@
 				14EF8456292DB06E0015B3FD /* UIWindow+Swizzle.swift in Sources */,
 				14EB30C92916BACA00744608 /* Logger.swift in Sources */,
 				14CD95B929173BF700BE08FB /* LayerState.swift in Sources */,
-				3D39BC242917936500268337 /* Date+Formatting.swift in Sources */,
 				14EB30D42916D0CE00744608 /* Layer.swift in Sources */,
 				3D2472E4291942040000583C /* EditorViewModel.swift in Sources */,
 				14EF8443292D91620015B3FD /* StudyControlView.swift in Sources */,
