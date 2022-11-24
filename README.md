@@ -241,7 +241,7 @@ As you can see on the IPad screen, you're given a preset. On the first layer the
 Now you're shown a video about how the different layers in the drawing should behave in the end when you're resizing the panel. You're asked to create the same behaviour when resizing the panel. You should try to be as accurate as possible, while also being fast. Before you begin with the task, push the button in the top right to start. If you're finished press the button on the top right again to stop.
 (show video.)
 
-### Questionnaire 1
+**Questionnaire 1**<br>
 **Q1) <br>Mental Demand:** How much mental and perceptual activity was required (e.g. thinking, deciding, calculating, remembering, looking, searching, etc.)? Was the task easy or demanding, simple or complex, exacting or forgiving?
 
 **Q2) <br>Physical Demand:** How much physical activity was required (e.g. tapping, dragging, activating, etc.)? Was the task easy or demanding, slow or fast, restful or laborious, slack or strenous?
@@ -270,7 +270,7 @@ Again you'll get a preset and see a video of how the layers should behave when y
 Before you begin with the task, push the button in the top right to start. If you're finished press the button on the top right again to stop.
 (show video.)
 
-### Questionnaire 2
+**Questionnaire 2**<br>
 **Q1) <br>Mental Demand:** How much mental and perceptual activity was required (e.g. thinking, deciding, calculating, remembering, looking, searching, etc.)? Was the task easy or demanding, simple or complex, exacting or forgiving?
 
 **Q2) <br>Physical Demand:** How much physical activity was required (e.g. tapping, dragging, activating, etc.)? Was the task easy or demanding, slow or fast, restful or laborious, slack or strenous?
@@ -289,14 +289,21 @@ How hard did you have to work (mentally or physically) to accomplish your level 
 **Q7) <br> Simplicity:** 
 Again, considering your time with the tool sofar, how easy is it to use? How simple, effortless, straighforward versus complex, difficult, unintuitive was the use of the tool when accomplishing your goal.
 
-### Questionair 3
+**Questionair 3**<br>
 **Q1) <br> Comparison:** 
 (Open question)
 Having used both methods, which one did you prefer? Which one of the key aspects (i.e. mental/physical demand, performance, etc.) in the questionaire was the main reason for your preference?
 
-**Q2) <br> Improvements:**
-(Open question)
-Do you have any suggestions for points of improvement?s
+**Q2) <br> Keyframe experience:**
+Do you have any previous experience with Keyframing, as seen in video-editing/animation software? 
+
+**Q3) <br> Constraint based experience:**
+Do you have any previous experiences with constraint based layouting, like in Figma or similar software? 
+
+**Q4) <br> Improvements:**
+Do you have any suggestions for points of improvements?
+
+
 
 
 
