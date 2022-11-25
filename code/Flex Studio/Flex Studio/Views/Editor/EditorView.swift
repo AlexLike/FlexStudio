@@ -103,6 +103,7 @@ struct EditorView: View {
         .onAppear {
             viewModel.selectedLayer = viewModel.panel.layers.first!
             isFullyVisible = true
+            Logger.forStudy.critical("Opened editor for panel of title \(viewModel.panel.title ?? viewModel.panel.creationDate?.formatted() ?? "unknown", privacy: .public)")
         }
         .onDisappear {
             viewModel.panel.updateThumbnail(variant: viewModel.responsivityInterfaceVariant)

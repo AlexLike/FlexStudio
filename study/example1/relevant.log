@@ -1,0 +1,52 @@
+Timestamp                       Thread     Type        Activity             PID    TTL  
+2022-11-25 17:59:41.600804+0100 0x83e9f    Fault       0x1b5ff7             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (267.5, 438.0)
+2022-11-25 17:59:41.768380+0100 0x83e9f    Fault       0x1b6f81             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Opened editor for panel of title Cozy Campfire
+2022-11-25 17:59:43.708547+0100 0x83e9f    Fault       0x1b6f82             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (1354.5, 31.5)
+2022-11-25 17:59:44.258998+0100 0x83e9f    Fault       0x1b6f83             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (1341.0, 36.5)
+2022-11-25 17:59:45.999740+0100 0x83e9f    Fault       0x1b6f88             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (1272.0, 94.5)
+2022-11-25 17:59:46.136948+0100 0x83e9f    Fault       0x1b6f8c             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Testing the indirect responsivity interface variant.
+2022-11-25 17:59:48.143249+0100 0x83e9f    Fault       0x1b6f8d             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (1305.5, 946.5)
+2022-11-25 17:59:48.628365+0100 0x83e9f    Fault       0x1b6f8e             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (1288.0, 945.5)
+2022-11-25 17:59:48.664903+0100 0x83e9f    Fault       0x1b6f8f             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Toggled ResponsivityControlView.
+2022-11-25 17:59:49.358948+0100 0x83e9f    Fault       0x1b7071             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (1280.5, 946.5)
+2022-11-25 17:59:49.441902+0100 0x83e9f    Fault       0x1b7072             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Toggled ResponsivityControlView.
+2022-11-25 17:59:50.508483+0100 0x83e9f    Fault       0x1b7074             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (1278.5, 49.0)
+2022-11-25 17:59:50.846803+0100 0x83e9f    Fault       0x1b7075             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] The participant begins the task.
+2022-11-25 17:59:51.786830+0100 0x83e9f    Fault       0x1b7077             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (1287.5, 957.5)
+2022-11-25 17:59:51.905018+0100 0x83e9f    Fault       0x1b7078             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Toggled ResponsivityControlView.
+2022-11-25 17:59:53.425802+0100 0x83e9f    Fault       0x1b707a             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (1247.0, 784.5)
+2022-11-25 17:59:53.522208+0100 0x83e9f    Fault       0x1b707b             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Toggled pin location.
+2022-11-25 17:59:54.322362+0100 0x83e9f    Fault       0x1b707d             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (81.0, 523.0)
+2022-11-25 17:59:55.065755+0100 0x83e9f    Fault       0x1b7115             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (76.0, 552.5)
+2022-11-25 17:59:55.126736+0100 0x83e9f    Fault       0x1b7116             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Selected layer.
+2022-11-25 17:59:55.980816+0100 0x83e9f    Fault       0x1b7118             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (1131.5, 887.5)
+2022-11-25 17:59:56.061157+0100 0x83e9f    Fault       0x1b7119             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Toggled pin location.
+2022-11-25 17:59:56.749966+0100 0x83e9f    Fault       0x1b711b             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (74.5, 532.0)
+2022-11-25 17:59:57.349692+0100 0x83e9f    Fault       0x1b71ae             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (85.5, 469.0)
+2022-11-25 17:59:57.403530+0100 0x83e9f    Fault       0x1b71af             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Selected layer.
+2022-11-25 17:59:58.236208+0100 0x83e9f    Fault       0x1b71c1             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (1135.5, 809.0)
+2022-11-25 17:59:58.345821+0100 0x83e9f    Fault       0x1b71c2             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Toggled pin location.
+2022-11-25 17:59:59.198777+0100 0x83e9f    Fault       0x1b71c4             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (938.5, 495.5)
+2022-11-25 18:00:00.044875+0100 0x83e9f    Fault       0x1b7269             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Resized frame.
+2022-11-25 18:00:00.419311+0100 0x83e9f    Fault       0x1b726b             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (685.5, 774.5)
+2022-11-25 18:00:01.520568+0100 0x83e9f    Fault       0x1b737a             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Resized frame.
+2022-11-25 18:00:02.359184+0100 0x83e9f    Fault       0x1b737c             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (1250.0, 140.0)
+2022-11-25 18:00:02.808755+0100 0x83e9f    Fault       0x1b737d             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (1079.0, 183.5)
+2022-11-25 18:00:04.779934+0100 0x83e9f    Fault       0x1b737e             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (85.0, 943.0)
+2022-11-25 18:00:05.443606+0100 0x83e9f    Fault       0x1b737f             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (83.0, 563.0)
+2022-11-25 18:00:05.976215+0100 0x83e9f    Fault       0x1b73ed             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (91.5, 453.5)
+2022-11-25 18:00:07.202433+0100 0x83e9f    Fault       0x1b7407             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (95.0, 717.0)
+2022-11-25 18:00:07.552002+0100 0x83e9f    Fault       0x1b7408             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (100.5, 714.0)
+2022-11-25 18:00:08.062906+0100 0x83e9f    Fault       0x1b7409             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (74.5, 574.5)
+2022-11-25 18:00:08.804120+0100 0x83e9f    Fault       0x1b7425             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (100.5, 449.0)
+2022-11-25 18:00:10.021068+0100 0x83e9f    Fault       0x1b742f             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (73.0, 398.5)
+2022-11-25 18:00:10.068574+0100 0x83e9f    Fault       0x1b7450             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Selected layer.
+2022-11-25 18:00:12.515951+0100 0x83e9f    Fault       0x1b7452             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (1286.0, 943.0)
+2022-11-25 18:00:12.570563+0100 0x83e9f    Fault       0x1b7453             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Toggled ResponsivityControlView.
+2022-11-25 18:00:14.112482+0100 0x83e9f    Fault       0x1b7455             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (1273.5, 42.5)
+2022-11-25 18:00:14.289244+0100 0x83e9f    Fault       0x1b7456             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] The participant finishes the task. Duration: 0:23 min
+2022-11-25 18:00:16.335490+0100 0x83e9f    Fault       0x1b7458             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Touch began at (32.0, 53.5)
+2022-11-25 18:00:16.447680+0100 0x83e9f    Fault       0x1b7459             1521   14   Flex Studio: [ch.ethz.hci.2022.Flex-Studio:Study] Dismissed EditorView.
+==========
+/Users/alexanderzank/Library/Mobile Documents/com~apple~CloudDocs/ETH/HCI/study/1/full.logarchive
+==========

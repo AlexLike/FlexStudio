@@ -10,6 +10,9 @@
 # Icon must end with two \r
 Icon
 
+study/*/full.logarchive
+study/*/*.mov
+
 
 # Thumbnails
 ._*

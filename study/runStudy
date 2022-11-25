@@ -1,0 +1,47 @@
+#! /bin/bash
+read -p "This participant's id: " id
+mkdir $id
+cd $id
+echo "Connect the iPad and start the screen recording. Make participant sign the consent form."
+open -a "QuickTime Player"
+
+sleep 0.1
+while true; do
+read -p "Begin test? (y) " yn
+case $yn in 
+	[yY] ) break;;
+	* ) echo "";;
+esac
+done
+
+{
+echo "Testing participant $id."
+startDate=$(date "+%Y-%m-%d %H:%M:%S")
+echo "The date is $startDate. Logging starts now."
+
+variant=$((($id - 1) % 4))
+if (( variant == 0  )); then
+echo "Performing I -> D on Cozy Campfire."
+elif (( variant == 1 )); then
+echo "Performing I -> D on Plumber."
+elif (( variant == 2 )); then
+echo "Performing D -> I on Cozy Campfire."
+else
+echo "Performing D -> I on Plumber."
+fi
+
+sleep 0.1
+while true; do
+read -p "Stop study and collect logs? (y) " yn
+case $yn in 
+	[yY] ) break;;
+	* ) echo invalid response;;
+esac
+done
+
+sudo log collect --device --start "$startDate" --output ./full.logarchive
+log show --predicate 'subsystem = "ch.ethz.hci.2022.Flex-Studio" and category = "Study"' ./full.logarchive > ./relevant.log
+
+echo "Filtered content successfully written to ./relevant.log"
+
+} | tee researcher.log

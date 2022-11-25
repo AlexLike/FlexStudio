@@ -214,13 +214,10 @@ To measure our goals, we task participants with
 {We'll be testing our prototypes A and B on 8 or 12 people. The probands are identified uniquely as #i in (1, ..., 8/12) } <br>
 {Setup for the tester <br>
 
-- connect iPad to the Mac and open the Console of the Mac
-- search for: process: Flex Studio, category: Study
-- tap "start"
-- open quick time player
-- choose "File" > "New Movie Recording" (not "New Screen Recording")
-- tap the arrow to choose the iPad and record it's screen
-- in the end of the study copy/paste all the logs to a file #i.txt
+- Connect iPad to the Mac
+- `cd study`
+- `./runStudy` and enter participant's id (without #)
+- In QuickTime Player, choose "File" > "New Movie Recording" (not "New Screen Recording"), tap the arrow to choose the iPad and record it's screen
   }
 
 {Link for questionnaire: https://docs.google.com/forms/d/e/1FAIpQLSc8zU0_1yKfc3mgu-SK4-0RwdJAbGEq76R5gKkZa2THE9VrEw/viewform?usp=sharing}
@@ -230,20 +227,19 @@ To measure our goals, we task participants with
 Hi [#i's name].
 Today we are looking for ways to improve the user experience of the responsivity editor in our drawing-app, Flex Studio. It allows artists to define how their layers should move when their containing panel is being resized. So, let's set the mood.
 
-Imagine you're an up-and-coming webcomic artist that has just drawn the last panel of their biweekly release. What's left to do is to tell Flex Studio how to adapt it to different aspect ratios. Your readers on Tapas and Instagram will love this work, no matter if its shown in a wide format or at 1:1.
+Imagine you're an up-and-coming webcomic artist that has just drawn the last panel of their biweekly release. What's left to do is to tell Flex Studio how to adapt it to different aspect ratios. Your readers on Tapas and Instagram will love this work, no matter if its shown in a wide format or at 1:1. But more on that in our example.
 
 Remember: This is a test of the component; not your creative abilities. If you find something difficult to use, chances are that others will as well, so your feedback helps everyone.
 
 The study will take about 20 minutes. We'll answer any questions you have in the end of the study. Oh, and one last organizational thing: We would like to make a video recording of the screen for evaluation purposse. Would you be so kind and give consent in this form?
 
 {pass paper consent form with name (NOT ID!) and signature.}
+{in the meantime, begin logging by confirming prompt in command line with "y". You'll see a dialogue with the current date and IV settings to be tested.}
 
 Do you have any questions?
 Otherwise let's get started.
 
 #### Test
-
-{Consider between subject design ((#i mod 4) + 1 )} <br>
 
 We'll run two rounds of tests, one for every interface variant. In every round, we'll first introduce you to it by providing a simple demo, and will grant you some time to play around with it in your own drawing. Once you're familiar with it, we'll ask you to make an artist-provided panel responsive according to a reference.
 Everything clear?

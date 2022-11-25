@@ -8,7 +8,15 @@
 import UIKit
 
 extension UIWindow {
+    static let logger = Logger.forType(UIWindow.self)
+    static let swizzledWindows = NSHashTable<UIWindow>(options: .weakMemory)
+    
     func swizzle() {
+        guard !Self.swizzledWindows.contains(self) else {
+            Self.logger.notice("Attempted to un-swizzle a window. Ignoring request.")
+            return
+        }
+        
         let sendEvent = class_getInstanceMethod(
             object_getClass(self),
             #selector(UIApplication.sendEvent(_:))
@@ -18,6 +26,9 @@ extension UIWindow {
             #selector(UIWindow.swizzledSendEvent(_:))
         )
         method_exchangeImplementations(sendEvent!, swizzledSendEvent!)
+        
+        Self.logger.notice("Successfully swizzled the window.")
+        Self.swizzledWindows.add(self)
     }
 
     @objc func swizzledSendEvent(_ event: UIEvent) {
@@ -27,9 +38,9 @@ extension UIWindow {
 
     func handle(_ touches: Set<UITouch>) {
         for touch in touches {
-            if case .ended = touch.phase {
+            if case .began = touch.phase {
                 Logger.forStudy
-                    .critical("Touch ended at \("\(touch.location(in: nil))", privacy: .public)")
+                    .critical("Touch began at \("\(touch.location(in: nil))", privacy: .public)")
             }
         }
     }

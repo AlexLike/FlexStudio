@@ -79,6 +79,8 @@ extension Layer {
         l.drawing = PKDrawing()
         l.panel = panel
         l.isVisible = true
+        l.keyframes = []
+        Keyframe.create(for: l, at: 0.5, position: .zero)
         panel.layers.insert(l)
         return l
     }
