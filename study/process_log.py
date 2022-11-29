@@ -181,7 +181,7 @@ def writeData(result, id, outputfile):
     return
 
 if __name__ == "__main__":
-    id = "3" 
+    id = "1" 
     inputfile = "study/"+id+"/relevant.log"
     outputfile = "study/study_results.csv"
     argv = sys.argv[1:]
