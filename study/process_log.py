@@ -137,20 +137,21 @@ def writeData(result, id, outputfile):
         "Number of erroneous inputs": 4,
         "Resized frame": 5,
         "Selected layer": 6,
-        "Toggled ResponsivityControlView": 7,
-        "Toggled pin location": 8,
-        "Toggled keyframe": 9,
-        "Moved position in keyframe": 10,
-        "Tap x coord.": 11, 
-        "Tap y coord.": 12, 
-        "Error x coord.": 13, 
-        "Error y coord.": 14
+        "Toggled layer visibility": 7,
+        "Toggled ResponsivityControlView": 8,
+        "Toggled pin location": 9,
+        "Toggled keyframe": 10,
+        "Moved position in keyframe": 11,
+        "Tap x coord.": 12, 
+        "Tap y coord.": 13, 
+        "Error x coord.": 14, 
+        "Error y coord.": 15
     }
     header = ["Participant's ID", "Task type", "Task completion time", "Total number of taps", "Number of erroneous inputs", 
-    "Resized frame", "Selected layer", "Toggled ResponsivityControlView", "Toggled pin location", "Toggled keyframe", "Moved position in keyframe",
+    "Resized frame", "Selected layer", "Toggled layer visibility", "Toggled ResponsivityControlView", "Toggled pin location", "Toggled keyframe", "Moved position in keyframe",
     "Tap x coord.", "Tap y coord.", "Error x coord.", "Error y coord."]
 
-    data = [[0 for i in range(15)] for j in range(2)]
+    data = [[0 for i in range(16)] for j in range(2)]
 
     for i in range(2):
         data[i][0] = id
@@ -160,14 +161,14 @@ def writeData(result, id, outputfile):
             print("ERROR: Number of x-coord. and y-coord. of touches isn't equal")
             return
         data[i][3] = len(result[i]['taps'][0])
-        data[i][11] = ' '.join(result[i]['taps'][0])
-        data[i][12] = ' '.join(result[i]['taps'][1])
+        data[i][12] = ' '.join(result[i]['taps'][0])
+        data[i][13] = ' '.join(result[i]['taps'][1])
         if len(result[i]['error'][0]) != len(result[i]['error'][1]):
             print("ERROR: Number of x-coord. and y-coord. of erroneous inputs isn't equal")
             return
         data[i][4] = len(result[i]['error'][0])
-        data[i][13] = ' '.join(result[i]['error'][0])
-        data[i][14] = ' '.join(result[i]['error'][1])
+        data[i][14] = ' '.join(result[i]['error'][0])
+        data[i][15] = ' '.join(result[i]['error'][1])
         for key in result[i]['actions'].keys():
             data[i][header_idx[key]] = result[i]['actions'][key]
 
@@ -181,36 +182,38 @@ def writeData(result, id, outputfile):
     return
 
 if __name__ == "__main__":
-    id = "1" 
+    id = "5" 
     inputfile = "study/"+id+"/relevant.log"
     outputfile = "study/study_results.csv"
     argv = sys.argv[1:]
 
-    if len(argv)< 3:
-        print("Arguments missing!")
-        print("\t Usage: process_log.py -I <Participant's ID> -i <inputfile.log> -o <outputfile.csv>")
-        sys.exit()
-    try:
-        opts, args = getopt.getopt(argv, "hI:i:o:",["Id=","ifile=","ofile="])
-    except getopt.GetoptError:
-        print("Arguments missing!")
-        print("\t Usage: process_log.py -I <Participant's ID> -i <inputfile.log> -o <outputfile.csv>")
-        sys.exit(2)
-    for opt, arg in opts:
-        if opt == '-h':
-            print("\t Usage: process_log.py -I <Participant's ID> -i <inputfile.log> -o <outputfile.csv>")
-            sys.exit()
-        elif opt in ("-i", "--ifile"):
-            inputfile = arg
-        elif opt in ("-o", "--ofile"):
-            outputfile = arg
-        elif opt in ("-I", "--Id"):
-            id = arg
+    # if len(argv)< 3:
+    #     print("Arguments missing!")
+    #     print("\t Usage: process_log.py -I <Participant's ID> -i <inputfile.log> -o <outputfile.csv>")
+    #     sys.exit()
+    # try:
+    #     opts, args = getopt.getopt(argv, "hI:i:o:",["Id=","ifile=","ofile="])
+    # except getopt.GetoptError:
+    #     print("Arguments missing!")
+    #     print("\t Usage: process_log.py -I <Participant's ID> -i <inputfile.log> -o <outputfile.csv>")
+    #     sys.exit(2)
+    # for opt, arg in opts:
+    #     if opt == '-h':
+    #         print("\t Usage: process_log.py -I <Participant's ID> -i <inputfile.log> -o <outputfile.csv>")
+    #         sys.exit()
+    #     elif opt in ("-i", "--ifile"):
+    #         inputfile = arg
+    #     elif opt in ("-o", "--ofile"):
+    #         outputfile = arg
+    #     elif opt in ("-I", "--Id"):
+    #         id = arg
 
     if not os.path.isfile(inputfile):
         print("Wrong path to inputfile!")
         sys.exit()
     result = readData(inputfile)
+    # print(result[0])
+    # print(result[1])
     writeData(result,id,outputfile)
 
 
