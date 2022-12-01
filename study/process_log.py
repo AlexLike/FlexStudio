@@ -100,8 +100,8 @@ def readData(inputfile):
                             else:
                                 # leave commented out to ignore all touches in layer menu
                                 # uncomment to log all touches in layer menu as correct touches
-                                # tests[current_test]['tap'][0].append(x) 
-                                # tests[current_test]['tap'][1].append(y) 
+                                # tests[current_test]['taps'][0].append(x) 
+                                # tests[current_test]['taps'][1].append(y) 
                                 last_action = [None,None]
 
                     else:
@@ -170,7 +170,8 @@ def writeData(result, id, outputfile):
         data[i][14] = ' '.join(result[i]['error'][0])
         data[i][15] = ' '.join(result[i]['error'][1])
         for key in result[i]['actions'].keys():
-            data[i][header_idx[key]] = result[i]['actions'][key]
+            if key in header_idx:
+                data[i][header_idx[key]] = result[i]['actions'][key]
 
     data = pd.DataFrame(data, columns=header)
     if file_exists: 
@@ -182,40 +183,19 @@ def writeData(result, id, outputfile):
     return
 
 if __name__ == "__main__":
-    id = "5" 
-    inputfile = "study/"+id+"/relevant.log"
-    outputfile = "study/study_results.csv"
-    argv = sys.argv[1:]
+    # for i in range(1,7):
+        id = 6 #str(i)
+        inputfile = "study/"+id+"/relevant.log"
+        outputfile = "study/study_results.csv"
+        argv = sys.argv[1:]
 
-    # if len(argv)< 3:
-    #     print("Arguments missing!")
-    #     print("\t Usage: process_log.py -I <Participant's ID> -i <inputfile.log> -o <outputfile.csv>")
-    #     sys.exit()
-    # try:
-    #     opts, args = getopt.getopt(argv, "hI:i:o:",["Id=","ifile=","ofile="])
-    # except getopt.GetoptError:
-    #     print("Arguments missing!")
-    #     print("\t Usage: process_log.py -I <Participant's ID> -i <inputfile.log> -o <outputfile.csv>")
-    #     sys.exit(2)
-    # for opt, arg in opts:
-    #     if opt == '-h':
-    #         print("\t Usage: process_log.py -I <Participant's ID> -i <inputfile.log> -o <outputfile.csv>")
-    #         sys.exit()
-    #     elif opt in ("-i", "--ifile"):
-    #         inputfile = arg
-    #     elif opt in ("-o", "--ofile"):
-    #         outputfile = arg
-    #     elif opt in ("-I", "--Id"):
-    #         id = arg
-
-    if not os.path.isfile(inputfile):
-        print("Wrong path to inputfile!")
-        sys.exit()
-    result = readData(inputfile)
-    # print(result[0])
-    # print(result[1])
-    writeData(result,id,outputfile)
-
+        if not os.path.isfile(inputfile):
+            print("Wrong path to inputfile!")
+            sys.exit()
+        result = readData(inputfile)
+        # print(result[0])
+        # print(result[1])
+        writeData(result,id,outputfile)
 
 
 
