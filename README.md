@@ -159,23 +159,21 @@ To measure our goals, we task participants with
 
 (C1) / (C2) making one of two preset panels responsive in such way that it mimicks the behavior from a printed reference.
 
-(O) making a preset panel responsive however they desire.
-
 ---
 
-### Quantitative Dependent Variables
+### Dependent Variables
 
-**(T) Task completion time**
+**T (Task Completion Time, sec) ∈ ℝ interval**
 
-**(N) Number of taps and drag gestures**
+**N (Number of Drags and Gestures) ∈ ℕ interval**
 
-**(E) Number of erroneous inputs (i.e. missing or performing irrelevant inputs)**
+**E (Number of Erroneous Inputs) ∈ ℕ interval**
 
-**(A) Accuracy of the result (only for V2 ∈ {C1, C2})**
+**X (Modified NASA TLX Raw Score) ∈ {10, 11, ..., 100} interval**
 
-### Qualitative Dependent Variables
+**R (Perceived Restrictivity) ∈ {1, 2, ..., 10} Likert, ordinal**
 
-**(X) NASA TLX Score**
+**C (Perceived Complexity) ∈ {1, 2, ..., 10}Likert, ordinal**
 
 ### Additional Qualitative Data
 
@@ -185,17 +183,21 @@ To measure our goals, we task participants with
 
 ### Hypotheses
 
-(HT) There will be no effect of input modality (V1) on the time (T) required to fulfill a closed task (V2 ∈ {C1, C2}).
+(HT) There will be no effect of interface variant (V1) on the time (T) required to fulfill a closed task (V2).
 
-(HN) There will be no effect of input modality (V1) on the number of gestures (N) required to fulfill a closed task (V2 ∈ {C1, C2}).
+(HN) There will be no effect of interface variant (V1) on the number of gestures (N) required to fulfill a closed task (V2).
 
-(HEA) There will be no effect of input modality (V1) on the overall accuracy (E/A) of the responsivity process in a closed task (V2 ∈ {C1, C2}).
+(HE) There will be no effect of interface variant (V1) on the input accuracy (E) of the responsivity process in a closed task (V2).
 
-(HX) There will be no effect of input modality (V1) on the TLX score (X) awarded by the users.
+(HX) There will be no effect of interface variant (V1) on the Raw TLX score (X) awarded by the users.
+
+(HR) There will be no effect of interface variant (V1) on the restric- tivity (R) perceived by the user.
+
+(HC) There will be no effect of interface variant (V1) on the com- plexity (C) perceived by the user.
 
 ---
 
-### Between-Subject Design
+### Within-Subjects Design
 
 | IV Seq. ID | (V1,V2)1 | (V1,V2)2 |
 | ---------- | -------- | -------- |
@@ -204,7 +206,7 @@ To measure our goals, we task participants with
 | 3          | (D,C1)   | (I,C1)   |
 | 4          | (D,C2)   | (I,C2)   |
 
-∀ V1, V2. (V1,V2) is preceded by training (V1,O).
+∀ V1, V2. (V1,V2) is preceded by open training on V1.
 
 ---
 
