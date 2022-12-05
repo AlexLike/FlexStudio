@@ -130,7 +130,7 @@ def writeData(result, id, outputfile):
         file_exists = False
 
     header_idx = {
-        "Participant's ID": 0,
+        "Participant ID": 0,
         "Task type": 1,
         "Task completion time": 2, 
         "Total number of taps": 3, 
@@ -147,7 +147,7 @@ def writeData(result, id, outputfile):
         "Error x coord.": 14, 
         "Error y coord.": 15
     }
-    header = ["Participant's ID", "Task type", "Task completion time", "Total number of taps", "Number of erroneous inputs", 
+    header = ["Participant ID", "Task type", "Task completion time", "Total number of taps", "Number of erroneous inputs", 
     "Resized frame", "Selected layer", "Toggled layer visibility", "Toggled ResponsivityControlView", "Toggled pin location", "Toggled keyframe", "Moved position in keyframe",
     "Tap x coord.", "Tap y coord.", "Error x coord.", "Error y coord."]
 
