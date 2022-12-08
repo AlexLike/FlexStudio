@@ -368,28 +368,30 @@ Do you have any suggestions for points of improvements?
 
 Thanks a lot for your participation.
 
+---
+
 ### Study Results
 
 For a more detailed report on the study results, please refer to sections 3 and 4 of our paper _Designing and Evaluating a Responsivity Tool for Flex Studio_
 
 #### Quantitive
 
-**Completion Time**
+**Completion Time:**
 To compare the effect of the interface variant V1 on completion time T, we conducted a paired samples t-test. The mean difference between the two groups was not statistically significant and we failed to reject HT.
 
-**Number of Gestures**
+**Number of Gestures:**
 To compare the effect of the interface variant V1 on the number of gestures N, we conducted a paired samples t-test. The mean difference between the two groups was not statistically significant and we failed to reject HN.
 
-**Input Accuracy**
+**Input Accuracy:**
 To compare the effect of the interface variant V1 on the number of erroneous inputs E, we conducted a Wilcoxon signed-rank test. The mean difference between the two groups was statistically significant, indicating that the direct interface is less prone to erroneous inputs. HE can be rejected
 
-**Raw TLX Score**
+**Raw TLX Score:**
 To compare the effect of the interface variant V1 on raw TLX score X, we conducted a paired samples t-test. The mean difference between the two groups was not statistically significant and we failed to reject HX.
 
-**Restrictivity**
+**Restrictivity:**
 To compare the effect of the interface variant V1 on restrictivity R, we conducted a Wilcoxon signed-rank test. The mean difference between the two groups was statistically significant, indicating that the direct interface is is perceived as less restrictive. HR can be rejected. 
 
-**Complexity**
+**Complexity:**
 To compare the effect of the interface variant V1 on complexity C, we conducted a Wilcoxon signed-rank test. The mean difference between the two groups was not statistically significant and we failed to reject HC.
 
 #### Qualitative
