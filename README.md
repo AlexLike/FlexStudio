@@ -218,7 +218,7 @@ For the study protocol, please refer to `study/protocol.md`
 
 ### Study Results
 
-For a more detailed report on the study results, please refer to sections 3 and 4 of our paper _Designing and Evaluating a Responsivity Tool for Flex Studio_
+For a more detailed report on the study results, please refer to sections 3 and 4 of our paper [_Designing and Evaluating a Responsivity Tool for Flex Studio_](/Deliverables/Report.pdf)
 
 #### Quantitive
 
@@ -235,15 +235,14 @@ To compare the effect of the interface variant V1 on the number of erroneous inp
 To compare the effect of the interface variant V1 on raw TLX score X, we conducted a paired samples t-test. The mean difference between the two groups was not statistically significant and we failed to reject HX.
 
 **Restrictivity:**
-To compare the effect of the interface variant V1 on restrictivity R, we conducted a Wilcoxon signed-rank test. The mean difference between the two groups was statistically significant, indicating that the direct interface is is perceived as less restrictive. HR can be rejected. 
+To compare the effect of the interface variant V1 on restrictivity R, we conducted a Wilcoxon signed-rank test. The mean difference between the two groups was statistically significant, indicating that the direct interface is is perceived as less restrictive. HR can be rejected.
 
 **Complexity:**
 To compare the effect of the interface variant V1 on complexity C, we conducted a Wilcoxon signed-rank test. The mean difference between the two groups was not statistically significant and we failed to reject HC.
 
 #### Qualitative
-6 out of 8 participants preferred the direct interface, while the other 2 participants saw advantages in both interfaces, depending on the user's experience. 
-4 participants thought that the indirect interface was easier to use and less mentally demanding, one of the them mentioned that the difference is negligible. 
-The key reason why participants preferred the direct interface was due to having more control over the position of the layers and therefore the look of the final image. 
+
+6 out of 8 participants preferred the direct interface, while the other 2 participants saw advantages in both interfaces, depending on the user's experience.
+4 participants thought that the indirect interface was easier to use and less mentally demanding, one of the them mentioned that the difference is negligible.
+The key reason why participants preferred the direct interface was due to having more control over the position of the layers and therefore the look of the final image.
 Lastly, one participant noted that the direct interface was easier to use since they didn't need to test its behavior by
-
-
