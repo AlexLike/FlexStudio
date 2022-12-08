@@ -367,3 +367,35 @@ Do you have any previous experiences with constraint based layouting, like in Fi
 Do you have any suggestions for points of improvements?
 
 Thanks a lot for your participation.
+
+### Study Results
+
+For a more detailed report on the study results, please refer to sections 3 and 4 of our paper _Designing and Evaluating a Responsivity Tool for Flex Studio_
+
+#### Quantitive
+
+**Completion Time**
+To compare the effect of the interface variant V1 on completion time T, we conducted a paired samples t-test. The mean difference between the two groups was not statistically significant and we failed to reject HT.
+
+**Number of Gestures**
+To compare the effect of the interface variant V1 on the number of gestures N, we conducted a paired samples t-test. The mean difference between the two groups was not statistically significant and we failed to reject HN.
+
+**Input Accuracy**
+To compare the effect of the interface variant V1 on the number of erroneous inputs E, we conducted a Wilcoxon signed-rank test. The mean difference between the two groups was statistically significant, indicating that the direct interface is less prone to erroneous inputs. HE can be rejected
+
+**Raw TLX Score**
+To compare the effect of the interface variant V1 on raw TLX score X, we conducted a paired samples t-test. The mean difference between the two groups was not statistically significant and we failed to reject HX.
+
+**Restrictivity**
+To compare the effect of the interface variant V1 on restrictivity R, we conducted a Wilcoxon signed-rank test. The mean difference between the two groups was statistically significant, indicating that the direct interface is is perceived as less restrictive. HR can be rejected. 
+
+**Complexity**
+To compare the effect of the interface variant V1 on complexity C, we conducted a Wilcoxon signed-rank test. The mean difference between the two groups was not statistically significant and we failed to reject HC.
+
+#### Qualitative
+6 out of 8 participants preferred the direct interface, while the other 2 participants saw advantages in both interfaces, depending on the user's experience. 
+4 participants thought that the indirect interface was easier to use and less mentally demanding, one of the them mentioned that the difference is negligible. 
+The key reason why participants preferred the direct interface was due to having more control over the position of the layers and therefore the look of the final image. 
+Lastly, one participant noted that the direct interface was easier to use since they didn't need to test its behavior by
+
+
