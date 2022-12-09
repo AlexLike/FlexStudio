@@ -2,9 +2,9 @@
   <img height="56" src="img/logo-ait.png"> &nbsp; &nbsp;
   <img height="56" src="img/eth-sip-3l.png">
 </p> -->
-<picture style="display:block; max-width: 480px;">
+<picture>
   <source media="(prefers-color-scheme: dark)" srcset="img/siplab-ait-eth-logos-white.png">
-  <img alt="SIPLAB and AIT at ETH Zürich." src="img/siplab-ait-eth-logos.png">
+  <img alt="SIPLAB and AIT at ETH Zürich." src="img/siplab-ait-eth-logos.png" width="480">
 </picture>
 
 # Flex Studio, Group 1
