@@ -205,9 +205,9 @@ To measure our goals, we task participants with
 
 (HX) There will be no effect of interface variant (V1) on the Raw TLX score (X) awarded by the users.
 
-(HR) There will be no effect of interface variant (V1) on the restric- tivity (R) perceived by the user.
+(HR) There will be no effect of interface variant (V1) on the restrictivity (R) perceived by the user.
 
-(HC) There will be no effect of interface variant (V1) on the com- plexity (C) perceived by the user.
+(HC) There will be no effect of interface variant (V1) on the complexity (C) perceived by the user.
 
 ---
 
