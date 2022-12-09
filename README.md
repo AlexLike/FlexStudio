@@ -15,15 +15,7 @@
 
 ## Project description
 
-_Flex Studio_ is a concept application streamlining the workflow of
-cartoon and webcomic artists. Instead of focusing on full-page
-layouts, artists develop one panel at a time, letting their imagination
-run free while hinting to the system how their drawings should
-be positioned at a wide range of aspect ratios. Our auto-paneling
-technology uses this information to export single-panel, print, and
-full-page versions of their work tailored to each platform, alleviating
-the need for intensive manual composition work and increasing the
-reach of their art
+_Flex Studio_ is a concept application streamlining the workflow of cartoon and webcomic artists. Instead of focusing on full-page layouts, artists develop one panel at a time, letting their imagination run free while hinting to the system how their drawings should be positioned at a wide range of aspect ratios. Our auto-paneling technology uses this information to export single-panel, print, and full-page versions of their work tailored to each platform, alleviating the need for intensive manual composition work and increasing the reach of their art.
 
 ## Ideation & Evaluation
 
