@@ -12,6 +12,7 @@
 #### Kai Zheng, Cashen Adkins, Tim Kluser, Karl Robert Kristenprun, Alexander Zank
 
 ![An overview of the responsivity tool in Flex Studio.](study/paper/Header.png)
+_Background © ETH Zürich / Gian Marco Castelberg_
 
 ## Project description
 
