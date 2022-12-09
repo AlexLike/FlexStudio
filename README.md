@@ -1,17 +1,29 @@
-<p align="left" width="100%">
+<!-- <p align="left" width="100%">
   <img height="56" src="img/logo-ait.png"> &nbsp; &nbsp;
-  <img height="56" src="img/eth-sip-3l.png">     
-</p>
+  <img height="56" src="img/eth-sip-3l.png">
+</p> -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="img/siplab-ait-eth-logos-white.png">
+  <img alt="SIPLAB and AIT at ETH Zürich." src="img/siplab-ait-eth-logos.png">
+</picture>
 
 # Flex Studio, Group 1
 
 #### Kai Zheng, Cashen Adkins, Tim Kluser, Karl Robert Kristenprun, Alexander Zank
 
+![An overview of the responsivity tool in Flex Studio.](study/paper/Header.png)
+
 ## Project description
 
-    TODO
-
-Introduction to chosen topic in own words, possibly with a brief motivation
+_Flex Studio_ is a concept application streamlining the workflow of
+cartoon and webcomic artists. Instead of focusing on full-page
+layouts, artists develop one panel at a time, letting their imagination
+run free while hinting to the system how their drawings should
+be positioned at a wide range of aspect ratios. Our auto-paneling
+technology uses this information to export single-panel, print, and
+full-page versions of their work tailored to each platform, alleviating
+the need for intensive manual composition work and increasing the
+reach of their art
 
 ## Ideation & Evaluation
 
@@ -19,7 +31,7 @@ Introduction to chosen topic in own words, possibly with a brief motivation
 
 Having selected "Cartoon" as our project topic, we first tried to find cartoon artists to give us some insight into their workflow and what they would like to see improved. Sadly, none of our posts on Reddit, nor E-Mails to cartoon networks, have been answered so far, so we relied on _existing conversations in creator lounges_, _existing applications in the field_, and on _blog posts_.
 
-Before we entered the desk research, we already had some ideas of what we wanted to do, all revolving around a responsive cartoon-maker. But instead of following our initial ideas, desk research allowed us to see the abundance of flaws in the current workflow of cartoonists. It made us realize the scope of possibilities that we could pursue. Our sources indicate that webcomics are prone to die without innovation on both the creator and the consumer side. Artists often use general-purpose graphics software instead of specialized tools, and consumers seem to prefer more interactive content when consuming digital media.
+Before we entered the [desk research](/Deliverables/DeskResearch/DeskResearchSources.md), we already had some ideas of what we wanted to do, all revolving around a responsive cartoon-maker. But instead of following our initial ideas, desk research allowed us to see the abundance of flaws in the current workflow of cartoonists. It made us realize the scope of possibilities that we could pursue. Our sources indicate that webcomics are prone to die without innovation on both the creator and the consumer side. Artists often use general-purpose graphics software instead of specialized tools, and consumers seem to prefer more interactive content when consuming digital media.
 
 ### How-might-we's
 
@@ -35,6 +47,8 @@ How might we...
 ### Brainstorming
 
 The 6-3-5 brainwriting technique was surprisingly effective at generating new ideas and expanding on our initial thoughts. The time limit and judgment-free environment resulted in a plethora of exciting ideas, many of which we would like to implement in our first prototypes.
+
+![Our affinity diagram](/Deliverables/Brainstorm/AffinityDiagram.jpeg)
 
 We look forward to the prototyping phase, where we will explore different feature sets and interface elements.
 
@@ -62,8 +76,8 @@ We enter the next stage with excitement and plan to focus on these three core fe
 
 To get a more thorough feeling for the structure, feature set, and visual language of our product, we decided to create pseudo-interactive prototypes for
 
-1. the [top level-navigation](/Deliverables/MidFiPrototyping/Top%20Level-Navigation%20and%20Export.mp4) and for
-2. the [unified panel editor](/Deliverables/MidFiPrototyping/Sidebar%20and%203D%20Model%20Import.mp4).
+1. the [top level-navigation](/Deliverables/MidFiPrototyping/IdeaB/Top%20Level-Navigation%20and%20Export.mp4) and for
+2. the [unified panel editor](/Deliverables/MidFiPrototyping/IdeaA/Sidebar%20and%203D%20Model%20Import.mp4).
 
 The former we designed in Sketch, following Apple's Human Interface Guidelines and drawing inspiration from other apps that foster organized productivity.
 The latter we created in Figma, exploring how basic layering, the reference side panel, and context-switching to 3D template mode could work together.
@@ -212,13 +226,13 @@ To measure our goals, we task participants with
 
 ### Protocol
 
-For the study protocol, please refer to `study/protocol.md`
+View the [entire protocol](/Deliverables/Study/protocol.md) in its separate document.
 
 ---
 
 ### Study Results
 
-For a more detailed report on the study results, please refer to sections 3 and 4 of our paper [_Designing and Evaluating a Responsivity Tool for Flex Studio_](/Deliverables/Report.pdf)
+For a detailed report on the study results, please refer to sections 3 and 4 of our paper [_Designing and Evaluating a Responsivity Tool for Flex Studio_](/Deliverables/Study/Report.pdf).
 
 #### Quantitive
 
