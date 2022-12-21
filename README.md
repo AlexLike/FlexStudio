@@ -265,6 +265,14 @@ To compare the effect of the interface variant V1 on complexity C, we conducted 
 The key reason why participants preferred the direct interface was due to having more control over the position of the layers and therefore the look of the final image.
 Lastly, one participant noted that the direct interface was easier to use since they didn't need to test its behavior by
 
+#### Conclusion
+
+We designed and evaluated pinning- and keyframe-based interface variants for Flex Studio’s responsivity tool, allowing artists to make their creations more adaptive.
+
+While our empirical study did not find significant performance differences, it did deem the direct interface more expressive. From qualitative results, we learned that the level of control offered by keyframes was a vital factor in participants’ preferences, but the preciseness of pins is also desirable.
+
+As a next step, we suggest exploring the idea of using both interfaces simultaneously to combine their respective strengths.
+
 ## Goodbye
 
 Throughout the semester, we researched, debated, explained, implemented, questioned, answered, analyzed, adjusted, pitched, and presented. While challenging and stressful at times, the overall HCI process has proven engaging, fun, and worthwhile. The results speak for themselves: We are amazed by our colleagues' projects and proud of our product. Thank you for sticking with us.
