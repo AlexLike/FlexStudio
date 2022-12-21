@@ -3,8 +3,8 @@
   <img height="56" src="img/eth-sip-3l.png">
 </p> -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="img/siplab-ait-eth-logos-white.png">
-  <img alt="SIPLAB and AIT at ETH Zürich." src="img/siplab-ait-eth-logos.png" width="480">
+  <source media="(prefers-color-scheme: dark)" srcset="./img/siplab-ait-eth-logos-white.png">
+  <img alt="SIPLAB and AIT at ETH Zürich." src="./img/siplab-ait-eth-logos.png" width="480">
 </picture>
 
 # Flex Studio, Group 1
@@ -136,9 +136,20 @@ _The Unified Panel Editor provides the ability to_
 3. _ideate on one's story in a free-form scratchpad, and_
 4. _temporarily place 3D models behind ones drawings for reference._
 
-We enter the next stage with ideas for two potential A/B tests: one for (2) and one for (4). For the hi-fi prototype, we strive to build a minimally featured version of the editor with testing facilities for the desired test.
+We enter the next stage with ideas for a potential A/B tests for (2). In the hi-fi prototype, we strive to build a minimally featured version of the editor with a responsivity tool and testing facilities.
 
 ## Hi-fidelity Prototype
+
+Flex Studio (Research Edition) features panel-wise navigation, layered drawing, two variants of the responsivity tool, and plentiful study-centered infrastructure.
+
+To achieve a native look and natural pencil interactions, we decided to forego Unity and instead implement an iPadOS app using Apple's SDK. Notably, we used
+
+- SwiftUI to declare most views, build organic animations, and orchestrate data flow reactively,
+- PencilKit for the smooth pencil mechanics and the system-provided bottom draw tool picker,
+- Core Data to persist application state to the disk, and
+- OSLog to accumulate events during the study.
+
+Please view the [guided video walkthrough](https://www.youtube.com/watch?v=o2dFzIIkwnU) to see Research Edition in action and read our paper [_Designing and Evaluating a Responsivity Tool for Flex Studio_](/Deliverables/Study/Report.pdf) to learn about the two interface variants.
 
 ## User study
 
@@ -146,9 +157,9 @@ We enter the next stage with ideas for two potential A/B tests: one for (2) and 
 
 Given that the core functionality of our app relies on sensibly responsive panels, we need to make editing the corresponding constraints discoverable and easy to use. We want the responsivity editor to
 
-1. require minimal input, i.e. work with as little manual input as possible,
-2. behave predicatably, i.e. extrapolate from the user's guidance like another human would, and
-3. be flexible enough to achieve a wide range of results, i.e. allow the artist to express many layer alignments.
+1. work quickly and easily, i.e., require minimal manual input,
+2. behave predicatably, i.e., extrapolate from the user’s guidance like another human would, and
+3. be flexible enough to achieve a wide range of results, i.e., allow the artist to express many layer alignments.
 
 ---
 
@@ -253,3 +264,7 @@ To compare the effect of the interface variant V1 on complexity C, we conducted 
 4 participants thought that the indirect interface was easier to use and less mentally demanding, one of the them mentioned that the difference is negligible.
 The key reason why participants preferred the direct interface was due to having more control over the position of the layers and therefore the look of the final image.
 Lastly, one participant noted that the direct interface was easier to use since they didn't need to test its behavior by
+
+## Goodbye
+
+Throughout the semester, we researched, debated, explained, implemented, questioned, answered, analyzed, adjusted, pitched, and presented. While challenging and stressful at times, the overall HCI process has proven engaging, fun, and worthwhile. The results speak for themselves: We are amazed by our colleagues' projects and proud of our product. Thank you for sticking with us.
