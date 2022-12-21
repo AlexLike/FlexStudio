@@ -276,3 +276,5 @@ As a next step, we suggest exploring the idea of using both interfaces simultane
 ## Goodbye
 
 Throughout the semester, we researched, debated, explained, implemented, questioned, answered, analyzed, adjusted, pitched, and presented. While challenging and stressful at times, the overall HCI process has proven engaging, fun, and worthwhile. The results speak for themselves: We are amazed by our colleagues' projects and proud of our product. Thank you for sticking with us.
+
+<!-- fin -->
