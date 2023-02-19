@@ -14,6 +14,14 @@
 ![An overview of the responsivity tool in Flex Studio.](study/paper/Header.png)
 _Background © ETH Zürich / Gian Marco Castelberg_
 
+> Flex Studio is our semester project for ETH's HCI course.
+> 
+> #### Quick Links
+>
+> - our paper [_Designing and Evaluating a Responsivity Tool for Flex Studio_](/Deliverables/Study/Report.pdf)
+> - our [final presentation](https://www.youtube.com/watch?v=SJYu8f-hb8Y)
+> - a [guided video walkthrough](https://www.youtube.com/watch?v=o2dFzIIkwnU) of the hifi-prototype
+
 ## Project description
 
 _Flex Studio_ is a concept application streamlining the workflow of cartoon and webcomic artists. Instead of focusing on full-page layouts, artists develop one panel at a time, letting their imagination run free while hinting to the system how their drawings should be positioned at a wide range of aspect ratios. Our auto-paneling technology uses this information to export single-panel, print, and full-page versions of their work tailored to each platform, alleviating the need for intensive manual composition work and increasing the reach of their art.
